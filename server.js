@@ -15,21 +15,23 @@ const urlencoder = bodyparser.urlencoded({
     extended: false
 })
 
+app.set("view engine", "hbs")
 app.use(express.static(__dirname+"/views"))
 
-
+app.use(express.static(path.join(__dirname, "views")))
 
 app.get("/", (req, res, next) => {
     console.log("GET /")
 
-
+        res.render("landing.hbs")
+//        res.sendFile(path.join(__dirname, "views/landing.hbs"))
 
     console.log("HI")
 })
 
-//app.use(express.static(path.join(__dirname, "views")))
 
-app.listen(3000, () => {
+
+app.listen(4000, () => {
     console.log("listening in port 3000")
 })
 
