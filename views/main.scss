@@ -1,0 +1,33 @@
+// add changes to css
+// sample :
+//$theme-colors: (
+//    "primary": #ff4136, //changes "primary"
+//    "dark": #123ab5
+//);
+
+body { 
+    background: white !important; 
+    font-family: 'Roboto', sans-serif !important; 
+}
+
+.navbar {
+    background: #982827;
+}
+
+#search{
+    color: lightyellow;
+}
+
+.nav-link{
+    color:yellow;
+}
+
+.nav-link:hover{
+    color:white;
+}
+
+// variables that u can change: node modules -> bootstrap -> scss -> _variables.scss
+// always recompile your code (sass main.scss main.css) after adding/editing here and before reloading the page
+
+
+@import "node_modules/bootstrap/scss/bootstrap";

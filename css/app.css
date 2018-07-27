@@ -1,0 +1,174 @@
+
+img{
+    display: block;
+    width: 100%;
+}
+a.nav-link:focus{
+    outline: none;
+}
+main.container{
+    padding-top: 20px;
+}
+
+.container-fluid{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container-prof{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.feed {
+    width: 80%;
+}
+
+
+.memediv{
+    margin-left: 50px;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 5px;
+    padding: 23px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    background-color: antiquewhite;
+}
+
+.memedivprof{
+    margin: auto;
+    width: 600px;
+    margin-bottom: 40px;
+    padding: 23px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    background-color: antiquewhite;
+}
+
+.memedivHome{
+    width: 600px;
+    height: 260px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    padding: 23px;
+    background-color: antiquewhite;
+}
+
+.memedivShared{
+    width: 450px;
+    height: 250px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    padding: 23px;
+    background-color: antiquewhite;
+}
+
+.memeContent{
+    width: 200px;
+    height: 200px;
+    display:inline;
+/*
+    border-left: 20px;
+    border-width: 1.5px;
+    border-style: solid;
+*/
+
+}
+.memedivTag{
+    width: 350px;
+    height: 450px;
+    border-width: 1.5px;
+    border-style: solid;
+    border-color: black;
+    padding: 23px;
+    background-color: antiquewhite; 
+}
+
+.memedivTagsOfTag{
+    display: inline-block;
+}
+.memePicTag{
+    margin-left: 25px;
+    width: 250px;
+    height: 250px;
+    display: inline-block;
+
+}
+.biggerTag{
+    font-size: 18px;
+    color: green;
+    max-height: 100px;
+    height: 100px;
+    overflow: scroll;
+}
+
+.memePic{
+    width: 200px;
+    height: 200px;
+    display:inline;
+}
+
+.buttonid{
+    display: inline;
+
+}
+
+
+#logo{
+    height: 40px;
+    width: 100px;
+}
+
+.imgthumb{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+}
+
+.imgprof{
+/*    float: left;*/
+    width: 500px;
+    height: 500px;
+    margin-right: 10px;
+}
+
+/*
+img{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+}
+*/
+
+.bigger{
+    font-size: 20px;
+/*    margin-bottom: 30px;*/
+/*    margin-left: 20px;*/
+    height: 200px;
+/*    display: inline;*/
+    color: green;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.biggerprof{
+    font-size: 20px;
+/*    margin-bottom: 30px;*/
+/*    margin-left: 20px;*/
+/*    height: 200px;*/
+/*    display: inline;*/
+    color: green;
+    max-height: 200px;
+    overflow: scroll;
+}
+
+.card-body{
+    width: 750px;
+}
