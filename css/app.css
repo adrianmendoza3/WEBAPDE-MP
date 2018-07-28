@@ -72,11 +72,7 @@ main.container{
     width: 200px;
     height: 200px;
     display:inline;
-/*
-    border-left: 20px;
-    border-width: 1.5px;
-    border-style: solid;
-*/
+
 
 }
 .memedivTag{
@@ -132,27 +128,15 @@ main.container{
 }
 
 .imgprof{
-/*    float: left;*/
     width: 500px;
     height: 500px;
     margin-right: 10px;
 }
 
-/*
-img{
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
-}
-*/
 
 .bigger{
     font-size: 20px;
-/*    margin-bottom: 30px;*/
-/*    margin-left: 20px;*/
     height: 200px;
-/*    display: inline;*/
     color: green;
     max-height: 200px;
     overflow: scroll;
@@ -160,10 +144,6 @@ img{
 
 .biggerprof{
     font-size: 20px;
-/*    margin-bottom: 30px;*/
-/*    margin-left: 20px;*/
-/*    height: 200px;*/
-/*    display: inline;*/
     color: green;
     max-height: 200px;
     overflow: scroll;
