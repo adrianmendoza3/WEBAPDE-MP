@@ -6,7 +6,7 @@
 //);
 
 body { 
-    background: white !important;
+    background: floralwhite !important;
     font-family: 'Roboto', sans-serif !important; 
 }
 
@@ -18,6 +18,8 @@ body {
     color: lightyellow;
 }
 
+
+
 .nav-link{
     color:yellow;
 }
@@ -25,6 +27,8 @@ body {
 .nav-link:hover{
     color:white;
 }
+
+
 
 // variables that u can change: node modules -> bootstrap -> scss -> _variables.scss
 // always recompile your code (sass main.scss main.css) after adding/editing here and before reloading the page

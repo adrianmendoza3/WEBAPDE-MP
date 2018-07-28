@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Tag: Angel</title>
+    <title>Home</title>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
       
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="./../css/app.css">
+    <link rel="stylesheet" href="/app.css">
   </head>
 
   <body>
+
     <!-- Modal Log in-->
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -27,7 +28,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="home.hbs"> <!--bottom half of the popup-->
+          <form method="POST" action="./home.hbs"> <!--bottom half of the popup-->
             <div class="modal-body"> <!--username, password, remember me-->
                   <div class="form-group row"> <!--username-->
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -72,7 +73,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="home.hbs"> <!--bottom half of pop up-->
+            <form method="POST" action="./home.hbs"> <!--bottom half of pop up-->
                 <div class="modal-body"> <!--username, password, confirm password-->
                     <div class="form-group row"> <!--username-->
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -105,7 +106,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home.hbs"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
+        <a class="navbar-brand" href="home.hbs"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -124,7 +125,10 @@
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
-              <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location = './landing.html'">Logout</button> 
+              <form action="logout">
+                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
+
+              </form>
         </ul>
         </div>
       </nav>
@@ -132,18 +136,79 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Memes under the Tag of: Angel</h1>
-        <div class="row">
-            <div class="col-12 col-md-4"> 
-                <div class="mt-4 memedivTag"> <!--memes and captions area-->
-                    <a href="./meme4.html"><div class="biggerTag">Guardian Angel</div></a>
-                    <a href="./meme4.html"><img src="./../storage/images/meme6.jpg" class="memePicTag"/></a>
-                    <div class="memedivTagsOfTag">
-                        Tags:
-                        <a href="./tag6Angel.html">Angel</a>,
-                        <a href="./tagEven.html">she made dis</a>
-                    </div>
+
+        <div class="row"> <!--middle container-->
+
+            <div class="col-3 sideTags">
+                <h1 class="mt-5"><br>Tags</h1>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+                <div>WASSAP MGA PARE</div>
+            </div>
+
+            <div class="col-6"> <!--whole column 12-->
+                <h1 class="mt-5"><br>All Memes</h1>
+                <div class="mb-4 memediv">
+                    <a href="./meme1NA.html" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="./meme1NA.html"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="./tag1WCNA.html">World Cup</a>,
+                    <a href="./tagOddNA.html">i made dis</a>
+
                 </div>
+
+                <div class="mb-4 memediv">
+                    <a href="./meme1NA.html" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="./meme1NA.html"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="./tag1WCNA.html">World Cup</a>,
+                    <a href="./tagOddNA.html">i made dis</a>
+
+                </div>
+
+                <div class="mb-4 memediv">
+                    <a href="./meme1NA.html" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="./meme1NA.html"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="./tag1WCNA.html">World Cup</a>,
+                    <a href="./tagOddNA.html">i made dis</a>
+
+                </div>
+
+                <div class="mb-4 memediv">
+                    <a href="./meme1NA.html" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="./meme1NA.html"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="./tag1WCNA.html">World Cup</a>,
+                    <a href="./tagOddNA.html">i made dis</a>
+
+                </div>
+            </div>
+            <div class="col-3 "> <!--memes shared to u part-->
+                <h1 class="mt-5"><br>Memes Shared to You</h1>
+                <div class="memedivShared mt-4">
+                    <a href="./meme1NA.html" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="./meme1NA.html"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="./tag1WCNA.html">World Cup</a>,
+                    <a href="./tagOddNA.html">i made dis</a>
+                </div>
+                
+                <!--add memes shared here-->
             </div>
         </div>
     </main>

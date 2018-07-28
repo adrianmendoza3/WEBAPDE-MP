@@ -9,6 +9,16 @@ img{
 a.nav-link:focus{
     outline: none;
 }
+
+.aCaps:hover{
+    text-decoration: none;
+    color: blue;
+}
+
+.aCaps{
+    color: black;
+}
+
 main.container{
     padding-top: 20px;
 }
@@ -41,7 +51,7 @@ main.container{
     border-width: 1.5px;
     /*border-style: solid;*/
     /*border-color: black;*/
-    background-color: white;
+    /*background-color: pink;*/
 }
 
 .memedivprof{
@@ -56,23 +66,30 @@ main.container{
 }
 
 .memedivHome{
-    width: 600px;
-    height: 260px;
+    /*margin-left: 50px;*/
+    /*margin-right: auto;*/
+    /*margin: auto;*/
+    /*width: 70%;*/
+    max-width: 80%;
+    /*height: 90%;*/
+
+    margin-top: 5px;
+    /*padding: 23px;*/
     border-width: 1.5px;
-    border-style: solid;
-    border-color: black;
-    padding: 23px;
-    background-color: antiquewhite;
+    /*border-style: solid;*/
+    /*border-color: black;*/
+    /*background-color: pink;*/
 }
 
 .memedivShared{
-    width: 450px;
-    height: 250px;
-    border-width: 1.5px;
-    border-style: solid;
-    border-color: black;
-    padding: 23px;
-    background-color: antiquewhite;
+    /*width: 450px;*/
+    /*height: 250px;*/
+    /*max-width: 80%;*/
+    /*border-width: 1.5px;*/
+    /*border-style: solid;*/
+    /*border-color: black;*/
+    /*padding: 23px;*/
+    /*background-color: antiquewhite;*/
 }
 
 .memeContent{
@@ -90,7 +107,7 @@ main.container{
 }
 
 .caption:hover{
-    color: lightskyblue;
+    color: blue;
 }
 
 .memedivTag{
@@ -140,7 +157,7 @@ main.container{
 
 .imgthumb{
     /*float: left;*/
-    width: 400px;
+    max-width: 400px;
     /*height: 200px;*/
     margin: auto;
 }

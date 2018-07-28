@@ -35,6 +35,18 @@ app.get("/", (req, res, next) => {
     console.log("HI");
 });
 
+app.post("/login", urlencoder, (req, res) => {
+    console.log("POST /login");
+
+    res.render("home.hbs");
+});
+
+app.get("/logout", (req, res) => {
+    console.log("POST /logout");
+
+    res.render("landing.hbs");
+});
+
 
 
 app.listen(3000, () => {
