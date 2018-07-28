@@ -1,3 +1,6 @@
+body{
+    background-color: #005cbf;
+}
 
 img{
     display: block;
@@ -26,15 +29,19 @@ main.container{
 
 
 .memediv{
-    margin-left: 50px;
-    margin-right: auto;
-    width: 40%;
+    /*margin-left: 50px;*/
+    /*margin-right: auto;*/
+    /*margin: auto;*/
+    /*width: 70%;*/
+    max-width: 80%;
+    /*height: 90%;*/
+
     margin-top: 5px;
-    padding: 23px;
+    /*padding: 23px;*/
     border-width: 1.5px;
-    border-style: solid;
-    border-color: black;
-    background-color: antiquewhite;
+    /*border-style: solid;*/
+    /*border-color: black;*/
+    background-color: white;
 }
 
 .memedivprof{
@@ -69,12 +76,23 @@ main.container{
 }
 
 .memeContent{
-    width: 200px;
+    width: 400px;
     height: 200px;
     display:inline;
+}
 
+.caption{
+    display: inline;
+    width: 500px;
+    /*background-color: #6f42c1;*/
+    margin: 0px;
 
 }
+
+.caption:hover{
+    color: lightskyblue;
+}
+
 .memedivTag{
     width: 350px;
     height: 450px;
@@ -121,10 +139,10 @@ main.container{
 }
 
 .imgthumb{
-    float: left;
-    width: 200px;
-    height: 200px;
-    margin-right: 10px;
+    /*float: left;*/
+    width: 400px;
+    /*height: 200px;*/
+    margin: auto;
 }
 
 .imgprof{
