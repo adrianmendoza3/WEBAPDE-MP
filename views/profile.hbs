@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Tag: Dota</title>
+    <title>Chesie's Profile</title>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
@@ -17,6 +17,7 @@
   </head>
 
   <body>
+
     <!-- Modal Log in-->
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -105,17 +106,17 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home.hbs"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
+        <a class="navbar-brand" href="home"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./uploadmeme.html">Upload a Meme</a> <!--upload a meme button-->
+              <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./profile.html">My Profile</a> <!--my profile button-->
+              <a class="nav-link" href="./profile">My Profile</a> <!--my profile button-->
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -124,7 +125,9 @@
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
-              <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location = './landing.html'">Logout</button> 
+              <form action="logout">
+                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location = './landing.html'">Logout</button>
+              </form>
         </ul>
         </div>
       </nav>
@@ -132,18 +135,92 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Memes under the Tag of: Dota</h1>
+        <h1 class="mt-5">Chesie's Profile</h1> <!--name of user-->
         <div class="row">
-            <div class="col-12 col-md-4"> 
-                <div class="mt-4 memedivTag"> <!--memes and captions area-->
-                    <a href="./meme5.html"><div class="biggerTag">Dota 3.0</div></a>
-                    <a href="./meme5.html"><img src="./../storage/images/meme5.png" class="memePicTag"/></a>
-                    <div class="memedivTagsOfTag">
-                        Tags:
-                        <a href="./tag5Dota.html">Dota</a>,
-                        <a href="./tagOdd.html">i made dis</a>
+            <div class="col-12 col-md-7"> <!--memes and captions by user-->
+                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+<!--                        <div class="card">-->
+                            <div class="card-body">
+                                <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
+                                <img src="./../storage/images/meme1.jpg" class = "imgprof"/> <!--memes-->
+                                <div> <!--tags-->
+                                    Tags:
+                                    <a href="tag">World Cup</a>
+                                    <a href="tag">i made dis</a>
+                                </div>
+                                
+                                <br>
+                                
+                                <div>
+                                    <button class="buttonid" > 53 thumbs up </button>
+                                    <button class="buttonid" > 24 thumbs down </button>
+                                    <button class="buttonid" > 12 shares </button>
+
+                                </div>
+                            </div>
+<!--                        </div>                     -->
                     </div>
-                </div>
+                
+                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+<!--                        <div class="card">-->
+                            <div class="card-body">
+                                <a href="./meme2.html"><div class = "biggerprof">purrr ??</div></a> <!--caption-->
+                                <img src="./../storage/images/meme2.jpg" class = "imgprof"/> <!--memes-->
+                                <div> <!--tags-->
+                                    Tags:
+                                    <a href="./tag2Pet.html">Pet</a>
+                                    <a href="./tagEven.html">she made dis</a>
+                                </div>
+                            </div>
+<!--                        </div>                     -->
+                    </div>
+                
+                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+<!--                        <div class="card">-->
+                            <div class="card-body">
+                                <a href="./meme3.html"><div class = "biggerprof">Smart hits again</div></a> <!--caption-->
+                                <img src="./../storage/images/meme3.jpg" class = "imgprof"/> <!--memes-->
+                                <div> <!--tags-->
+                                    Tags:
+                                    <a href="./tag3Smart.html">Show up</a>
+                                    <a href="./tagOdd.html">i made dis</a>
+                                </div>
+                            </div>
+<!--                        </div>                     -->
+                    </div>
+                
+                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+<!--                        <div class="card">-->
+                            <div class="card-body">
+                                <a href="./meme4.html"><div class = "biggerprof">when you're not used to it</div></a> <!--caption-->
+                                <img src="./../storage/images/meme4.jpg" class = "imgprof"/> <!--memes-->
+                                <div> <!--tags-->
+                                    Tags:
+                                    <a href="./tag4Pidgeon.html">Is this a Pigeon?</a>
+                                    <a href="./tagEven.html">she made dis</a>
+                                </div>
+                            </div>
+<!--                        </div>                     -->
+                    </div>
+                
+                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+<!--                        <div class="card">-->
+                            <div class="card-body">
+                                <a href="./meme5.html"><div class = "biggerprof">Dota 3.0</div></a> <!--caption-->
+                                <img src="./../storage/images/meme5.png" class = "imgprof"/> <!--memes-->
+                                <div> <!--tags-->
+                                    Tags:
+                                    <a href="./tag5Dota.html">Dota</a>
+                                    <a href="./tagOdd.html">i made dis</a>
+                                </div>
+                            </div>
+<!--                        </div>                     -->
+                    </div>
+            </div>
+            <div class="col-12 offset-md-1 col-md-4"> <!--user information part-->
+                <h4>Username: Chesie</h4>
+                <h4>Description: </h4>
+                <p class="lead">Girl who loves memes</p>
             </div>
         </div>
     </main>

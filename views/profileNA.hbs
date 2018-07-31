@@ -5,11 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Dota 3.0</title>
+    <title>Chesie's Profile</title>
 
     <!-- Bootstrap core CSS -->
-<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
-      
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWna xCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
       
     <link rel="stylesheet" href="main.css">
 
@@ -29,7 +28,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="home.hbs">
+          <form method="POST" action="login">
             <div class="modal-body">
                   <div class="form-group row">
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -74,7 +73,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="home.hbs">
+            <form method="POST" action="register">
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -115,7 +114,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="landing.html"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
+        <a class="navbar-brand" href="landing"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -140,33 +139,68 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
+        <h1 class="mt-5">Chesie's Profile</h1> <!--name of user-->
         <div class="row">
-            <div class="col-12 col-md-7">
-                <h1 class="mt-5">Dota 3.0</h1>
-                <img src="./../storage/images/meme5.png" />
-                <div>
-                    <h5>Tags:</h5>
-                    <a href="./tag5DotaNA.html">Dota</a>
-                    <a href="./tagOddNA.html">i made dis</a>
-                </div>
-                <div>
-                    <h5>Uploaded by:</h5>
-                    <a href="./profileNA.html"><h5>Chesie</h5></a>
-                </div>
-                <!-- will show only when user owns this meme-->
-                <div class="col-12 col-md-7">
-                    <div class="input-group mb-3">
-<!--
-                        <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Add Tag</button>
+            <div class="col-12 col-md-7"> <!--memes and captions by user-->
+                    <div class="mt-4 memedivprof">
+                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
+                        <a href="memeNA"><img src="./../storage/images/meme1.jpg" class = "imgprof"/></a>
+                        <div>
+                            Tags:
+                            <a href="tagNA">World Cup</a>,
+                            <a href="tagNA">i made dis</a>
                         </div>
--->
                     </div>
-                </div>
+                
+                    <div class="mt-4 memedivprof">
+                        <a href="./meme2NA.html"><div class = "biggerprof">purrr ??</div></a>
+                        <a href="./meme2NA.html"><img src="./../storage/images/meme2.jpg" class = "imgprof"/></a>
+                        <div>
+                            Tags:
+                            <a href="./tag2PetNA.html">Pet</a>,
+                            <a href="./tagEvenNA.html">she made dis</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 memedivprof">
+                        <a href="./meme3NA.html"><div class = "biggerprof">Smart hits again</div></a>
+                        <a href="./meme3NA.html"><img src="./../storage/images/meme3.jpg" class = "imgprof"/></a>
+                        <div>
+                            Tags:
+                            <a href="./tag3SmartNA.html">Show up</a>,
+                            <a href="./tagOddNA.html">i made dis</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 memedivprof">
+                        <a href="./meme4NA.html"><div class = "biggerprof">when you're not used to it</div></a>
+                        <a href="./meme4NA.html"><img src="./../storage/images/meme4.jpg" class = "imgprof"/></a>
+                        <div>
+                            Tags:
+                            <a href="./tag4PidgeonNA.html">Is this a Pigeon?</a>,
+                            <a href="./tagEvenNA.html">she made dis</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 memedivprof">
+                        <a href="./meme5NA.html"><div class = "biggerprof">Dota 3.0</div></a>
+                        <a href="./meme5NA.html"><img src="./../storage/images/meme5.png" class = "imgprof"/></a>
+                        <div>
+                            Tags:
+                            <a href="./tag5DotaNA.html">Dota</a>,
+                            <a href="./tagOddNA.html">i made dis</a>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-12 offset-md-1 col-md-4"> <!--user information part-->
+                <h4>Username: Chesie</h4>
+                <h4>Description:</h4>
+                <p class="lead"> Girl who loves memes</p>
             </div>
         </div>
     </main>
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
