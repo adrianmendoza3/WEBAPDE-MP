@@ -113,6 +113,12 @@ app.get("/tagNA", (req, res) => {
 res.render("tagNA.hbs");
 });
 
+app.get("/addTag", (req, res) => {
+    console.log("GET /addTag");
+
+res.render("meme.hbs");
+});
+
 
 app.use("*", (request, response)=> {
     response.status(404).send("These are not the sites you are looking for");

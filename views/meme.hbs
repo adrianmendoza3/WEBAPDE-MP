@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="main.css">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="./../css/app.css">
+    <link rel="stylesheet" href="/app.css">
   </head>
 
   <body>
@@ -29,7 +29,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="home.hbs"> <!--bottom half of the popup-->
+          <form method="POST" action="login"> <!--bottom half of the popup-->
             <div class="modal-body"> <!--username, password, remember me-->
                   <div class="form-group row"> <!--username-->
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -74,7 +74,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="home.hbs"> <!--bottom half of pop up-->
+            <form method="POST" action="register"> <!--bottom half of pop up-->
                 <div class="modal-body"> <!--username, password, confirm password-->
                     <div class="form-group row"> <!--username-->
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -107,7 +107,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home"><img id="logo" src="./../storage/images/MEME NUMBA WAN.png"/></a>
+        <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -127,8 +127,7 @@
               </form>
               <!--log out button-->
               <form action ="logout">
-                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location = './landing.html'">Logout</button>
-
+                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
               </form>
         </ul>
         </div>
@@ -140,7 +139,7 @@
         <div class="row">
             <div class="col-12 col-md-7">
                 <h1 class="mt-5">90 percent of the time , we hate you all the time ...</h1>
-                <img src="./../storage/images/meme1.jpg" />
+                <img src="/meme1.jpg" />
                 <div>
                     Tags:
                     <a href="tag">World Cup</a>
@@ -155,7 +154,9 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Add Tag</button>
+                            <form action="addTag">
+                                <button class="btn btn-outline-secondary" type="button" >Add Tag</button>
+                            </form>
                         </div>
                     </div>
                 </div>
