@@ -73,7 +73,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="home.hbs"> <!--bottom half of pop up-->
+            <form method="POST" action="register"> <!--bottom half of pop up-->
                 <div class="modal-body"> <!--username, password, confirm password-->
                     <div class="form-group row"> <!--username-->
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -97,6 +97,76 @@
                 <div class="modal-footer"> <!--cancel and register button-->
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
                     <button type="submit" class="btn btn-primary">Register</button>  <!--register button-->
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Edit-->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content"> <!--the whole pop up-->
+            <div class="modal-header"> <!--"register" and exit button-->
+              <h5 class="modal-title" id="registerModalLabel">Edit Content</h5> <!--"register"-->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form method="POST" action="postEdit"> <!--bottom half of pop up-->
+                <div class="modal-body"> <!--username, password, confirm password-->
+                    <div class="form-group row"> <!--username-->
+                        <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
+                        <div class="col-md-6">
+                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
+                        </div>
+                    </div>
+                    <div class="form-group row"> <!--password-->
+                        <label for="tags" class="col-md-4 col-form-label text-md-right">Tags</label>
+                        <div class="col-md-6">
+                            <input id="password" type="text" class="form-control" name="password" required="">
+                        </div>
+                    </div>
+                    <div class="form-group row"> <!--password-->
+                        <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
+                        <div class="col-md-6">
+                            <input id="password" type="text" class="form-control" name="password" required="">
+                        </div>
+                    </div>
+                    <div class="form-group row"> <!--confirm password-->
+                        <label for="privacy" class="col-md-4 col-form-label text-md-right">Privacy</label>
+                        <div class="col-md-6">
+                            <select id="username" class="form-control" name="username" value="" required="" autofocus="">
+                                <option value="val1">Private</option>
+                                <option value="val2">Public</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"> <!--cancel and register button-->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                    <button type="submit" class="btn btn-primary">Update Content</button>  <!--register button-->
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal Delete-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content"> <!--the whole pop up-->
+            <div class="modal-header"> <!--"register" and exit button-->
+              <h5 class="modal-title" id="registerModalLabel">Are you sure you want to delete meme?</h5> <!--"register"-->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form method="POST" action="postDelete"> <!--bottom half of pop up-->
+                <div class="modal-footer"> <!--cancel and register button-->
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                    <button type="submit" class="btn btn-primary">Delete</button>  <!--register button-->
                 </div>
             </form>
           </div>
@@ -140,6 +210,10 @@
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
                     <div class="mt-4 memedivprof"> <!--memes and caption-->
 <!--                        <div class="card">-->
+                        <div class="edit_delete" align="right">
+                            <a class="btn"href="#" data-toggle="modal" data-target="#editModal">Edit</a>
+                            <a  href="#" data-toggle="modal" data-target="#deleteModal" >Delete</a>
+                        </div>
                             <div class="card-body">
                                 <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
                                 <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->

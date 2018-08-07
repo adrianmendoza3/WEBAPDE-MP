@@ -44,25 +44,25 @@ app.post("/login", urlencoder, (req, res) => {
 app.post("/register", urlencoder, (req, res) => {
     console.log("POST /login");
 
-res.render("home.hbs");
+    res.render("home.hbs");
 });
 
 app.get("/profile", (req, res) => {
     console.log("GET /profile");
 
-res.render("profile.hbs");
+    res.render("profile.hbs");
 });
 
 app.get("/profileNA", (req, res) => {
     console.log("GET /profileNA");
-
-res.render("profileNA.hbs");
+    
+    res.render("profileNA.hbs");
 });
 
 app.get("/landing", (req, res) => {
     console.log("GET /landing");
-
-res.render("landing.hbs");
+    
+    res.render("landing.hbs");
 });
 
 app.get("/home", (req, res) => {
@@ -74,13 +74,13 @@ res.render("home.hbs");
 app.post("/upload", (req, res) => {
     console.log("GET /upload");
 
-res.render("home.hbs");
+    res.render("home.hbs");
 });
 
 app.get("/uploadmeme", (req, res) => {
     console.log("GET /uploadmeme");
 
-res.render("uploadmeme.hbs");
+    res.render("uploadmeme.hbs");
 });
 
 app.get("/logout", (req, res) => {
@@ -92,33 +92,44 @@ app.get("/logout", (req, res) => {
 app.get("/memeNA", (req, res) => {
     console.log("GET /memeNA");
 
-res.render("memeNA.hbs");
+    res.render("memeNA.hbs");
 });
 
 app.get("/meme", (req, res) => {
     console.log("GET /meme");
 
-res.render("meme.hbs");
+    res.render("meme.hbs");
 });
 
 app.get("/tag", (req, res) => {
     console.log("GET /tag");
 
-res.render("tag.hbs");
+    res.render("tag.hbs");
 });
 
 app.get("/tagNA", (req, res) => {
     console.log("GET /tagNA");
 
-res.render("tagNA.hbs");
+    res.render("tagNA.hbs");
 });
 
 app.get("/addTag", (req, res) => {
     console.log("GET /addTag");
 
-res.render("meme.hbs");
+    res.render("meme.hbs");
 });
 
+app.post("/postDelete", (req, res) => {
+    console.log("POST /postDelete");
+    
+    res.render("profile.hbs");
+});
+
+app.post("/postEdit", (req, res) => {
+    console.log("POST /postEdit");
+    
+    res.render("profile.hbs");
+});
 
 app.use("*", (request, response)=> {
     response.status(404).send("These are not the sites you are looking for");
