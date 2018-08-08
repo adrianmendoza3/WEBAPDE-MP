@@ -223,14 +223,20 @@ app.get("/search", urlencoder, (req, res) => {
             Post.find({
                 tags : tag._id
             }).then((posts)=>{
-            res.render("tag.hbs", {
-                name : tag.name,
-                posts : posts
-            });
+                if(req.session.username != null){
+                    res.render("tag.hbs", {
+                    name : tag.name,
+                    posts : posts
+                    });
+                }
+                else{
+                    res.render("tagNA.hbs")
+                }
                 
-        }, (err)=>{
-            res.render("landing.hbs")
-        })
+
+            }, (err)=>{
+                res.render("landing.hbs")
+            })
 
         }
         else{
@@ -576,7 +582,7 @@ app.post("/postEdit", urlencoder, (req, res) => {
             Uid = 0000;
         }
     })
-    var tags = req.body.tags; //process csv
+//    var tags = req.body.tags; //process csv
     var likers; //default null
     var unlikers; //default null
     var time; //set to now
@@ -614,7 +620,7 @@ app.post("/postEdit", urlencoder, (req, res) => {
     })
 
     let newPost = {
-        title, likes, id:Uid, user, tags, likers, unlikers, time, privacy, sharedTo
+        title, likes, id:Uid, user, likers, unlikers, time, privacy, sharedTo
     }
     
     Post.findOneAndUpdate({

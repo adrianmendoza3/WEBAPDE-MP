@@ -26,11 +26,14 @@
                     var id = $(this).attr("data-id")
                
                     $("button.editmodal").click(function(){
-                        //place data id into input#deleteid
-                        $("input#viewid").val(id)
+                        if($("input#edittitle").val() != ""){
+                            //place data id into input#deleteid
+                            $("input#viewid").val(id)
 
-                        //submit the form#deleteform
-                        $("form#viewform").submit()
+
+                            //submit the form#deleteform
+                            $("form#viewform").submit()
+                        }
                     })
                     
                 })
@@ -90,13 +93,14 @@
                     <div class="form-group row"> 
                         <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
                         <div class="col-md-6">
-                            <input id="edittitle" type="text" class="form-control" name="edittitle" value="" autofocus="">
+                            <input id="edittitle" type="text" class="form-control" name="edittitle" value="" required = "" autofocus="">
                         </div>
                     </div>
                     <div class="form-group row"> 
                         <label for="tags" class="col-md-4 col-form-label text-md-right">Tags</label>
                         <div class="col-md-6">
-                            <input id="edittags" type="text" class="form-control" name="edittags">
+                            <input id="edittags" type="text" class="form-control" name="edittags" required="">
+                            
                         </div>
                     </div>
                     <div class="form-group row"> 
@@ -159,8 +163,8 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
@@ -174,7 +178,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Chesie's Profile</h1> <!--name of user-->
+        <h1 class="mt-5"><br>Chesie's Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
                     
@@ -197,31 +201,55 @@
 <!--                        <div class="card">-->
                     <div class="edit_delete" align="right">
   
+<!--
                         <button class="btn btn-info btn-lg edit" data-id="{{_id}}"
                         data-toggle="modal" data-target="#editModal">Edit</button>
                         
                         <button class="btn btn-info btn-lg delete" data-id="{{_id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
+-->
 
                     </div>
                     <div class="card-body">
 
-                        <button class="btn btn-info btn-lg meme" data-id="{{_id}}">{{title}}</button>
+                        <button class="btn btn-danger btn-lg meme" data-id="{{_id}}">{{title}}</button>
+                        <div class ="filler"></div>
 
                         <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
+                        <div class ="filler"></div>
                         <div> <!--tags-->
-                            Tags:
+                            Tags: <br>
                             {{#each tags}}
                                 <a href="tag">{{this}}</a>
-                                <button class="buttonid deleteTagBtn" data-id="{{this}}" > Delete Tag </button> <br>
+                                <button class="btn btn-danger btn-sm buttonid deleteTagBtn" data-id="{{this}}" > Delete Tag </button> <br>
                             {{/each}}
                         </div>
 
                         <br>
-
-                        <div>
+                        
+                        <div class="bottombuttons">
+                            <button class="buttonid" > 53 thumbs up </button>
+                            <button class="buttonid" > 24 thumbs down </button>
+<!--
                             <button class="buttonid" > {{likes}} thumbs up </button>
                             <button class="buttonid" > {{dislikes}} thumbs down </button>
                             <button class="buttonid" > {{sharedTo}} shares </button>
+-->
+                            <button class="btn btn-danger btn-lg edit" data-id="{{_id}}"
+                            data-toggle="modal" data-target="#editModal">Edit</button>
+
+                            <button class="btn btn-danger btn-lg delete" data-id="{{_id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                            
+<!--
+                            <div class="edit_delete" align="right">
+                            <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#editModal">Edit</a>
+                            <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal" >Delete</a>
+                            </div>
+-->
+                                    
+                        </div> 
+                        
+                        <div>
+                            
                             
 
                         </div>
@@ -231,10 +259,13 @@
                 {{/each}}
 
             </div>
-            <div class="col-12 offset-md-1 col-md-4"> <!--user information part-->
-                <h4>Username: Chesie</h4>
-                <h4>Description: </h4>
-                <p class="lead">Girl who loves memes</p>
+            
+             <div class="col-12 offset-md-1 col-md-4 info"> <!--user information part-->
+                <br>
+                <h4><b>Username:</b></h4>
+                <p class="lead">afsantooos</p>
+                <h4><b>Description:</b> </h4>
+                <p class="lead">19 year old college girl who loves posting and sharing memes</p>
             </div>
         </div>
     </main>

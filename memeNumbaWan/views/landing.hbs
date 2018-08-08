@@ -128,15 +128,15 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <li class="nav-item">
-                  <a id="login" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#signinModal">Login</a> <!--login button-->
+                  <a id="login" class="btn btn-outline-warning my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#signinModal">Login</a> <!--login button-->
               </li>
               <li class="nav-item">
-                  <a id="signup" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a> <!--signup button-->
+                  <a id="signup" class="btn btn-outline-warning my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a> <!--signup button-->
               </li>
         </ul>
         </div>
@@ -146,52 +146,41 @@
 
 
     <!-- Begin page content -->
-    <main role="main" class="container-fluid feed">
-
+    <main role="main" class="container-fluid feed">  
+        <h1 class="mt-5"><br>All Memes</h1>
         <div class="row">
-            <div class="col-3 sideTags">
-                <h1 class="mt-5"><br>Tags</h1>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
+            {{#each posts}}
 
+            <div class="mb-4 memediv">
+                <div class ="memeContent">
+                <a href="memeNA" class ="aCaps"><div class="bigger" >
+                    {{title}}
+                </div></a> 
+                
+                <div class="memePic">
+                    <a href="memeNA"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                </div>
+                Tags:
+                {{#each tags}}
+                    <a href="tagNA">{{name}}</a>,
+                {{/each}}
+                </div>
             </div>
-            <div class="col-9 allMemes">
-                <h1 class="mt-5"><br>All Memes</h1>
-                    
-                    {{#each posts}}
 
-                    <div class="mb-4 memediv">
-                        <a href="memeNA" class ="aCaps"><div class="caption" >
-                            {{title}}
-                        </div></a> 
-                        <br>
+            {{/each}}
 
-                        <a href="memeNA"><img src="/meme1.jpg" class = "imgthumb"/> </a>
-                        <br>
-                        Tags:
-                        {{#each tags}}
-                            <a href="tagNA">{{name}}</a>,
-                        {{/each}}
-
-                    </div>
-
-                    {{/each}}
-                    
-            </div>
         </div>
         
         <div align = "center"> 
     
+<!--
             <button type="button"> < </button>
 
             Page 1/3
             
             <button type="button"> > </button>
+-->
+        <a class="btn btn-secondary" href="#" data-toggle="modal" data-target="#deleteModal" >SEE MORE</a>
 
         
         </div>

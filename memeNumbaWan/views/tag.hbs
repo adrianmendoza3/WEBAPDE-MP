@@ -119,8 +119,8 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
@@ -134,22 +134,26 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Memes under the Tag of: {{name}}</h1>
+        <h1 class="mt-5"><br>Memes under the Tag of: {{name}}</h1>
         <div class="row">
             <div class="col-12 col-md-4"> 
                 
-                <div class="mb-4 memediv" data-id="{{_id}}">
-                    <a href="meme" class ="aCaps"><div class="caption" >
-                        {{title}}
-                    </div></a> 
+                <div class="mt-4 memedivTag" data-id="{{_id}}">
+                    <a href="meme" class ="aCaps">
+                        <div class="biggerTag" >{{title}} TITLE</div>
+                    </a> 
+                    <a href="meme"><img src="/meme1.jpg" class = "memePicTag"/> 
+                    </a>
+
+                    <br>
+                    <div class = "memedivTagsofTag">
+                        Tags:
+                        {{#each post.tags}}
+                            <a href="tag">TAG</a>,
+                        {{/each}}
+                    </div>
                     <br>
                     
-                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
-                    <br>
-                    Tags:
-                    {{#each post.tags}}
-                        <a href="tag">TAG</a>,
-                    {{/each}}
                     
                 </div>
                 

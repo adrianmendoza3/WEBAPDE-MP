@@ -139,8 +139,8 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
@@ -155,8 +155,9 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
-            <div class="col-12 col-md-7">
-                <h1 class="mt-5"> {{post.title}}</h1>
+            <div class="col-12 col-md-7 memecontent">
+                <h1 class="mt-5"> <br>HI</h1>
+                <h6 align="right" class="type">Public</h6>
                 <img src="/meme1.jpg" />
                 <div>
                     Tags:
@@ -169,20 +170,25 @@
                     <a href="profile"><h5>{{post.user}}</h5></a>
                 </div>
                 <!-- will show only when user owns this meme-->
-                <div class="col-12 col-md-7">
+                
+                <!-- will show only when user owns this meme-->
+
+<!--                NEWWW-->
+                <div class="col-12 col-md-7 addTag">
                     <div class="input-group mb-3">
                         <div class="input-group-append" data-id="{{post._id}}">
-                            <form id = "addTagForm" action="addTag" method="post">
-                                <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2" name="addtagname">
-                                
-                                <input id ="viewid" type = "hidden"  name = "id">
-                                <button class="btn btn-outline-secondary tag" data-id="{{post._id}}">
-                                    Add Tag
-                                </button>
-                            </form>
+                        
+                        <form id = "addTagForm" action="addTag" method="post">    
+                        <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2" name="addtagname">
+                            <button class="btn btn-danger tag" data-id="{{post._id}}" >Add Tag</button>
+                            
+                             <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#shareModal">Share</a>
+                        </form>
+                       
+                    
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </main>

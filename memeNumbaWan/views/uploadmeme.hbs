@@ -35,8 +35,8 @@
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
@@ -50,7 +50,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Upload a Meme</h1>
+      <h1 class="mt-5"><br>Upload a Meme<br></h1>
       <form class="col-12 col-md-8" method="POST" action="upload" accept-charset="UTF-8">
         <div class="form-group"> <!--for the title-->
             <label for="name">Title</label>

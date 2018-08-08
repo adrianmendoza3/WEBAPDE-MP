@@ -17,7 +17,51 @@
   </head>
 
   <body>
+<!-- Modal Sign in-->
 
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signinModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form method="POST" action="login">
+            <div class="modal-body">
+                  <div class="form-group row">
+                      <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
+                      <div class="col-md-6">
+                          <input id="logusername" type="text" class="form-control" name="logusername" value="" required="" autofocus="">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                      <div class="col-md-6">
+                          <input id="logpassword" type="password" class="form-control" name="logpassword" required="">
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <div class="col-md-6 offset-md-4">
+                          <div class="checkbox">
+                              <label>
+                                  <input type="checkbox" name="remember"> Remember Me
+                              </label>
+                          </div>
+                      </div>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- Modal Register-->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -82,15 +126,15 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
           <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> <!--search bar-->
+              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <li class="nav-item">
-                  <a id="login" class="nav-link" href="#" data-toggle="modal" data-target="#signinModal">Login</a> <!--login button-->
+                  <a id="login" class="btn btn-outline-warning my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#signinModal">Login</a> <!--login button-->
               </li>
               <li class="nav-item">
-                  <a id="signup" class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a> <!--signup button-->
+                  <a id="signup" class="btn btn-outline-warning my-2 my-sm-0 mr-sm-2" href="#" data-toggle="modal" data-target="#registerModal">Sign Up</a> <!--signup button-->
               </li>
         </ul>
         </div>
@@ -100,64 +144,38 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Chesie's Profile</h1> <!--name of user-->
+        <h1 class="mt-5"><br>Chesie's Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
                     <div class="mt-4 memedivprof">
+                        <div class="col-12 col-md-13 card-body">
                         <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
                         <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
+                        <div class="filler"></div>
                         <div>
                             Tags:
                             <a href="tagNA">World Cup</a>,
                             <a href="tagNA">i made dis</a>
+                        </div>
+                            <h6>12 shares</h6>
+                            <br>
+
+                        <div>
+                            <span class="rating">53 thumbs up</span>
+                            <span class="rating">24 thumbs down</span>
+                        </div> 
                         </div>
                     </div>
 
-                    <div class="mt-4 memedivprof">
-                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
-                        <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
-                        <div>
-                            Tags:
-                            <a href="tagNA">World Cup</a>,
-                            <a href="tagNA">i made dis</a>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 memedivprof">
-                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
-                        <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
-                        <div>
-                            Tags:
-                            <a href="tagNA">World Cup</a>,
-                            <a href="tagNA">i made dis</a>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 memedivprof">
-                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
-                        <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
-                        <div>
-                            Tags:
-                            <a href="tagNA">World Cup</a>,
-                            <a href="tagNA">i made dis</a>
-                        </div>
-                    </div>
-
-                    <div class="mt-4 memedivprof">
-                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
-                        <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
-                        <div>
-                            Tags:
-                            <a href="tagNA">World Cup</a>,
-                            <a href="tagNA">i made dis</a>
-                        </div>
-                    </div>
+                    
 
             </div>
-            <div class="col-12 offset-md-1 col-md-4"> <!--user information part-->
-                <h4>Username: Chesie</h4>
-                <h4>Description:</h4>
-                <p class="lead"> Girl who loves memes</p>
+            <div class="col-12 offset-md-1 col-md-4 info"> <!--user information part-->
+                <br>
+                <h4><b>Username:</b></h4>
+                <p class="lead">afsantooos</p>
+                <h4><b>Description:</b> </h4>
+                <p class="lead">19 year old college girl who loves posting and sharing memes</p>
             </div>
         </div>
     </main>
