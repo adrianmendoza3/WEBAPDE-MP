@@ -34,6 +34,30 @@
                     })
                     
                 })
+                
+                 $("button.meme").click(function(){
+                    //get attr data id from the clicked button
+                    var id = $(this).attr("data-id")
+                    
+                    //place data id into input#deleteid
+                    $("input#memeid").val(id)
+                    
+                    //submit the form#deleteform
+                    $("form#memeform").submit()
+                })
+                
+                $("button.deleteTagBtn").click(function(){
+                    //get attr data id from the clicked button
+                    var tagid = $(this).attr("data-id")
+                    var postid = $(this).attr("data-try")
+                    
+                    
+                    //place data id into input#deleteid
+                    $("input#tagid").val(tagid)
+                    
+                    //submit the form#deleteform
+                    $("form#tagform").submit()   
+                })
             })
       </script>
 
@@ -117,7 +141,7 @@
           </div>
         </div>
       </div>
-
+      
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
@@ -160,11 +184,13 @@
                 </form>
 -->
                 
-<!--
-                <form id = "viewform" action="viewEdit" method="get">
-                    <input id ="viewid" type = "hidden"  name = "id">
+                <form id = "tagform" action="deleteTag" method="post">
+                    <input id ="tagid" type = "hidden"  name = "deletetagid">
                 </form> 
--->
+                
+                <form id = "memeform" action="meme" method="get">
+                    <input id ="memeid" type = "hidden"  name = "id">
+                </form>
                 
                 {{#each posts}}
                 <div class="mt-4 memedivprof" data-id="{{_id}}"> <!--memes and caption-->
@@ -178,15 +204,15 @@
 
                     </div>
                     <div class="card-body">
-                        <a href="meme"><div class = "biggerprof">
-                            {{title}}
-                        </div></a> <!--caption-->
+
+                        <button class="btn btn-info btn-lg meme" data-id="{{_id}}">{{title}}</button>
 
                         <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
                         <div> <!--tags-->
                             Tags:
                             {{#each tags}}
-                                <a href="tag">{{name}}</a>
+                                <a href="tag">{{this}}</a>
+                                <button class="buttonid deleteTagBtn" data-id="{{this}}" > Delete Tag </button> <br>
                             {{/each}}
                         </div>
 
@@ -196,6 +222,7 @@
                             <button class="buttonid" > {{likes}} thumbs up </button>
                             <button class="buttonid" > {{dislikes}} thumbs down </button>
                             <button class="buttonid" > {{sharedTo}} shares </button>
+                            
 
                         </div>
                     </div>

@@ -7,7 +7,9 @@ const UserSchema = new Schema({
     username: String,
     name: String,
     password: String,
-    description: String
+    description: String,
+    postID : [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
+    
 //    img: {
 //        type: String,
 //        default: '/img/samples/sample_profile.jpg',

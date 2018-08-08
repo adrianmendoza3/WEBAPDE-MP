@@ -39,19 +39,10 @@ main.container{
 
 
 .memediv{
-    /*margin-left: 50px;*/
-    /*margin-right: auto;*/
-    /*margin: auto;*/
-    /*width: 70%;*/
     max-width: 80%;
-    /*height: 90%;*/
 
     margin-top: 5px;
-    /*padding: 23px;*/
     border-width: 1.5px;
-    /*border-style: solid;*/
-    /*border-color: black;*/
-    /*background-color: pink;*/
 }
 
 .memedivprof{
@@ -66,31 +57,12 @@ main.container{
 }
 
 .memedivHome{
-    /*margin-left: 50px;*/
-    /*margin-right: auto;*/
-    /*margin: auto;*/
-    /*width: 70%;*/
     max-width: 80%;
-    /*height: 90%;*/
 
     margin-top: 5px;
-    /*padding: 23px;*/
     border-width: 1.5px;
-    /*border-style: solid;*/
-    /*border-color: black;*/
-    /*background-color: pink;*/
 }
 
-.memedivShared{
-    /*width: 450px;*/
-    /*height: 250px;*/
-    /*max-width: 80%;*/
-    /*border-width: 1.5px;*/
-    /*border-style: solid;*/
-    /*border-color: black;*/
-    /*padding: 23px;*/
-    /*background-color: antiquewhite;*/
-}
 
 .memeContent{
     width: 400px;
@@ -101,7 +73,6 @@ main.container{
 .caption{
     display: inline;
     width: 500px;
-    /*background-color: #6f42c1;*/
     margin: 0px;
 
 }

@@ -5,18 +5,14 @@ const ObjectId = Schema.ObjectId
 const PostSchema = new Schema({
 
     title: String,
-    likes: {
-        type: Number,
-        default: 0
-    },
-    uid: ObjectId,
+    uid: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     user: String,
-    tags: Array,
-    likers: Array,
-    unlikers: Array,
+    tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}],
+    likers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+    unlikers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     time: {type: Date, default: Date.now},
     privacy: Boolean,
-    sharedTo: Array
+    sharedTo: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
     
 })
 

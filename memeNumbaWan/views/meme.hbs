@@ -5,7 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>90 percent of the time</title>
+    <title>{{post.title}}</title>
+    <script src="jquery-3.3.1.js"> </script>
+    <script>
+        $(document).ready(function(){
+            $("button.tag").click(function(){
+                
+                //get attr data id from the clicked button
+                var id = $(this).attr("data-id")
+                alert(id)
+
+                //place data id into input#
+                $("input#viewid").val(id)
+
+                //submit the form#
+                $("form#addTagForm").submit()
+            })
+        })
+          
+    </script>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
@@ -138,25 +156,29 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <h1 class="mt-5"> {{title}} </h1>
+                <h1 class="mt-5"> {{post.title}}</h1>
                 <img src="/meme1.jpg" />
                 <div>
                     Tags:
-                    <a href="tag">World Cup</a>
-                    <a href="tag">i made dis</a>
+                    {{#each tags}}
+                        <a href="tag">{{name}}</a>
+                    {{/each}}
                 </div>
                 <div>
                     <h5>Uploaded by:</h5>
-                    <a href="profile"><h5>Chesie</h5></a>
+                    <a href="profile"><h5>{{post.user}}</h5></a>
                 </div>
                 <!-- will show only when user owns this meme-->
                 <div class="col-12 col-md-7">
                     <div class="input-group mb-3">
-                        
-                        <div class="input-group-append">
-                            <form action="addTag" method="post">
+                        <div class="input-group-append" data-id="{{post._id}}">
+                            <form id = "addTagForm" action="addTag" method="post">
                                 <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2" name="addtagname">
-                                <button class="btn btn-outline-secondary" type="button" >Add Tag</button>
+                                
+                                <input id ="viewid" type = "hidden"  name = "id">
+                                <button class="btn btn-outline-secondary tag" data-id="{{post._id}}">
+                                    Add Tag
+                                </button>
                             </form>
                         </div>
                     </div>

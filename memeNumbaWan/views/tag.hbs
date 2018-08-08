@@ -134,18 +134,31 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5">Memes under the Tag of: World Cup</h1>
+        <h1 class="mt-5">Memes under the Tag of: {{name}}</h1>
         <div class="row">
             <div class="col-12 col-md-4"> 
-                <div class="mt-4 memedivTag"> <!--memes and captions area-->
-                    <a href="meme"><div class="biggerTag">90 percent of the time , we hate you all the time ...</div></a>
-                    <a href="meme"><img src="/meme1.jpg" class="memePicTag"/></a>
-                    <div class="memedivTagsOfTag">
-                        Tags:
-                        <a href="tag">World Cup</a>,
-                        <a href="tag">i made dis</a>
-                    </div>
+                
+                <div class="mb-4 memediv" data-id="{{_id}}">
+                    <a href="meme" class ="aCaps"><div class="caption" >
+                        {{title}}
+                    </div></a> 
+                    <br>
+                    
+                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    {{#each post.tags}}
+                        <a href="tag">TAG</a>,
+                    {{/each}}
+                    
                 </div>
+                
+                {{#each posts}}
+                
+                
+                
+                {{/each}}
+                
             </div>
         </div>
     </main>

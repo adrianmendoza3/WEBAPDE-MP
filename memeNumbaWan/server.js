@@ -9,6 +9,7 @@ const mongoose = require("mongoose")
 const {Post} = require("./model/Post.js")
 const {Tag} = require("./model/Tag.js")
 const {User} = require("./model/User.js")
+const crypto = require("crypto")
 
 mongoose.Promise = global.Promise
 mongoose.connect("mongodb://localhost:27017/memeNumbaWan", {
@@ -33,6 +34,57 @@ app.use(express.static(__dirname+"/public"))
 
 // app.use(express.static(path.join(__dirname, "views")))
 
+//functions:
+function encrypt(text) {
+  return crypto.createHash("md5").update(text).digest("hex")
+}
+
+function updatePost(title, id, user, tagID, likers, unlikers, time, privacy, sharedTo, postID){
+    
+    let newPost = {
+        title, uid:id, user, tags:tagID, likers, unlikers, time, privacy, sharedTo
+    }
+//    
+//    var friend = {"firstName": req.body.fName, "lastName": req.body.lName};
+//    Users.findOneAndUpdate({name: req.user.name}, {$push: {friends: friend}});
+//    };
+
+    if(tagID != null){
+        Post.findOneAndUpdate({
+            _id : postID
+        }, newPost).then(()=>{
+            
+            console.log(newPost)
+        }, (err)=>{
+            console.log(err)         
+        })
+        
+        
+        User.findOneAndUpdate({_id : id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
+            if(err){
+                console.log("Something wrong when updating data!");
+            }
+            console.log(doc);
+        });
+//        
+//        User.findOneandUpdate({
+//            _id : id
+//        }, {$push: { postID : postID }});
+        
+//        Post.findOneAndUpdate({
+//            _id : postID
+//        }, {$push: { tags: tagID }});
+        
+//        Post.findByIdAndUpdate(postID,
+//            {$push: {tags: tagID}},
+//            {safe: true, upsert: true}
+//        );
+    }  
+    else{
+        console.log("No tag yet????")
+    }
+}
+
 app.use(session({
     secret: "super secret",
     name: "super secret",
@@ -55,7 +107,7 @@ app.get("/", (req, res, next) => {
     if(req.session.username != null){
         Post.find().then((posts)=>{
             res.render("home.hbs", {
-                posts : posts
+                posts : posts,
             });
         }, (err)=>{
             res.render("landing.hbs")
@@ -78,7 +130,9 @@ app.post("/login", urlencoder, (req, res) => {
     console.log("POST /login");
     
     var username = req.body.logusername;
-    var password = req.body.logpassword;
+    var password = encrypt(req.body.logpassword);
+    
+    console.log("encrypted pw:" +password);
     
     User.findOne({
         username : username,
@@ -94,7 +148,7 @@ app.post("/login", urlencoder, (req, res) => {
             res.redirect("/")
         }
         else{
-            res.render("landing.hbs")
+            res.redirect("/")
             console.log("cannot login")
         }
     }, (err)=>{
@@ -111,6 +165,7 @@ app.get("/redirectprofile", (req, res, next) => {
         Post.find().then((posts)=>{
             res.render("profile.hbs", {
                 posts : posts
+                
             });
         }, (err)=>{
             res.render("landing.hbs")
@@ -152,14 +207,114 @@ app.get("/redirectmeme", (req, res) => {
     }
 });
 
+app.get("/search", urlencoder, (req, res) => {
+    console.log("search input: "+req.query.searchinput)
+    
+    var input = req.query.searchinput;
+    var tagID;
+    
+     Tag.findOne({
+        name : input
+     }).then((tag)=>{
+        if(tag != null){
+            console.log("Tag: " + tag)
+            tagID = tag._id
+            
+            Post.find({
+                tags : tag._id
+            }).then((posts)=>{
+            res.render("tag.hbs", {
+                name : tag.name,
+                posts : posts
+            });
+                
+        }, (err)=>{
+            res.render("landing.hbs")
+        })
+
+        }
+        else{
+            res.redirect("/")
+        }
+     })
+});
+
+app.post("/deleteTag", urlencoder, (req, res) => {
+    console.log("Deleting tag with id of: " + req.body.deletetagid)
+    
+//    Post.findOne({
+//        
+//    }).then(()=>{
+//        
+//    })
+//    
+//    Post.deleteOne({
+//        _id: req.body.id
+//    }).then((post)=>{
+//        res.redirect("/redirectprofile")
+//
+//    })
+});
+
 app.post("/addTag", urlencoder, (req, res) => {
     console.log("GET /addTag");
     
     var newtag = req.body.addtagname;
-    console.log("NEW TAG ADDED: "+newtag)
+//    console.log("NEW TAG ADDED: "+ newtag);
+    var postID = req.body.id;
+//    console.log("TAG OF POST ID: "+postID); //id of post (not yet used)
+    
+    Tag.findOne({
+        name : newtag   
+    }).then((tag)=>{
+        if(tag != null){ //existing tag
+            console.log("tag "+newtag+" already exists");
+            
+            Tag.findOneAndUpdate({_id : tag._id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
+                if(err){
+                    console.log("Something wrong when updating tag!");
+                }
+                console.log(doc);
+            });
+            
+            Post.findOneAndUpdate({_id : postID}, {$push: { tags : tag._id }}, {new: true}, function(err, doc){
+                if(err){
+                    console.log("Something wrong when updating post!");
+                }
+                console.log(doc);
+            });
+            
+            console.log("Postids in found:" + tag.postID.length)
+            res.redirect("/redirectprofile")
+        }
+        else{
+            var f = new Tag({
+                name : newtag,
+                postID : postID
+            })
+            
+            console.log(f)
+            
+            f.save().then(()=>{
+                //things were correct
+                console.log("Tag:" + newtag)
+                console.log("Postids new:" + f.postID.length)
+                res.redirect("/redirectprofile")
+            }, (err)=>{
+                console.log("ERROR: Somethings wrong")
+                res.render("landing.hbs")
+            })
+            
+//            Tag.update({_id : f._id}, { $push: { postID: postID } })
+        }
+    }, (err)=>{
+        res.render("landing.hbs")
+    })
+    //////////////////////////////////////
     
     
-    res.redirect("/redirectmeme")
+    
+//    res.redirect("/redirectmeme")
 });
 
 app.post("/register", urlencoder, (req, res) => {
@@ -176,8 +331,10 @@ app.post("/register", urlencoder, (req, res) => {
     }).then((user)=>{
         if(user == null){
             if(password == conpassword){
+                var hashedpassword = encrypt(password);
+                
                 var f = new User({
-                    username, name, password, description
+                    username, name, password: hashedpassword, description
                 })
 
                 f.save().then(()=>{
@@ -244,24 +401,36 @@ app.get("/home", (req, res) => {
 });
 
 app.get("/uploadmeme", (req, res) => {
-    console.log("get /upload");
+    console.log("get /uploadmeme");
     console.log("uname sesh: "+req.session.username);
 
     res.render("uploadmeme.hbs");
 });
 
 app.post("/upload", urlencoder, (req, res) => {
-    console.log("post /uploadmeme");
+    console.log("post /uploaded");
     console.log("uname sesh: "+req.session.username);
     
-    var title = req.body.memetitle;
-    var likes;
-    var id;
-    var user = req.session.username;
+    var title ="", id, user ="", tags, likers, unlikers, time, privacy="false", sharedTo, tagID;
+    
+    var x = new Post({
+        title, id, user, tags, likers, unlikers, time, privacy, sharedTo
+    })
+    
+    x.save()
+    
+    var postID = x._id
+    
+    console.log("Post ID: " +postID)
+    
+    title = req.body.memetitle;
+    user = req.session.username;
+    
     User.findOne({
         username : user
     }).then((user)=>{
         if(user != null){
+            console.log("USER: " + user)
             id = user._id;
             
         }
@@ -269,39 +438,59 @@ app.post("/upload", urlencoder, (req, res) => {
             id = 0000;
         }
     })
+//            
+    tags = req.body.tags; //process csv
+//    
+    
+    Tag.findOne({
+        name : tags   
+    }).then((tag)=>{
+        if(tag != null){ //existing tag
             
-    var tags = req.body.tags; //process csv
-    var likers; //default null
-    var unlikers; //default null
-    var time; //set to now
-    var privacy = req.body.privacy; 
-    var sharedTo; //default null
-    
-    //process to boolean
-    if(privacy=="private"){
-        privacy = true;
-    }
-    else {
-        privacy = false;
-    }
-    
-    var f = new Post({
-        title, likes, id, user, tags, likers, unlikers, time, privacy, sharedTo
-    })
-    
-    f.save().then(()=>{
-        //things were correct
-        console.log("title:" + title + 
-                    " id:" + id + 
-                    " user:" + user + 
-                    " tags:" + tags +
-                    " privacy:" + privacy)
+            Tag.findOneAndUpdate({_id : tag._id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
+                if(err){
+                    console.log("Something wrong when updating tag!");
+                }
+                console.log(doc);
+            });
+            
+            updatePost(title, id, user, tag._id, likers, unlikers, time, privacy, sharedTo, postID);
         
+        }
+        else{
+            var f = new Tag({
+                name : tags,
+                postID : postID
+            })
+                        
+            f.save().then(()=>{
+                console.log("F: "+f)
+                tagID = f._id
+            }).then(()=>{
+                console.log("HIII BITCHESS")
+                 privacy = req.body.privacy; 
+
+                if(privacy=="private"){
+                    privacy = true;
+                }
+                else {
+                    privacy = false;
+                }
+
+                console.log("TAG ID = " + tagID);
+
+                updatePost(title, id, user, tagID, likers, unlikers, time, privacy, sharedTo, postID);
+                console.log("HIII AGAIN BITCHESS")
+            }, (err)=>{
+                console.log("ERROR: Somethings wrong")
+            })
+        }
         res.redirect("/")
     }, (err)=>{
-        console.log("ERROR: Somethings wrong")
-        res.render("landing.hbs")
+        console.log(err)
+        return null
     })
+    
 });
 
 app.get("/logout", (req, res) => {
@@ -327,8 +516,16 @@ app.get("/memeNA", (req, res) => {
 
 app.get("/meme", (req, res) => {
     console.log("GET /meme");
-
-    res.redirect("/redirectmeme");
+    
+    Post.findOne({
+        _id: req.query.id
+    }).then((post)=>{
+        res.render("meme.hbs", {
+            post
+        })
+    }, (err)=>{
+        
+    })
 });
 
 app.get("/tag", (req, res) => {
@@ -429,10 +626,11 @@ app.post("/postEdit", urlencoder, (req, res) => {
     
 });
 
-
 app.use("*", (request, response)=> {
     response.status(404).send("These are not the sites you are looking for");
 });
+
+
 
 app.listen(3000, () => {
     console.log("listening in port 3000")
