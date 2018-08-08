@@ -126,8 +126,8 @@
                   <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
               </form>
               <!--log out button-->
-              <form action ="logout">
-                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
+              <form action="logout">
+                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
               </form>
         </ul>
         </div>
@@ -138,7 +138,7 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <h1 class="mt-5">90 percent of the time , we hate you all the time ...</h1>
+                <h1 class="mt-5"> {{title}} </h1>
                 <img src="/meme1.jpg" />
                 <div>
                     Tags:
@@ -152,9 +152,10 @@
                 <!-- will show only when user owns this meme-->
                 <div class="col-12 col-md-7">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2">
+                        
                         <div class="input-group-append">
-                            <form action="addTag">
+                            <form action="addTag" method="post">
+                                <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2" name="addtagname">
                                 <button class="btn btn-outline-secondary" type="button" >Add Tag</button>
                             </form>
                         </div>

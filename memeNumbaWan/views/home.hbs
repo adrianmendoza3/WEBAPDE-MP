@@ -18,33 +18,34 @@
 
   <body>
 
-    <!-- Modal Log in-->
+    <!-- Modal Sign in-->
+
     <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content"> <!--the whole popup-->
-          <div class="modal-header"><!--"login" and exit button-->
-            <h5 class="modal-title" id="signinModalLabel">Login</h5> <!--"login"-->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signinModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="login"> <!--bottom half of the popup-->
-            <div class="modal-body"> <!--username, password, remember me-->
-                  <div class="form-group row"> <!--username-->
+          <form method="POST" action="login">
+            <div class="modal-body">
+                  <div class="form-group row">
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
                       <div class="col-md-6">
-                          <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
+                          <input id="logusername" type="text" class="form-control" name="logusername" value="" required="" autofocus="">
                       </div>
                   </div>
-                  <div class="form-group row"><!--password-->
+                  <div class="form-group row">
                       <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
                       <div class="col-md-6">
-                          <input id="password" type="password" class="form-control" name="password" required="">
+                          <input id="logpassword" type="password" class="form-control" name="logpassword" required="">
                       </div>
                   </div>
 
-                  <div class="form-group row"><!--remember me-->
+                  <div class="form-group row">
                       <div class="col-md-6 offset-md-4">
                           <div class="checkbox">
                               <label>
@@ -53,10 +54,10 @@
                           </div>
                       </div>
                   </div>
-              
+
             </div>
-            <div class="modal-footer"> 
-              <button type="submit" class="btn btn-primary">Login</button> <!--login button-->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Login</button>
             </div>
           </form>
         </div>
@@ -66,37 +67,51 @@
     <!-- Modal Register-->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Register</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="registerModalLabel">Register</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="register"> <!--bottom half of pop up-->
-                <div class="modal-body"> <!--username, password, confirm password-->
-                    <div class="form-group row"> <!--username-->
+            <form method="POST" action="register">
+                <div class="modal-body">
+                    <div class="form-group row">
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                         <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
+                            <input id="regusername" type="text" class="form-control" name="regusername" value="" required="" autofocus="">
                         </div>
                     </div>
-                    <div class="form-group row"> <!--password-->
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                        <div class="col-md-6">
+                            <input id="regname" type="text" class="form-control" name="regname" value="" required="" autofocus="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required="">
+                            <input id="regpassword" type="password" class="form-control" name="regpassword" required="">
                         </div>
                     </div>
-                    <div class="form-group row"> <!--confirm password-->
+                    <div class="form-group row">
                         <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                         <div class="col-md-6">
-                            <input id="confirmpassword" type="password" class="form-control" name="confirmpassword" required="">
+                            <input id="regconfirmpassword" type="password" class="form-control" name="regconfirmpassword" required="">
                         </div>
                     </div>
+
+                    <div class="form-group row">
+                        <label for="shortdescription" class="col-md-4 col-form-label text-md-right">Short Description (Optional)</label>
+                        <div class="col-md-6">
+                            <input id="regshortdescription" type="text" class="form-control" name="regshortdescription">
+                        </div>
+                    </div>
+
                 </div>
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Register</button>  <!--register button-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
           </div>
@@ -126,8 +141,7 @@
               </form>
               <!--log out button-->
               <form action="logout">
-                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
-
+                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
               </form>
         </ul>
         </div>
@@ -152,6 +166,26 @@
 
             <div class="col-6"> <!--whole column 12-->
                 <h1 class="mt-5"><br>All Memes</h1>
+                {{#each posts}}
+                
+                <div class="mb-4 memediv" data-id="{{_id}}">
+                    <a href="meme" class ="aCaps"><div class="caption" >
+                        {{title}}
+                    </div></a> 
+                    <br>
+                    
+                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    {{#each tags}}
+                        <a href="tag">{{name}}</a>,
+                    {{/each}}
+                    
+                </div>
+                
+                {{/each}}
+                
+<!--
                 <div class="mb-4 memediv">
                     <a href="meme" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
                     <br>
@@ -159,6 +193,21 @@
                     <br>
                     Tags:
                     <a href="tag">World Cup</a>,
+-->
+<!--
+                    <a href="tag">i made dis</a>
+
+                </div>
+
+                <div class="mb-4 memediv">
+                    <a href="meme" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
+                    <br>
+                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <br>
+                    Tags:
+                    <a href="tag">World Cup</a>,
+-->
+<!--
                     <a href="tag">i made dis</a>
 
                 </div>
@@ -184,17 +233,7 @@
                     <a href="tag">i made dis</a>
 
                 </div>
-
-                <div class="mb-4 memediv">
-                    <a href="meme" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
-                    <br>
-                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
-                    <br>
-                    Tags:
-                    <a href="tag">World Cup</a>,
-                    <a href="tag">i made dis</a>
-
-                </div>
+-->
             </div>
             <div class="col-3 "> <!--memes shared to u part-->
                 <h1 class="mt-5"><br>Memes Shared to You</h1>

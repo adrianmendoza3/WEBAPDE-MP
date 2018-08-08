@@ -18,91 +18,6 @@
 
   <body>
 
-    <!-- Modal Log in-->
-    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content"> <!--the whole popup-->
-          <div class="modal-header"><!--"login" and exit button-->
-            <h5 class="modal-title" id="signinModalLabel">Login</h5> <!--"login"-->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form method="POST" action="home.hbs"> <!--bottom half of the popup-->
-            <div class="modal-body"> <!--username, password, remember me-->
-                  <div class="form-group row"> <!--username-->
-                      <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
-                      <div class="col-md-6">
-                          <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                      </div>
-                  </div>
-                  <div class="form-group row"><!--password-->
-                      <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                      <div class="col-md-6">
-                          <input id="password" type="password" class="form-control" name="password" required="">
-                      </div>
-                  </div>
-
-                  <div class="form-group row"><!--remember me-->
-                      <div class="col-md-6 offset-md-4">
-                          <div class="checkbox">
-                              <label>
-                                  <input type="checkbox" name="remember"> Remember Me
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-              
-            </div>
-            <div class="modal-footer"> 
-              <button type="submit" class="btn btn-primary">Login</button> <!--login button-->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Register-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Register</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form method="POST" action="home.hbs"> <!--bottom half of pop up-->
-                <div class="modal-body"> <!--username, password, confirm password-->
-                    <div class="form-group row"> <!--username-->
-                        <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
-                        <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--password-->
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--confirm password-->
-                        <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                        <div class="col-md-6">
-                            <input id="confirmpassword" type="password" class="form-control" name="confirmpassword" required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Register</button>  <!--register button-->
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
@@ -126,7 +41,7 @@
               </form>
               <!--log out button-->
               <form action="logout">
-                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location = './landing.html'">Logout</button>
+                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
               </form>
         </ul>
         </div>
@@ -139,7 +54,7 @@
       <form class="col-12 col-md-8" method="POST" action="upload" accept-charset="UTF-8">
         <div class="form-group"> <!--for the title-->
             <label for="name">Title</label>
-            <input class="form-control" placeholder="Enter Title" name="name" type="text" value="" id="title">
+            <input class="form-control" placeholder="Enter Title" name="memetitle" type="text" value="" id="memetitle">
         </div>
         <label for="image">Image</label>
         <div class="input-group mb-3"><!--to upload picture-->
@@ -151,7 +66,7 @@
         </div>
         <div class="form-group"> <!--for tags-->
             <label for="name">Tags (Comma separated)</label>
-            <input class="form-control" placeholder="Enter Tags" name="name" type="text" value="" id="tags">
+            <input class="form-control" placeholder="Enter Tags" name="tags" type="text" value="" id="tags">
         </div>
         <div class="form-group"> <!--select type-->
             <label for="type">Privacy</label>

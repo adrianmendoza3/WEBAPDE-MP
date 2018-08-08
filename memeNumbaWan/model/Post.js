@@ -1,24 +1,27 @@
 const mongoose = require("mongoose")
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId
 
-var PostSchema = mongoose.Schema({
-//    name : String,
-//    price : Number,
-//    cuisine : String
+const PostSchema = new Schema({
 
-    Caption : {
-        type: String,
-        required: true,
-        unique: true
+    title: String,
+    likes: {
+        type: Number,
+        default: 0
     },
-    UserID : Number,
-    MemePic : String,
-    Likers : Number,
-    Disapprovers : String,
-    SharedTo : Number,
-    Privacy : Boolean
+    uid: ObjectId,
+    user: String,
+    tags: Array,
+    likers: Array,
+    unlikers: Array,
+    time: {type: Date, default: Date.now},
+    privacy: Boolean,
+    sharedTo: Array
+    
 })
 
-var Post = mongoose.model ("post", FoodSchema)
+
+const Post = mongoose.model ("post", PostSchema);
 
 module.exports = {
     Post

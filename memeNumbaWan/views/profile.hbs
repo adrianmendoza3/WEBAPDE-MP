@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Chesie's Profile</title>
+      
+    <script src="jquery-3.3.1.js"> </script>
+      <script>
+            $(document).ready(function(){
+                
+                $("button.delete").click(function(){
+                    var id = $(this).attr("data-id")
+                    
+                    $("button.deletemodal").click(function(){
+                        $("input#deleteid").val(id)
+                    
+                        $("form#deleteform").submit()
+                    })
+                })
+                
+                $("button.edit").click(function(){
+                    //get attr data id from the clicked button
+                    var id = $(this).attr("data-id")
+               
+                    $("button.editmodal").click(function(){
+                        //place data id into input#deleteid
+                        $("input#viewid").val(id)
+
+                        //submit the form#deleteform
+                        $("form#viewform").submit()
+                    })
+                    
+                })
+            })
+      </script>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
@@ -18,91 +48,7 @@
 
   <body>
 
-    <!-- Modal Log in-->
-    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content"> <!--the whole popup-->
-          <div class="modal-header"><!--"login" and exit button-->
-            <h5 class="modal-title" id="signinModalLabel">Login</h5> <!--"login"-->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form method="POST" action="home.hbs"> <!--bottom half of the popup-->
-            <div class="modal-body"> <!--username, password, remember me-->
-                  <div class="form-group row"> <!--username-->
-                      <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
-                      <div class="col-md-6">
-                          <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                      </div>
-                  </div>
-                  <div class="form-group row"><!--password-->
-                      <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
-                      <div class="col-md-6">
-                          <input id="password" type="password" class="form-control" name="password" required="">
-                      </div>
-                  </div>
-
-                  <div class="form-group row"><!--remember me-->
-                      <div class="col-md-6 offset-md-4">
-                          <div class="checkbox">
-                              <label>
-                                  <input type="checkbox" name="remember"> Remember Me
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-              
-            </div>
-            <div class="modal-footer"> 
-              <button type="submit" class="btn btn-primary">Login</button> <!--login button-->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Register-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Register</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form method="POST" action="register"> <!--bottom half of pop up-->
-                <div class="modal-body"> <!--username, password, confirm password-->
-                    <div class="form-group row"> <!--username-->
-                        <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
-                        <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--password-->
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--confirm password-->
-                        <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                        <div class="col-md-6">
-                            <input id="confirmpassword" type="password" class="form-control" name="confirmpassword" required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Register</button>  <!--register button-->
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      
       <!-- Modal Edit-->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -112,31 +58,27 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
                 <span aria-hidden="true">&times;</span>
               </button>
-            </div>
-            <form method="POST" action="postEdit"> <!--bottom half of pop up-->
-                <div class="modal-body"> <!--username, password, confirm password-->
-                    <div class="form-group row"> <!--username-->
+            </div>  
+              
+            <form id = "viewform" method="POST" action="postEdit">
+                <input id ="viewid" type = "hidden"  name = "id">
+                <div class="modal-body">
+                    <div class="form-group row"> 
                         <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
                         <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
+                            <input id="edittitle" type="text" class="form-control" name="edittitle" value="" autofocus="">
                         </div>
                     </div>
-                    <div class="form-group row"> <!--password-->
+                    <div class="form-group row"> 
                         <label for="tags" class="col-md-4 col-form-label text-md-right">Tags</label>
                         <div class="col-md-6">
-                            <input id="password" type="text" class="form-control" name="password" required="">
+                            <input id="edittags" type="text" class="form-control" name="edittags">
                         </div>
                     </div>
-                    <div class="form-group row"> <!--password-->
-                        <label for="description" class="col-md-4 col-form-label text-md-right">Description</label>
-                        <div class="col-md-6">
-                            <input id="password" type="text" class="form-control" name="password" required="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--confirm password-->
+                    <div class="form-group row"> 
                         <label for="privacy" class="col-md-4 col-form-label text-md-right">Privacy</label>
                         <div class="col-md-6">
-                            <select id="username" class="form-control" name="username" value="" required="" autofocus="">
+                            <select id="editprivacy" class="form-control" name="editprivacy" value="" required="" autofocus="">
                                 <option value="val1">Private</option>
                                 <option value="val2">Public</option>
                             </select>
@@ -146,7 +88,7 @@
                 </div>
                 <div class="modal-footer"> <!--cancel and register button-->
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Update Content</button>  <!--register button-->
+                    <button class="editmodal btn btn-primary">Update Content</button>  
                 </div>
             </form>
           </div>
@@ -163,10 +105,13 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="postDelete"> <!--bottom half of pop up-->
+
+            <form id = "deleteform" method="POST" action="postDelete"> <!--bottom half of pop up-->
+                <input id="deleteid" type="hidden" name="id">
+                                
                 <div class="modal-footer"> <!--cancel and register button-->
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Delete</button>  <!--register button-->
+                    <button class="deletemodal btn btn-primary" >Delete</button>  <!--register button-->
                 </div>
             </form>
           </div>
@@ -196,7 +141,7 @@
               </form>
               <!--log out button-->
               <form action="logout">
-                  <button id="search" class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
+                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
               </form>
         </ul>
         </div>
@@ -208,124 +153,55 @@
         <h1 class="mt-5">Chesie's Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
-                    <div class="mt-4 memedivprof"> <!--memes and caption-->
+                    
+<!--
+                <form id= "deleteform" action ="postDelete" method = "post">
+                    <input id="deleteid" type="hidden" name="id">
+                </form>
+-->
+                
+<!--
+                <form id = "viewform" action="viewEdit" method="get">
+                    <input id ="viewid" type = "hidden"  name = "id">
+                </form> 
+-->
+                
+                {{#each posts}}
+                <div class="mt-4 memedivprof" data-id="{{_id}}"> <!--memes and caption-->
 <!--                        <div class="card">-->
-                        <div class="edit_delete" align="right">
-                            <a class="btn"href="#" data-toggle="modal" data-target="#editModal">Edit</a>
-                            <a  href="#" data-toggle="modal" data-target="#deleteModal" >Delete</a>
-                        </div>
-                            <div class="card-body">
-                                <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
-                                <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
-                                <div> <!--tags-->
-                                    Tags:
-                                    <a href="tag">World Cup</a>
-                                    <a href="tag">i made dis</a>
-                                </div>
-                                
-                                <br>
-                                
-                                <div>
-                                    <button class="buttonid" > 53 thumbs up </button>
-                                    <button class="buttonid" > 24 thumbs down </button>
-                                    <button class="buttonid" > 12 shares </button>
+                    <div class="edit_delete" align="right">
+  
+                        <button class="btn btn-info btn-lg edit" data-id="{{_id}}"
+                        data-toggle="modal" data-target="#editModal">Edit</button>
+                        
+                        <button class="btn btn-info btn-lg delete" data-id="{{_id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
 
-                                </div>
-                            </div>
-<!--                        </div>                     -->
                     </div>
+                    <div class="card-body">
+                        <a href="meme"><div class = "biggerprof">
+                            {{title}}
+                        </div></a> <!--caption-->
 
-                    <div class="mt-4 memedivprof"> <!--memes and caption-->
-                        <!--                        <div class="card">-->
-                        <div class="card-body">
-                            <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
-                            <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
-                            <div> <!--tags-->
-                                Tags:
-                                <a href="tag">World Cup</a>
-                                <a href="tag">i made dis</a>
-                            </div>
-
-                            <br>
-
-                            <div>
-                                <button class="buttonid" > 53 thumbs up </button>
-                                <button class="buttonid" > 24 thumbs down </button>
-                                <button class="buttonid" > 12 shares </button>
-
-                            </div>
+                        <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
+                        <div> <!--tags-->
+                            Tags:
+                            {{#each tags}}
+                                <a href="tag">{{name}}</a>
+                            {{/each}}
                         </div>
-                        <!--                        </div>                     -->
-                    </div>
 
-                    <div class="mt-4 memedivprof"> <!--memes and caption-->
-                        <!--                        <div class="card">-->
-                        <div class="card-body">
-                            <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
-                            <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
-                            <div> <!--tags-->
-                                Tags:
-                                <a href="tag">World Cup</a>
-                                <a href="tag">i made dis</a>
-                            </div>
+                        <br>
 
-                            <br>
+                        <div>
+                            <button class="buttonid" > {{likes}} thumbs up </button>
+                            <button class="buttonid" > {{dislikes}} thumbs down </button>
+                            <button class="buttonid" > {{sharedTo}} shares </button>
 
-                            <div>
-                                <button class="buttonid" > 53 thumbs up </button>
-                                <button class="buttonid" > 24 thumbs down </button>
-                                <button class="buttonid" > 12 shares </button>
-
-                            </div>
                         </div>
-                        <!--                        </div>                     -->
                     </div>
-
-                    <div class="mt-4 memedivprof"> <!--memes and caption-->
-                        <!--                        <div class="card">-->
-                        <div class="card-body">
-                            <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
-                            <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
-                            <div> <!--tags-->
-                                Tags:
-                                <a href="tag">World Cup</a>
-                                <a href="tag">i made dis</a>
-                            </div>
-
-                            <br>
-
-                            <div>
-                                <button class="buttonid" > 53 thumbs up </button>
-                                <button class="buttonid" > 24 thumbs down </button>
-                                <button class="buttonid" > 12 shares </button>
-
-                            </div>
-                        </div>
-                        <!--                        </div>                     -->
-                    </div>
-
-                    <div class="mt-4 memedivprof"> <!--memes and caption-->
-                        <!--                        <div class="card">-->
-                        <div class="card-body">
-                            <a href="meme"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a> <!--caption-->
-                            <img src="/meme1.jpg" class = "imgprof"/> <!--memes-->
-                            <div> <!--tags-->
-                                Tags:
-                                <a href="tag">World Cup</a>
-                                <a href="tag">i made dis</a>
-                            </div>
-
-                            <br>
-
-                            <div>
-                                <button class="buttonid" > 53 thumbs up </button>
-                                <button class="buttonid" > 24 thumbs down </button>
-                                <button class="buttonid" > 12 shares </button>
-
-                            </div>
-                        </div>
-                        <!--                        </div>                     -->
-                    </div>
+                </div>
+                
+                {{/each}}
 
             </div>
             <div class="col-12 offset-md-1 col-md-4"> <!--user information part-->

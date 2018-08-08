@@ -1,22 +1,25 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-var UserSchema = mongoose.Schema({
-//    name : String,
-//    price : Number,
-//    cuisine : String
+//Create user schema and model
 
-    Name : {
-        type: String,
-        required: true,
-        minlength: 3,
-        trim: true,
-        unique: true
-    },
-    Password : String,
-    Description : String
+const UserSchema = new Schema({
+    username: String,
+    name: String,
+    password: String,
+    description: String
+//    img: {
+//        type: String,
+//        default: '/img/samples/sample_profile.jpg',
+//    },
+//    postIDs : {
+//        type : Array,
+//        default: null
+//    }
+    
 })
 
-var User = mongoose.model ("user", UserSchema)
+const User = mongoose.model ("user", UserSchema);
 
 module.exports = {
     User

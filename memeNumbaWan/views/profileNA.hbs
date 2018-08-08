@@ -18,51 +18,6 @@
 
   <body>
 
-    <!-- Modal Sign in-->
-    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="signinModalLabel">Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form method="POST" action="login">
-            <div class="modal-body">
-                  <div class="form-group row">
-                      <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
-                      <div class="col-md-6">
-                          <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                      </div>
-                  </div>
-                  <div class="form-group row">
-                      <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                      <div class="col-md-6">
-                          <input id="password" type="password" class="form-control" name="password" required="">
-                      </div>
-                  </div>
-
-                  <div class="form-group row">
-                      <div class="col-md-6 offset-md-4">
-                          <div class="checkbox">
-                              <label>
-                                  <input type="checkbox" name="remember"> Remember Me
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Login</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
     <!-- Modal Register-->
     <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -78,29 +33,35 @@
                     <div class="form-group row">
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                         <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
+                            <input id="regusername" type="text" class="form-control" name="regusername" value="" required="" autofocus="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                        <div class="col-md-6">
+                            <input id="regname" type="text" class="form-control" name="regname" value="" required="" autofocus="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                         <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required="">
+                            <input id="regpassword" type="password" class="form-control" name="regpassword" required="">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                         <div class="col-md-6">
-                            <input id="confirmpassword" type="password" class="form-control" name="confirmpassword" required="">
+                            <input id="regconfirmpassword" type="password" class="form-control" name="regconfirmpassword" required="">
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <label for="shortdescription" class="col-md-4 col-form-label text-md-right">Short Description (Optional)</label>
                         <div class="col-md-6">
-                            <input id="shortdescription" type="text" class="form-control" name="shortdescription">
+                            <input id="regshortdescription" type="text" class="form-control" name="regshortdescription">
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
