@@ -6,9 +6,9 @@ const path = require("path");
 const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 //const mongostore = require("connect-mongo")(session)
-const {Post} = require("./model/Post.js")
-const {Tag} = require("./model/Tag.js")
-const {User} = require("./model/User.js")
+const {Post} = require("./model/post.js")
+const {Tag} = require("./model/tag.js")
+const {User} = require("./model/user.js")
 const crypto = require("crypto")
 
 mongoose.Promise = global.Promise
@@ -110,16 +110,16 @@ app.get("/", (req, res, next) => {
                 posts : posts,
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
         })
     }
     else{
         Post.find().then((posts)=>{
-            res.render("landing.hbs", {
+            res.render("index.hbs", {
                 posts : posts
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
         })
         
     }
@@ -152,7 +152,7 @@ app.post("/login", urlencoder, (req, res) => {
             console.log("cannot login")
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
     
     
@@ -162,13 +162,17 @@ app.get("/redirectprofile", (req, res, next) => {
     console.log("GET /redirect profile");
     
     if(req.session.username != null){
-        Post.find().then((posts)=>{
+        Post.find({
+            user : req.session.username
+        }).then((posts)=>{
             res.render("profile.hbs", {
-                posts : posts
+                posts : posts,
+                user : req.session.username,
+                username : req.session.username
                 
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
         })
     }
     else{
@@ -177,7 +181,7 @@ app.get("/redirectprofile", (req, res, next) => {
                 posts : posts
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
     })
         
     }
@@ -192,7 +196,7 @@ app.get("/redirectmeme", (req, res) => {
                 posts : posts
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
         })
     }
     else{
@@ -201,7 +205,7 @@ app.get("/redirectmeme", (req, res) => {
                 posts : posts
             });
         }, (err)=>{
-            res.render("landing.hbs")
+            res.render("index.hbs")
     })
         
     }
@@ -235,7 +239,7 @@ app.get("/search", urlencoder, (req, res) => {
                 
 
             }, (err)=>{
-                res.render("landing.hbs")
+                res.render("index.hbs")
             })
 
         }
@@ -308,13 +312,13 @@ app.post("/addTag", urlencoder, (req, res) => {
                 res.redirect("/redirectprofile")
             }, (err)=>{
                 console.log("ERROR: Somethings wrong")
-                res.render("landing.hbs")
+                res.render("index.hbs")
             })
             
 //            Tag.update({_id : f._id}, { $push: { postID: postID } })
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
     //////////////////////////////////////
     
@@ -349,7 +353,7 @@ app.post("/register", urlencoder, (req, res) => {
                     res.redirect("/")
                 }, (err)=>{
                     console.log("ERROR: Somethings wrong")
-                    res.render("landing.hbs")
+                    res.render("index.hbs")
                 })
                 
                 req.session.username = username
@@ -357,16 +361,16 @@ app.post("/register", urlencoder, (req, res) => {
             else{
                 // not same password
                 console.log("ERROR: Not same password")
-                res.render("landing.hbs")
+                res.render("index.hbs")
             }
         }
         else{
             console.log("ERROR: Username taken")
-            res.render("landing.hbs")
+            res.render("index.hbs")
             // username exists
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
 });
 
@@ -379,7 +383,7 @@ app.get("/profile", (req, res) => {
 //                posts : posts
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //    })
     res.redirect("/redirectprofile");
     
@@ -396,7 +400,7 @@ app.get("/profileNA", (req, res) => {
 app.get("/landing", (req, res) => {
     console.log("GET /landing");
     res.redirect("/");
-//    res.render("landing.hbs");
+//    res.render("index.hbs");
 });
 
 app.get("/home", (req, res) => {
@@ -511,7 +515,7 @@ app.get("/logout", (req, res) => {
         
     })
     res.redirect("/");
-//    res.render("landing.hbs");
+//    res.render("index.hbs");
 });
 
 app.get("/memeNA", (req, res) => {
