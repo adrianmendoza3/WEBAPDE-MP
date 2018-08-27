@@ -27,6 +27,7 @@ router.post("/login", (req, res) => { //controller/user
         password
     ).then((user)=>{
         if(user != null){
+
             console.log(user.username + ": " + user.password);
             req.session.username = user.username;
             console.log("uname sesh: "+req.session.username);
@@ -38,7 +39,7 @@ router.post("/login", (req, res) => { //controller/user
             console.log("cannot login")
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
 });
 
@@ -78,16 +79,16 @@ router.post("/register", urlencoder, (req, res) => { //user
             else{
                 // not same password
                 console.log("ERROR: Not same password")
-                res.render("landing.hbs")
+                res.render("index.hbs")
             }
         }
         else{
             console.log("ERROR: Username taken")
-            res.render("landing.hbs")
+            res.render("index.hbs")
             // username exists
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
 });
 

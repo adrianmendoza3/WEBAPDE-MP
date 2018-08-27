@@ -27,7 +27,7 @@ var a = {
 }
 
 //CREATE NEW TAG
-exports.createNew = function(tag){
+module.exports.createNew = function(tag){
   return new Promise(function(resolve, reject){
     console.log ("-----model/tag/createNew-----")
 
@@ -49,7 +49,7 @@ exports.createNew = function(tag){
 }
 
 //GET ONE TAG
-exports.getOne = function(tagname){
+module.exports.getOne = function(tagname){
   return new Promise(function(resolve, reject){
     console.log ("-----model/tag/getOne-----")
 
@@ -78,7 +78,7 @@ exports.getOne = function(tagname){
 }
 
 //FIND ONE AND PUSH POSTS
-exports.updateAndPush = function(id, post){
+module.exports.updateAndPush = function(id, post){
   return new Promise(function(resolve, reject){
     console.log ("-----model/tag/updateAndPush-----")
 
@@ -98,7 +98,7 @@ exports.updateAndPush = function(id, post){
 }
 
 //DELETE POST
-exports.deletePost = function(id){
+module.exports.deletePost = function(id){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/deletePost-----")
 

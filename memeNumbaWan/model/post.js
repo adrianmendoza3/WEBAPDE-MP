@@ -27,7 +27,7 @@ var a = {
 }
 
 //CREATE NEW POST
-exports.createNew = function(post){
+module.exports.createNew = function(post){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/createNew-----")
 
@@ -44,7 +44,7 @@ exports.createNew = function(post){
 }
 
 //FIND ONE AND UPDATE BY ID ONLY
-exports.updateOneByID = function(id, newPost){
+module.exports.updateOneByID = function(id, newPost){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/updateOneByID-----")
 
@@ -69,7 +69,7 @@ exports.updateOneByID = function(id, newPost){
 }
 
 //FIND ONE AND UPDATE BY ID AND USER (private/public)
-exports.updateOneByUser = function(id, user, newPost){
+module.exports.updateOneByUser = function(id, user, newPost){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/updateOneByUser-----")
 
@@ -95,7 +95,7 @@ exports.updateOneByUser = function(id, user, newPost){
 }
 
 //FIND ONE AND PUSH TAGS
-exports.updateAndPush = function(id, tag){
+module.exports.updateAndPush = function(id, tag){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/updateAndPush-----")
 
@@ -115,7 +115,7 @@ exports.updateAndPush = function(id, tag){
 }
 
 //GET ALL POSTS
-exports.getAll = function(){
+module.exports.getAll = function(){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/getAll-----")
 
@@ -142,7 +142,7 @@ exports.getAll = function(){
 }
 
 //GET ALL POSTS FILTERED BY NAME
-exports.getAllFiltered = function(uname){
+module.exports.getAllFiltered = function(uname){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/getAll-----")
 
@@ -171,7 +171,7 @@ exports.getAllFiltered = function(uname){
 }
 
 //GET ONE POST
-exports.getOne = function(id){
+module.exports.getOne = function(id){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/getOne-----")
 
@@ -200,7 +200,7 @@ exports.getOne = function(id){
 }
 
 //DELETE POST
-exports.deletePost = function(id){
+module.exports.deletePost = function(id){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/deletePost-----")
 

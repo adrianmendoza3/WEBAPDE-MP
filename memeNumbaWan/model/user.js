@@ -69,6 +69,7 @@ module.exports.getOneByUnameAndPword = function(uname, pword){
             password : pword
     }).then((user)=>{
         if(user != null){
+            resolve(user)
            console.log ("*GOT ONE USER!*")
                 resolve(user)
 //            console.log(user.username + ": " + user.password);
@@ -77,6 +78,7 @@ module.exports.getOneByUnameAndPword = function(uname, pword){
 //            res.redirect("/")
         }
         else{
+            resolve(user)
            console.log ("*USER DOES NOT EXIST!*")
 
 //            res.redirect("/")
@@ -136,7 +138,7 @@ module.exports.getOneByUname = function(uname){
 }
 
 //FIND ONE AND PUSH POSTS
-exports.updateAndPush = function(id, post){
+module.exports.updateAndPush = function(id, post){
   return new Promise(function(resolve, reject){
     console.log ("-----model/user/updateAndPush-----")
 
