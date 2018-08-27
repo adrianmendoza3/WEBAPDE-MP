@@ -2,28 +2,26 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId
 
-//const UserSchema = new Schema({
-//    username: { type: String, required: true}
-//})
-
-//const TagSchema = mongoose.Schema({
-//    name : { type: String, required: true}     
-//})
-
 const PostSchema = new Schema({
+
     title: String,
+    uid: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     user: String,
-    tags: [String],
-    likers: [String],
-    unlikers: [String],
+    tags: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}],
+    likers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
+    unlikers: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     time: {type: Date, default: Date.now},
     privacy: Boolean,
-    sharedTo: [String]
+    sharedTo: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+    
 })
 
-const Post = mongoose.model("post", PostSchema);
 
-module.exports = PostSchema
+const Post = mongoose.model ("post", PostSchema);
+
+module.exports = {
+    Post
+}
 
 var a = {
     Post

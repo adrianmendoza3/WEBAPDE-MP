@@ -3,37 +3,29 @@ const Schema = mongoose.Schema;
 
 //Create user schema and model
 
-//const TagSchema = mongoose.Schema({
-//    name : { type: String, required: true} , 
-//})
-
-const PostSchema = new Schema({
-    title: String,
-    tags: [String],
-    likers: [String],
-    unlikers: [String],
-    time: {type: Date, default: Date.now},
-    privacy: Boolean,
-    sharedTo: [String]
-})
-
 const UserSchema = new Schema({
-    username: {
-        type:String,
-        index: true
-    },
+    username: String,
+    name: String,
     password: String,
     description: String,
-    posts : [PostSchema]
+    postID : [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
+    
+//    img: {
+//        type: String,
+//        default: '/img/samples/sample_profile.jpg',
+//    },
+//    postIDs : {
+//        type : Array,
+//        default: null
+//    }
     
 })
 
 const User = mongoose.model ("user", UserSchema);
 
-module.exports = UserSchema
-//{
-//    User
-//}
+module.exports = {
+    User
+}
 
 var a = {
     User
