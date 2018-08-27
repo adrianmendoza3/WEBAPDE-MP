@@ -40,11 +40,13 @@
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
-      
-    <link rel="stylesheet" href="/main.css">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/app.css">
+      <link rel="stylesheet" href="main.css">
+
+      <!-- App CSS -->
+      <link rel="stylesheet" href="/app.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
   </head>
 
   <body>
@@ -184,60 +186,54 @@
 
         <div class="row"> <!--middle container-->
 
-            <div class="col-3 sideTags">
-                <h1 class="mt-5"><br>Tags</h1>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-                <div>WASSAP MGA PARE</div>
-            </div>
-
             <form id = "memeform" action="meme" method="get">
                 <input id ="memeid" type = "hidden"  name = "id">
             </form>
 
             <div class="col-6"> <!--whole column 12-->
-                <h1 class="mt-5"><br>All Memes</h1>
+                <!--<h1 class="mt-5"><br>All Memes</h1>-->
                 {{#each posts}}
-
+                    <br>
                 <div class="mb-4 memediv" data-id="{{_id}}">
-                    <a class ="aCaps"><div class="caption" >
+                    <h1 class ="memeTitle home aCaps" >
                         {{title}}
-                    </div></a> 
+                    </h1>
+
+                    <h6 align="right" class="type">Public</h6>
+
+                    <div class="memePic">
+                        <a><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    </div>
+
+                    <!--<br>-->
+
+                    <div class="memeTags">
+                        <i class="fas fa-tags"></i>
+
+                        <!--Tags:-->
+                        {{#each tags}}
+                            <a class="tags" href="tag">#{{this}} </a>
+                        {{/each}}
+                        <br>
+                    </div>
+
                     <br>
-                    
-                    <a><img src="/post/photo/{{id}}" class = "imgthumb"/> </a>
-                    <br>
-                    Tags:
-                    {{#each tags}}
-                        <a href="tag">{{this}}TAG</a>,
-                    {{/each}}
                     
                 </div>
                 
                 {{/each}}
                 
             </div>
-            <div class="col-3 "> <!--memes shared to u part-->
-                <h1 class="mt-5"><br>Memes Shared to You</h1>
-                <div class="memedivShared mt-4">
-                    <a href="meme" class ="aCaps"><div class="caption" >90 percent asasdasdasdas asdasdasdas asdasdasdas asdasdasasd asdasdasdasdas of the time , we hate you all the time ...</div> </a>
-                    <br>
-                    <a href="meme"><img src="/meme1.jpg" class = "imgshared"/> </a>
-                    <br>
-                    Tags:
-                    <a href="tag">World Cup</a>,
-                    <a href="tag">i made dis</a>
-                </div>
-                
-                <!--add memes shared here-->
-            </div>
+
         </div>
     </main>
 
+    <footer>
+        <center>
+            © MEME NUMBA WAN 2018 ★ <a href="about.hbs">ABOUT</a>
+
+        </center>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

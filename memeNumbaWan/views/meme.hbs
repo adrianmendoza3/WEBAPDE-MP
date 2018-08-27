@@ -39,12 +39,13 @@
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
-      
-      
-    <link rel="stylesheet" href="main.css">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/app.css">
+
+      <link rel="stylesheet" href="main.css">
+
+      <!-- App CSS -->
+      <link rel="stylesheet" href="/app.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   </head>
 
   <body>
@@ -174,17 +175,17 @@
 
         {{#each posts}}
             <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
-                <h1 class="mt-5"> <br>{{title}} </h1>
+                <h1 class="pageTitle"> {{title}} </h1>
                 <h6 align="right" class="type">Public</h6>
                 <img src="/meme1.jpg" />
                 <div>
-                    Tags:
+                    <!--Tags:-->
                     {{#each tags}}
                         <a href="tag">{{name}} TAG</a>
                     {{/each}}
                 </div>
                 <div data-id="{{_id}}">
-                    <h5>Uploaded by:</h5>
+                    <i class="fas fa-user" style="color:#5a5a5a"> : </i>
                     <button class="userclickhere" data-id=""{{_id}}"><h5>{{user}}</h5></button>
                 </div>
 
@@ -199,9 +200,9 @@
                         
                         <form id = "addTagForm" action="addTag" method="post">    
                         <input type="text" class="form-control" placeholder="Tag Name" aria-label="Tag Name" aria-describedby="basic-addon2" name="addtagname">
-                            <button class="btn btn-danger tag" data-id="{{post._id}}" >Add Tag</button>
+                            <button class="btn btn-danger tag" data-id="{{post._id}}" ><i class="fas fa-plus"></i></button>
                             
-                             <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#shareModal">Share</a>
+                             <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#shareModal"><i class="fas fa-share"></i></a>
                         </form>
                        
                     
@@ -214,6 +215,12 @@
         </div>
     </main>
 
+    <footer>
+        <center>
+            © MEME NUMBA WAN 2018 ★ <a href="about.hbs">ABOUT</a>
+
+        </center>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

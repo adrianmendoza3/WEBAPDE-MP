@@ -1,12 +1,56 @@
 body{
-    background-color: #005cbf;
+    background-color: #ffffff;
 }
-
+h1{
+    color: #bb7600;
+}
+h2{
+    color: #bb7600;
+}
 img{
     display: block;
     width: 100%;
 }
+a, button {
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+button:focus{
+    outline: none;
+}
 
+.form-control:focus{
+    border-color: #df0000;
+    box-shadow: 0 0 0 0.2rem rgba(255, 63, 63, 0.25);
+}
+.btn-primary{
+    background-color: #b30000;
+    border-color: #ac0000;
+}
+.btn-primary:hover, .btn-primary:active {
+    color: #fff;
+    background-color: #740000 !important;
+    border-color: #730000 !important;
+}
+.btn-secondary{
+    background-color: #e0a43e;
+    border-color: #f0b249;
+}
+.btn-secondary:hover, .btn-secondary:active {
+    background-color: #f0c44b !important;
+    border-color: #ffce46 !important;
+}
+.btn-secondary:focus, .btn-primary:focus{
+    box-shadow: none;
+}
+.nav-link{
+    color: #f6c94e;
+}
+.nav-link:hover{
+    color: antiquewhite; /*#5a0100*/
+
+}
 a.nav-link:focus{
     outline: none;
 }
@@ -19,9 +63,15 @@ a.nav-link:focus{
 .aCaps{
     color: black;
 }
-
+.home.aCaps{
+    margin: 5px;
+    color: #925f08;
+}
+.home.aCaps:hover{
+    color: white;
+}
 main.container{
-    padding-top: 20px;
+    padding-top: 0px;
 }
 
 .container-fluid{
@@ -33,6 +83,20 @@ main.container{
     width: 95%;
     margin: 0 auto;
 }
+main{
+    margin-top: 67.5px !important;
+}
+.navbar{
+    background-color: #830100;
+}
+.dropdown-menu{
+    left: -155px;
+}
+.navcontainer{
+    width: 80%;
+    margin: 0 auto;
+}
+
 
 .feed {
     width: 80%;
@@ -56,13 +120,9 @@ main.container{
     border-radius: 10px;
     border-radius: 10px;
     padding: 10px;
-    
-    height: 500px;
-    width: 500px;
-}
 
-.memediv:hover{
-    background-color: antiquewhite;
+    height: 600px;
+    width: 500px;
 }
 
 /* MEMES IN HOME */
@@ -104,11 +164,6 @@ main.container{
     border-radius: 10px;
 }
 
-.memedivprof:hover{
-    background-color: antiquewhite;
-}
-
-
 .memedivShared{
     /*width: 450px;
     height: 250px;
@@ -130,21 +185,20 @@ main.container{
 }
 
 .memeContent{
-    width: 400px;
-    height: 200px;
-    display:inline;
+    display:block;
 }
 
 .caption{
     display: inline;
-    width: 500px;
-    /*background-color: #6f42c1;*/
+    font-size: 26px;
+    color: #bb7600;
     margin: 0px;
 
 }
 
 .caption:hover{
-    color: blue;
+    color: #ffa50f;
+    text-decoration: underline;
 }
 
 /* MEMES IN TAGS */
@@ -155,27 +209,23 @@ main.container{
     /*border-style: solid;
     border-color: black;*/
     padding: 23px;
-    /*background-color: antiquewhite;*/
+    /*background-color: pink;*/
     border-radius: 10px;
-}
-
-.memedivTag:hover{
-    background-color: antiquewhite;
 }
 
 .memedivTagsOfTag{
     display: inline-block;
 }
 .memePicTag{
-    margin-left: 25px;
-    width: 250px;
-    height: 250px;
+    /*margin-left: 25px;*/
+    width: 275px;
+    height: 275px;
     display: inline-block;
 
 }
 .biggerTag{
     font-size: 18px;
-    color: green;
+    color: #bb7600;
     max-height: 100px;
     height: 100px;
     overflow: scroll;
@@ -186,7 +236,9 @@ main.container{
     width: 200px;
     height: 200px;
     */
-    object-fit: contain;
+    /*object-fit: contain;*/
+    width: auto 0;
+    height: 500px;
 }
 
 .buttonid{
@@ -204,11 +256,8 @@ main.container{
 }
 
 .imgthumb{
-    /*float: left;*/
-    height: 380px;
-    width: 380px;
-    /*height: 200px;*/
-    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .imgshared{
@@ -230,15 +279,16 @@ main.container{
 
 
 .bigger{
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: 700;
     max-height: 200px;
-    color: green;
+    color: #bb7600;
     overflow: hidden;
 }
 
 .biggerprof{
     font-size: 25px;
-    color: green;
+    color: #bb7600;
     max-height: 200px;
     overflow: hidden;
 }
@@ -246,7 +296,7 @@ main.container{
 .biggerTag{
     font-size: 25px;
     height: 80px;
-    color: green;
+    color: #bb7600;
     max-height: 200px;
     overflow: hidden;
 }
@@ -296,4 +346,133 @@ main.container{
 .bottombuttons{
     display: flex;
     flex-direction: row;
+}
+a{
+    color: #cb0200;
+    font-weight: 500;
+}
+.tags, .tags:hover, .tags:active{
+    color:white;
+}
+a:hover, a:active{
+    color: #ff0200;
+}
+.memeTags{
+    display: block;
+    background-color: #830100;
+    color: white;
+    padding: 5px;
+}
+
+/***** Uploaded by ********/
+.uploadedbyuser{
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+
+/***** when active menu ****/
+ul.navbar-nav li a#upload.active:after {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    border-bottom: 4px solid #ebc94e;
+    content: '_____';
+    color: transparent;
+    width: 113px;
+}
+
+ul.navbar-nav li a#profile.active:after {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    border-bottom: 4px solid #ebc94e;
+    content: '_____';
+    color: transparent;
+    width: 73px;
+}
+
+.pageTitle{
+    background-color: #e0a43e;
+    display: inline;
+    padding: 10px 5px;
+    position: relative;
+    color: #573700;
+}
+.pageTitle i{
+    font-size: 20px;
+    vertical-align: middle;
+}
+.pageTitle:before{
+    content: "\A";
+    border-style: solid;
+    border-width: 0px 30px 60px 0;
+    border-color: transparent #e0a43e transparent transparent;
+    position: absolute;
+    left: -30px;
+    top: 6px;
+}
+
+.pageTitle:after{
+    content: "\A";
+    border-style: solid;
+    border-width: 60px 30px 0px 0;
+    border-color: transparent #e0a43e transparent transparent;
+    position: absolute;
+    transform: rotate(180deg);
+    right: -30px;
+    top: 6px;
+}
+.memeTitle{
+    background-color: #e0a43e;
+    display: inline;
+    font-size: 30px;
+    position: relative;
+    color: #573700;
+}
+.memeTitle:after{
+    content: "\A";
+    border-style: solid;
+    border-width: 0px 19px 34px 0;
+    border-color: transparent #e0a43e transparent transparent;
+    position: absolute;
+    transform: rotate(180deg);
+    right: -19px;
+    top: 0px;
+}
+
+/* ABOUT PAGE */
+.developers{
+    display: flex;
+}
+.developer{
+    margin-left: 65px;
+    margin-right: 65px;
+}
+.devphoto{
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
+}
+
+footer{
+    color:dimgray;
+}
+
+.homeTitle{
+    display: flex;
+}
+
+.profileNAlikers{
+    background-color: #ebc94e;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.shares{
+    background-color: dimgray;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
 }

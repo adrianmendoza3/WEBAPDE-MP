@@ -109,6 +109,8 @@ router.get("/profileNA",(req, res, next) => {
 });
 
 router.get("/profile",(req, res, next) => {
+
+    console.log("HEREE AGAING")
     Post.getOne(req.query.id).then((posts)=>{
         res.render("profile.hbs", {
             posts
