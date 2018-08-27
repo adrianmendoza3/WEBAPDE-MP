@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee52442f-c0ed-4a7a-bd4f-b04c67185f8e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/collection-2--7132950811186905199.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/collection-2--7132950811186905199.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/index-3--7132950811186905199.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/index-3--7132950811186905199.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/journal/WiredTigerLog.0000000001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/mongod.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/sizeStorer.wt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1052491718">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="hbs" value="2" />
+          <entry key="js" value="48" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="JavaScript" value="48" />
+          <entry key="PLAIN_TEXT" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="hbs" value="13" />
+          <entry key="js" value="217" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="217" />
+          <entry key="PLAIN_TEXT" value="13" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="289" selection-start-line="289" selection-end-line="289" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>login</find>
+      <find>action</find>
+      <find>User.</find>
+      <find>module.</find>
+      <find>getOneByUname</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/post.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/tag.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/tag.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/server.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/app.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/user.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="39" />
+    <option name="width" value="996" />
+    <option name="height" value="1032" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535382374584" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee52442f-c0ed-4a7a-bd4f-b04c67185f8e" name="Default Changelist" comment="" />
+      <created>1535369263139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535369263139</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" order="0" />
+      <window_info id="UI Designer" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.14736842" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Run" order="5" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Palette&#9;" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+    </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.hbs" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/home.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="35" selection-start-line="24" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="130" column="59" selection-start-line="130" selection-start-column="53" selection-end-line="130" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/tag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/tag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="289" selection-start-line="289" selection-end-line="289" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

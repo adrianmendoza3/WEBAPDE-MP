@@ -1,8 +1,9 @@
 const mongoose = require("mongoose")
-const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId
+//const Schema = mongoose.Schema;
+//const ObjectId = Schema.ObjectId
 
-const PostSchema = new Schema({
+
+const PostSchema = mongoose.Schema({
     title: String,
     user: String,
     tags: [String],
@@ -13,11 +14,13 @@ const PostSchema = new Schema({
     sharedTo: [String]
 })
 
+delete mongoose.connection.models['post'];
 const Post = mongoose.model("post", PostSchema);
 
-//module.exports = {
-//    Post
-//}
+
+module.exports = {
+    Post
+}
 
 var a = {
     Post

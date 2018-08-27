@@ -24,6 +24,7 @@ const UserSchema = new Schema({
     
 })
 
+delete mongoose.connection.models['user'];
 const User = mongoose.model ("user", UserSchema);
 
 module.exports = {
@@ -58,17 +59,18 @@ exports.createNew = function(user){
 }
 
 //GET ONE USER BY USERNAME & PASSWORD
-exports.getOneByUnameAndPword = function(uname, pword){
+module.exports.getOneByUnameAndPword = function(uname, pword){
   return new Promise(function(resolve, reject){
     console.log ("-----model/user/getOneByUnameAndPword-----")
-
+    console.log(uname+"\n")
+    console.log(pword)
     User.findOne({
             username : uname,
             password : pword
     }).then((user)=>{
         if(user != null){
            console.log ("*GOT ONE USER!*")
-
+            resolve(user)
 //            console.log(user.username + ": " + user.password);
 //            req.session.username = user.username;
 //            console.log("uname sesh: "+req.session.username);
@@ -81,6 +83,7 @@ exports.getOneByUnameAndPword = function(uname, pword){
 //            console.log("cannot login")
         }
     }, (err)=>{
+        reject(err)
         console.log ("*USER DOES NOT EXIST!*")
 //        res.render("landing.hbs")
     })
@@ -95,10 +98,11 @@ exports.getOneByUnameAndPword = function(uname, pword){
   })
 }
 
+
 //GET ONE USER BY USERNAME
-exports.getOneByUname = function(uname){
+module.exports.getOneByUname = function(uname){
   return new Promise(function(resolve, reject){
-    console.log ("-----model/user/getOneByUnameAndPword-----")
+    console.log ("-----model/user/getOneByUname-----")
 
     User.findOne({
             username : uname
@@ -151,4 +155,5 @@ exports.updateAndPush = function(id, post){
     });
   })
 }
+
 

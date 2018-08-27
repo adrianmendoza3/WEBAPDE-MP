@@ -6,9 +6,10 @@ const path = require("path");
 const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 //const mongostore = require("connect-mongo")(session)
-const {Post} = require("./model/post.js")
-const {Tag} = require("./model/tag.js")
-const {User} = require("./model/user.js")
+
+//const {Post} = require("./model/post.js")
+//const {Tag} = require("./model/tag.js")
+//const {User} = require("./model/user.js")
 const crypto = require("crypto")
 
 mongoose.Promise = global.Promise

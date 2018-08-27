@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Post = require("../models/post")
+const Tag = require("../model/tag")
 const bodyparser = require("body-parser")
 const auth = require("../middlewares/auth")
 

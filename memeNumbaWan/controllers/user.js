@@ -1,8 +1,9 @@
 const express = require("express")
 const router = express.Router()
-const Post = require("../models/post")
+const User = require("../model/user")
 const bodyparser = require("body-parser")
 const auth = require("../middlewares/auth")
+const crypto = require("crypto")
 
 const app = express()
 
@@ -21,10 +22,10 @@ router.post("/login", (req, res) => { //controller/user
 
     console.log("encrypted pw:" +password);
 
-    User.getOneByUnameAndPword({
+    User.getOneByUnameAndPword(
         username,
         password
-    }).then((user)=>{
+    ).then((user)=>{
         if(user != null){
             console.log(user.username + ": " + user.password);
             req.session.username = user.username;
@@ -51,7 +52,7 @@ router.post("/register", urlencoder, (req, res) => { //user
     var description = req.body.regshortdescription;
 
     User.getOneByUname(
-        username : username
+        username
     ).then((user)=>{
         if(user == null){
             if(password == conpassword){

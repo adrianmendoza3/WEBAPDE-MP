@@ -7,6 +7,7 @@ const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 const Post = require("../model/post")
 const router = express.Router()
+const auth = require("../middlewares/auth")
 
 router.use("/post", require("./post"))
 router.use("/user", require("./user"))

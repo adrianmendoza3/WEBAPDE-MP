@@ -15,6 +15,7 @@ const TagSchema = mongoose.Schema({
     posts : [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
 })
 
+delete mongoose.connection.models['tag'];
 const Tag = mongoose.model ("tag", TagSchema)
 
 module.exports = {

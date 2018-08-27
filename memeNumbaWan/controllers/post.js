@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const Post = require("../models/post")
+const Post = require("../model/post")
 const bodyparser = require("body-parser")
 const auth = require("../middlewares/auth")
 
@@ -15,9 +15,7 @@ router.use(urlencoder)
 
 router.get("/redirectprofile", auth, (req, res, next) => { //post???
     console.log("GET /redirect profile");
-    Post.getAllFiltered({
-        req.session.username
-    }).then((posts)=>{
+    Post.getAllFiltered(req.session.username).then((posts)=>{
         res.render("profile.hbs", {
             posts : posts,
             user : req.session.username,
