@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Chesie's Profile</title>
+    <!--<title>Chesie's Profile</title>-->
       
     <script src="jquery-3.3.1.js"> </script>
       <script>
@@ -181,13 +181,7 @@
         <h1 class="mt-5"><br>{{user}}'s Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
-                    
-<!--
-                <form id= "deleteform" action ="postDelete" method = "post">
-                    <input id="deleteid" type="hidden" name="id">
-                </form>
--->
-                
+
                 <form id = "tagform" action="deleteTag" method="post">
                     <input id ="tagid" type = "hidden"  name = "deletetagid">
                 </form> 
@@ -198,15 +192,9 @@
                 
                 {{#each posts}}
                 <div class="mt-4 memedivprof" data-id="{{_id}}"> <!--memes and caption-->
-<!--                        <div class="card">-->
                     <div class="edit_delete" align="right">
   
-<!--
-                        <button class="btn btn-info btn-lg edit" data-id="{{_id}}"
-                        data-toggle="modal" data-target="#editModal">Edit</button>
-                        
-                        <button class="btn btn-info btn-lg delete" data-id="{{_id}}" data-toggle="modal" data-target="#deleteModal">Delete</button>
--->
+
 
                     </div>
                     <div class="card-body">
@@ -265,7 +253,7 @@
                 <h4><b>Username:</b></h4>
                 <p class="lead">{{user}}</p>
                 <h4><b>Description:</b> </h4>
-                <p class="lead">19 year old college girl who loves posting and sharing memes</p>
+                <p class="lead">{{description}}</p>
             </div>
         </div>
     </main>

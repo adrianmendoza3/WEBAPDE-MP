@@ -51,7 +51,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
       <h1 class="mt-5"><br>Upload a Meme<br></h1>
-      <form class="col-12 col-md-8" method="POST" action="upload" accept-charset="UTF-8">
+      <form class="col-12 col-md-8" method="POST" action="post/upload" accept-charset="UTF-8" enctype="multipart/form-data">
         <div class="form-group"> <!--for the title-->
             <label for="name">Title</label>
             <input class="form-control" placeholder="Enter Title" name="memetitle" type="text" value="" id="memetitle">
@@ -60,7 +60,7 @@
         <div class="input-group mb-3"><!--to upload picture-->
           
           <div class="custom-file">
-            <input type="file" class="custom-file-input" id="image">
+            <input type="file" name="img" class="custom-file-input" id="image">
             <label class="custom-file-label" for="image">Choose file</label>
           </div>
         </div>

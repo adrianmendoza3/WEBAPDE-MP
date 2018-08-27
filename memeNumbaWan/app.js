@@ -472,12 +472,12 @@ app.get("/home", (req, res) => { //??????DELETE THIS
 //     res.redirect("/");
 // //    res.render("index.hbs");
 // });
-
-app.get("/memeNA", (req, res) => { //????DELETE THIS
-    console.log("GET /memeNA");
-    
-    res.redirect("/redirectmeme");
-});
+//
+// app.get("/memeNA", (req, res) => { //????DELETE THIS
+//     console.log("GET /memeNA");
+//
+//     res.redirect("/redirectmeme");
+// });
 
 // app.get("/meme", (req, res) => { //post
 //     console.log("GET /meme");
@@ -493,17 +493,17 @@ app.get("/memeNA", (req, res) => { //????DELETE THIS
 //     })
 // });
 
-app.get("/tag", (req, res) => { //index or delete???
-    console.log("GET /tag");
-
-    res.render("tag.hbs");
-});
-
-app.get("/tagNA", (req, res) => { //index or delete???
-    console.log("GET /tagNA");
-
-    res.render("tagNA.hbs");
-});
+// app.get("/tag", (req, res) => { //index or delete???
+//     console.log("GET /tag");
+//
+//     res.render("tag.hbs");
+// });
+//
+// app.get("/tagNA", (req, res) => { //index or delete???
+//     console.log("GET /tagNA");
+//
+//     res.render("tagNA.hbs");
+// });
 
 //app.post("/postDelete", urlencoder, (req, res) => { //post
 //    console.log("POST /postDelete");

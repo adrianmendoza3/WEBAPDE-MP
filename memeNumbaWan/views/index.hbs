@@ -5,6 +5,25 @@
 
     <title>Meme Numba Wan</title>
 
+      <script src="jquery-3.3.1.js"> </script>
+      <script>
+          $(document).ready(function(){
+
+              $("div.memediv").click(function(){
+                  //get attr data id from the clicked button
+                  var id = $(this).attr("data-id")
+
+                  //place data id into input#deleteid
+                  $("input#memeid").val(id)
+
+                  //submit the form#deleteform
+                  $("form#memeform").submit()
+              })
+
+          })
+
+      </script>
+
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
 
@@ -149,20 +168,25 @@
     <main role="main" class="container-fluid feed">  
         <h1 class="mt-5"><br>All Memes</h1>
         <div class="row">
+
+            <form id = "memeform" action="memeNA" method="get">
+                <input id ="memeid" type = "hidden"  name = "id">
+            </form>
+
             {{#each posts}}
 
-            <div class="mb-4 memediv">
-                <div class ="memeContent">
-                <a href="memeNA" class ="aCaps"><div class="bigger" >
+            <div class="mb-4 memediv" data-id="{{_id}}">
+                <div class ="memeContent" data-id="{{_id}}">
+                <a class ="aCaps"><div class="bigger" >
                     {{title}}
-                </div></a> 
-                
-                <div class="memePic">
-                    <a href="memeNA"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                </div></a>
+
+                <div class="memePic" data-id="{{_id}}">
+                    <a><img src="/meme1.jpg" class = "imgthumb"/> </a>
                 </div>
                 Tags:
                 {{#each tags}}
-                    <a href="tagNA">{{this}}</a>,
+                    <a href="tagNA" name="tagName">{{this}}</a>,
                 {{/each}}
                 </div>
             </div>

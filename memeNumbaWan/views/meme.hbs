@@ -47,7 +47,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="login"> <!--bottom half of the popup-->
+          <form method="POST" action="user/login"> <!--bottom half of the popup-->
             <div class="modal-body"> <!--username, password, remember me-->
                   <div class="form-group row"> <!--username-->
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -92,7 +92,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="register"> <!--bottom half of pop up-->
+            <form method="POST" action="user/register"> <!--bottom half of pop up-->
                 <div class="modal-body"> <!--username, password, confirm password-->
                     <div class="form-group row"> <!--username-->
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -155,8 +155,9 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
-            <div class="col-12 col-md-7 memecontent">
-                <h1 class="mt-5"> <br>{{title}} HII IM TITLE</h1>
+        {{#each posts}}
+            <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
+                <h1 class="mt-5"> <br>{{title}} </h1>
                 <h6 align="right" class="type">Public</h6>
                 <img src="/meme1.jpg" />
                 <div>
@@ -165,10 +166,11 @@
                         <a href="tag">{{name}} TAG</a>
                     {{/each}}
                 </div>
-                <div>
+                <div data-id="{{_id}}">
                     <h5>Uploaded by:</h5>
-                    <a href="profile"><h5>{{post.user}}</h5></a>
+                    <a href="redirectprofile"><h5>{{user}}</h5></a>
                 </div>
+
                 <!-- will show only when user owns this meme-->
                 
                 <!-- will show only when user owns this meme-->
@@ -190,6 +192,8 @@
                     </div>
                 </div>                
             </div>
+
+        {{/each}}
         </div>
     </main>
 

@@ -7,6 +7,37 @@
 
     <title>Home</title>
 
+      <script src="jquery-3.3.1.js"> </script>
+      <script>
+          $(document).ready(function(){
+              $("button.tag").click(function(){
+
+                  //get attr data id from the clicked button
+                  var id = $(this).attr("data-id")
+                  alert(id)
+
+                  //place data id into input#
+                  $("input#viewid").val(id)
+
+                  //submit the form#
+                  $("form#addTagForm").submit()
+              })
+
+              $("div.memediv").click(function(){
+                  //get attr data id from the clicked button
+                  var id = $(this).attr("data-id")
+
+                  //place data id into input#deleteid
+                  $("input#memeid").val(id)
+
+                  //submit the form#deleteform
+                  $("form#memeform").submit()
+              })
+
+          })
+
+      </script>
+
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
       
@@ -131,7 +162,7 @@
               <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile">My Profile</a> <!--my profile button-->
+              <a class="nav-link" href="myprofile">My Profile</a> <!--my profile button-->
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -164,17 +195,21 @@
                 <div>WASSAP MGA PARE</div>
             </div>
 
+            <form id = "memeform" action="meme" method="get">
+                <input id ="memeid" type = "hidden"  name = "id">
+            </form>
+
             <div class="col-6"> <!--whole column 12-->
                 <h1 class="mt-5"><br>All Memes</h1>
                 {{#each posts}}
-                
+
                 <div class="mb-4 memediv" data-id="{{_id}}">
-                    <a href="meme" class ="aCaps"><div class="caption" >
+                    <a class ="aCaps"><div class="caption" >
                         {{title}}
                     </div></a> 
                     <br>
                     
-                    <a href="meme"><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                    <a><img src="/post/photo/{{id}}" class = "imgthumb"/> </a>
                     <br>
                     Tags:
                     {{#each tags}}

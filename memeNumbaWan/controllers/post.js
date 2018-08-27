@@ -102,91 +102,121 @@ router.get("/postEdit", urlencoder, (req, res) => { //post
 
 
 
-router.post("/upload", urlencoder, (req, res) => { //post
+//ADDED BY CHESIE: upload meme
+const multer = require("multer")
+const fs = require("fs")
+const path = require("path")
+const UPLOAD_PATH = path.resolve(__dirname, "uploads")
+const upload = multer({
+    dest: UPLOAD_PATH,
+    limits: {
+        fileSize : 10000000,
+        files : 2
+    }
+})
+
+router.post("/upload", upload.single("img"), urlencoder, (req, res) => { //post
     console.log("post /uploaded");
     console.log("uname sesh: "+req.session.username);
 
     var title ="", id, user ="", tags, likers, unlikers, time, privacy="false", sharedTo, tagID;
 
-    var x = new Post({
-        title, id, user, tags, likers, unlikers, time, privacy, sharedTo
-    })
 
-    x.save()
+    console.log("filename: "+ req.file.filename)
+    console.log("originalname: "+ req.file.originalname)
+    Post.createNew(title, user, tags, likers, unlikers, time, privacy, sharedTo, req.file.filename, req.file.originalname).then((post)=>{
+        var postID = post._id
+        console.log("Post ID: " +postID)
+    }).then(()=>{
+        title = req.body.memetitle;
+        user = req.session.username;
 
-    var postID = x._id
+        User.getOneByUname(
+            user
+        ).then((user)=>{
+            if(user != null){
+                console.log("USER: " + user)
+                id = user._id;
 
-    console.log("Post ID: " +postID)
-
-    title = req.body.memetitle;
-    user = req.session.username;
-
-    User.findOne({
-        username : user
-    }).then((user)=>{
-        if(user != null){
-            console.log("USER: " + user)
-            id = user._id;
-
-        }
-        else{
-            id = 0000;
-        }
-    })
+            }
+            else{
+                id = 0000;
+            }
+        }).then(()=>{
 //
-    tags = req.body.tags; //process csv
-//
+            tags = req.body.tags; //process csv
 
-    Tag.findOne({
-        name : tags
-    }).then((tag)=>{
-        if(tag != null){ //existing tag
+            Tag.getOne(
+                tags
+            ).then((tag)=>{
+                if(tag != null){ //existing tag
 
-            Tag.findOneAndUpdate({_id : tag._id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
-                if(err){
-                    console.log("Something wrong when updating tag!");
+                    Tag.updateAndPush(tag._id, postID)
+
+                    //            title, user, tagID, likers, unlikers, time, privacy, sharedTo, postID, filename, originalfilename
+                    updatePost(title, user, tag._id, likers, unlikers, time, privacy, sharedTo, postID,req.file.filename, req.file.originalname);
+
                 }
-                console.log(doc);
-            });
+                else{
+                    Tag.createNew(tags, postID).then((tag)=>{
+                        console.log("F: "+f)
+                        tagID = tag._id
+                    }).then(()=>{
+                        console.log("HIII BITCHESS")
+                        privacy = req.body.privacy;
 
-            updatePost(title, id, user, tag._id, likers, unlikers, time, privacy, sharedTo, postID);
+                        if(privacy=="private"){
+                            privacy = true;
+                        }
+                        else {
+                            privacy = false;
+                        }
 
-        }
-        else{
-            var f = new Tag({
-                name : tags,
-                postID : postID
-            })
+                        console.log("TAG ID = " + tagID);
 
-            f.save().then(()=>{
-                console.log("F: "+f)
-                tagID = f._id
-            }).then(()=>{
-                console.log("HIII BITCHESS")
-                 privacy = req.body.privacy;
-
-                if(privacy=="private"){
-                    privacy = true;
+                        //            title, user, tagID, likers, unlikers, time, privacy, sharedTo, postID, filename, originalfilename
+                        updatePost(title, user, tagID, likers, unlikers, time, privacy, sharedTo, postID, postID,req.file.filename, req.file.originalname);
+                        console.log("HIII AGAIN BITCHESS")
+                    }, (err)=>{
+                        console.log("ERROR: Somethings wrong")
+                    })
                 }
-                else {
-                    privacy = false;
-                }
-
-                console.log("TAG ID = " + tagID);
-
-                updatePost(title, id, user, tagID, likers, unlikers, time, privacy, sharedTo, postID);
-                console.log("HIII AGAIN BITCHESS")
+                console.log("IT SHOULD BE WORKING")
+                res.redirect("/")
             }, (err)=>{
-                console.log("ERROR: Somethings wrong")
+                console.log(err)
+                return null
             })
-        }
-        res.redirect("/")
-    }, (err)=>{
-        console.log(err)
-        return null
+//
+        })
     })
-
 });
 
+router.get("/photo/:id", (req, res)=>{
+    console.log(req.params.id)
+    console.log("HELP ME LORD")
+    Post.getOne(req.params.id).then((doc)=>{
+        fs.createReadStream(path.resolve(UPLOAD_PATH, doc.filename)).pipe(res)
+    }, (err)=>{
+        console.log(err)
+        res.sendStatus(404)
+    })
+})
 
+function updatePost(title, user, tagID, likers, unlikers, time, privacy, sharedTo, postID, filename, originalfilename){
+
+    let newPost = {
+        title, user, tags:tagID, likers, unlikers, time, privacy, sharedTo, filename, originalfilename
+    }
+
+    if(tagID != null){
+        Post.updateOneByID(postID, newPost)
+
+
+        User.updateAndPush(id, postID)
+    }
+    else{
+        console.log("No tag yet????")
+    }
+}
 module.exports = router

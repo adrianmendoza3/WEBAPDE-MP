@@ -59,6 +59,19 @@ module.exports.createNew = function(username, hashedpassword, description){
   })
 }
 
+
+module.exports.getOneByUID = function(id){
+
+    User.findOne({
+        _id: id
+    }).then((user)=>{
+        resolve(user)
+    }, (err)=>{
+        console.log ("*USER DOES NOT EXIST!*")
+
+    })
+}
+
 //GET ONE USER BY USERNAME & PASSWORD
 module.exports.getOneByUnameAndPword = function(uname, pword){
   return new Promise(function(resolve, reject){

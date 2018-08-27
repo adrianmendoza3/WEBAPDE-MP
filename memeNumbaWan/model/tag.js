@@ -27,26 +27,29 @@ var a = {
 }
 
 //CREATE NEW TAG
-module.exports.createNew = function(tag){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/tag/createNew-----")
+module.exports.createNew = function(name, postID){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/tag/createNew-----")
+        var t = new Tag({
+            name,
+            postID
+        })
 
-    var t = new Tag(tag)
-
-    t.save().then(()=>{
-      console.log ("*NEW POST CREATED!*")
+        t.save().then(()=>{
+            console.log ("NEW POST CREATED!")
 //        res.redirect("/redirectprofile")
-    }, (err)=>{
+        }, (err)=>{
 //        res.render("index.hbs")
-    })
+        })
 
 //    p.save().then((newPost)=>{
 //      resolve(newPost)
 //    }, (err)=>{
 //      reject(err)
 //    })
-  })
+    })
 }
+
 
 //GET ONE TAG
 module.exports.getOne = function(tagname){

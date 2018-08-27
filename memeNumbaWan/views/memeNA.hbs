@@ -5,7 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>90 percent of the time</title>
+
+      <script src="jquery-3.3.1.js"> </script>
+      <script>
+          $(document).ready(function() {
+
+
+          }
+      </script>
 
     <!-- Bootstrap core CSS -->
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
@@ -29,7 +36,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form method="POST" action="login">
+          <form method="POST" action="user/login">
             <div class="modal-body">
                   <div class="form-group row">
                       <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -73,7 +80,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form method="POST" action="register">
+            <form method="POST" action="user/register">
                 <div class="modal-body">
                     <div class="form-group row">
                         <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -146,20 +153,22 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
-            <div class="col-12 col-md-7 memecontent">
-                <h1 class="mt-5"><br>90 percent of the time , we hate you all the time ...</h1>
+        {{#each posts}}
+        <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
+                <h1 class="mt-5"><br>{{title}}</h1>
                 <h6 align="right" class="type">Public</h6>
                 <img src="/meme1.jpg" />
                 <div class="filler"></div>
                 <div>
-                        Tags:
-                    <a href="tagNA">World Cup</a>
-                    <a href="tagNA">i made dis</a>
+                    Tags:
+                    {{#each tags}}
+                        <a href="tag">{{name}} TAG</a>
+                    {{/each}}
                 </div>
                 <div class="filler"></div>
-                <div>
+                <div data-id="{{_id}}">
                     <h5>Uploaded by:</h5>
-                    <a href="profileNA"><h5>Chesie</h5></a>
+                    <a href="redirectprofile"><h5>{{user}}</h5></a>
                 </div>
                 <!-- will show only when user owns this meme-->
                 <div class="col-12 col-md-7">
@@ -173,6 +182,7 @@
                     </div>
                 </div>
             </div>
+        {{/each}}
         </div>
     </main>
 

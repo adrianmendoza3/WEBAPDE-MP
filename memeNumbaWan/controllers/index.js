@@ -6,6 +6,7 @@ const path = require("path");
 const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 const Post = require("../model/post")
+const User = require("../model/user")
 const router = express.Router()
 const auth = require("../middlewares/auth")
 
@@ -58,21 +59,41 @@ router.get("/uploadmeme", (req, res) => { //INDEX??? // upload to go to upload p
     res.render("uploadmeme.hbs");
 });
 
-router.get("/profile", (req, res) => { //index???
-    console.log("GET /profile");
-    // console.log("uname sesh: "+req.session.username);
+router.get("/myprofile", (req, res, next) => { //post???
+    console.log("GET /redirect profile");
+        var posters;
+    if(req.session.username != null){
+        Post.getAllFiltered(req.session.username).then((posts)=>{
+            posters = posts
+        }).then(()=>{
+            User.getOneByUname(req.session.username).then((user)=>{
+                res.render("profile.hbs", {
+                    posts : posters,
+                    user : req.session.username,
+                    description: user.description
 
-    res.redirect("/redirectprofile");
-});
+                });
+            }, (err)=>{
 
-router.get("/profileNA", (req, res) => { //?????DELETE THIS
-    console.log("GET /profileNA");
-
-    res.redirect("/redirectprofile");
+            })
+        }), (err)=>{
+            res.render("index.hbs")
+        }
+    }
 });
 
 router.get("/redirectprofile", (req, res, next) => { //post???
     console.log("GET /redirect profile");
+
+    console.log("UID" + req.query._id)
+
+    User.getOneByUID(
+        req.query._id
+    ).then((user)=>{
+        console.log("USERID IS BLANK" + user._id)
+    }, (err)=>{
+        console.log(err)
+    })
 
     if(req.session.username != null){
         Post.getAllFiltered(req.session.username).then((posts)=>{
@@ -88,7 +109,8 @@ router.get("/redirectprofile", (req, res, next) => { //post???
    else{
        Post.getAll().then((posts)=>{
            res.render("profileNA.hbs", {
-               posts : posts
+               posts : posts,
+               user : req.session.username
            });
        }, (err)=>{
            res.render("index.hbs")
@@ -98,45 +120,83 @@ router.get("/redirectprofile", (req, res, next) => { //post???
 });
 
 
-router.get("/meme", (req, res) => { //post
-    console.log("GET /meme");
-
-    Post.getOne({
-        _id: req.query.id
-    }).then((post)=>{
-        res.render("meme.hbs", {
-            post
+router.get("/memeNA", (req, res) => { //????DELETE THIS
+    console.log("GET /memeNA");
+    console.log(req.query.id)
+    Post.getOne(req.query.id).then((posts)=>{
+        console.log(posts)
+        res.render("memeNA.hbs", {
+            posts
         })
     }, (err)=>{
-      console.log("ANO NA")
+
     })
+
+
+    // res.redirect("/redirectmeme");
 });
 
-router.get("/redirectmeme", (req, res, next) => { //index???
-    console.log("GET /meme");
+router.get("/meme", (req, res) => { //post
 
+    Post.getOne(req.query.id).then((posts)=>{
+        res.render("meme.hbs", {
+            posts
+        })
+    }, (err)=>{
 
-
-   if(req.session.username != null){
-       Post.getAll().then((posts)=>{
-           res.render("meme.hbs", {
-               posts : posts
-           });
-       }, (err)=>{
-           res.render("index.hbs")
-       })
-   }
-   else {
-       Post.getAll().then((posts) => {
-           res.render("memeNA.hbs", {
-               posts: posts
-           });
-       }, (err) => {
-           res.render("index.hbs")
-       })
-   }
+    })
 
 });
+
+// router.get("/redirectmeme", (req, res, next) => { //index???
+//     console.log("GET /meme");
+//
+//
+//
+//    if(req.session.username != null){
+//        Post.getAll().then((posts)=>{
+//            res.render("meme.hbs", {
+//                posts : posts
+//            });
+//        }, (err)=>{
+//            res.render("index.hbs")
+//        })
+//    }
+//    else {
+//        Post.getAll().then((posts) => {
+//            res.render("memeNA.hbs", {
+//                posts: posts //pass username
+//            });
+//        }, (err) => {
+//            res.render("index.hbs")
+//        })
+//    }
+//
+// });
+
+
+//////// TO BE FIXED
+
+//delete post
+//edit post
+//delete tag
+
+
+
+
+router.get("/tag", (req, res) => { //index or delete???
+    console.log("GET /tag");
+
+    res.render("tag.hbs");
+});
+
+router.get("/tagNA", (req, res) => { //index or delete???
+    console.log("GET /tagNA");
+
+    res.render("tagNA.hbs");
+});
+
+//////
 
 router.get("/index", (req, res) => {
    console.log("GET /index");

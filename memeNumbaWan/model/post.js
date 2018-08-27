@@ -11,7 +11,9 @@ const PostSchema = mongoose.Schema({
     unlikers: [String],
     time: {type: Date, default: Date.now},
     privacy: Boolean,
-    sharedTo: [String]
+    sharedTo: [String],
+    filename : String,
+    originalfilename: String
 })
 
 delete mongoose.connection.models['post'];
@@ -27,20 +29,31 @@ var a = {
 }
 
 //CREATE NEW POST
-module.exports.createNew = function(post){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/post/createNew-----")
+module.exports.createNew = function(title, user, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/createNew-----")
 
-    var p = new Post(post)
+        var p = new Post({
+            title,
+            user,
+            tags,
+            likers,
+            unlikers,
+            time,
+            privacy,
+            sharedTo,
+            filename,
+            originalfilename
+        })
 
-    p.save().then((newPost)=>{
-      console.log ("*NEW POST CREATED!*")
+        p.save().then((newPost)=>{
+            console.log ("NEW POST CREATED!")
 
-      resolve(newPost)
-    }, (err)=>{
-      reject(err)
+            resolve(newPost)
+        }, (err)=>{
+            reject(err)
+        })
     })
-  })
 }
 
 //FIND ONE AND UPDATE BY ID ONLY
@@ -175,7 +188,7 @@ module.exports.getOne = function(id){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/getOne-----")
 
-    Post.findOne({
+    Post.find({
       _id: id
     }).then((post)=>{
        console.log ("*GOT ONE POST!*")
