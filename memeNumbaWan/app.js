@@ -479,19 +479,19 @@ app.get("/memeNA", (req, res) => { //????DELETE THIS
     res.redirect("/redirectmeme");
 });
 
-app.get("/meme", (req, res) => { //post
-    console.log("GET /meme");
-    
-    Post.findOne({
-        _id: req.query.id
-    }).then((post)=>{
-        res.render("meme.hbs", {
-            post
-        })
-    }, (err)=>{
-        
-    })
-});
+// app.get("/meme", (req, res) => { //post
+//     console.log("GET /meme");
+//
+//     Post.findOne({
+//         _id: req.query.id
+//     }).then((post)=>{
+//         res.render("meme.hbs", {
+//             post
+//         })
+//     }, (err)=>{
+//
+//     })
+// });
 
 app.get("/tag", (req, res) => { //index or delete???
     console.log("GET /tag");

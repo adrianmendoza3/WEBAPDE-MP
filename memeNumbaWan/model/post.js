@@ -147,7 +147,7 @@ module.exports.getAllFiltered = function(uname){
     console.log ("-----model/post/getAll-----")
 
     Post.find({
-        user : req.session.username
+        user : uname
     }).then((posts)=>{
        console.log ("*GOT ALL POSTS!*")
        resolve(posts)
@@ -179,7 +179,7 @@ module.exports.getOne = function(id){
       _id: id
     }).then((post)=>{
        console.log ("*GOT ONE POST!*")
-
+        resolve(post)
 //      res.render("meme.hbs", {
 //          post
 //      })

@@ -13,38 +13,6 @@ const urlencoder = bodyparser.urlencoded({
 router.use(urlencoder)
 // localhost:3000/post/
 
-router.get("/redirectprofile", auth, (req, res, next) => { //post???
-    console.log("GET /redirect profile");
-    Post.getAllFiltered(req.session.username).then((posts)=>{
-        res.render("profile.hbs", {
-            posts : posts,
-            user : req.session.username,
-            username : req.session.username
-
-        });
-    }, (err)=>{
-        res.render("landing.hbs")
-    })
-});
-
-router.get("/redirectmeme", auth, (req, res, next) => { //index???
-    console.log("GET /meme");
-
-    Post.getAll().then((posts)=>{
-        res.render("meme.hbs", {
-            posts : posts
-        });
-    }, (err)=>{
-        res.render("landing.hbs")
-    })
-});
-
-router.get("/profile", (req, res) => { //index???
-    console.log("GET /profile");
-    console.log("uname sesh: "+req.session.username);
-
-    res.redirect("/redirectprofile");
-});
 
 router.get("/profileNA", (req, res) => { //?????DELETE THIS
     console.log("GET /profileNA");
@@ -138,12 +106,7 @@ router.get("/postEdit", urlencoder, (req, res) => { //post
 });
 
 
-router.get("/uploadmeme", (req, res) => { //INDEX???
-    console.log("get /uploadmeme");
-    console.log("uname sesh: "+req.session.username);
 
-    res.render("uploadmeme.hbs");
-});
 
 router.post("/upload", urlencoder, (req, res) => { //post
     console.log("post /uploaded");
