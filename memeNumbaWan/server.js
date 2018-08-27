@@ -397,8 +397,8 @@ app.get("/profileNA", (req, res) => {
     res.redirect("/redirectprofile");
 });
 
-app.get("/landing", (req, res) => {
-    console.log("GET /landing");
+app.get("/index", (req, res) => {
+    console.log("GET /index");
     res.redirect("/");
 //    res.render("index.hbs");
 });

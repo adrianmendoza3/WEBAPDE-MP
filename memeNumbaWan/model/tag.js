@@ -37,7 +37,7 @@ module.exports.createNew = function(tag){
       console.log ("*NEW POST CREATED!*")
 //        res.redirect("/redirectprofile")
     }, (err)=>{
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
     })
 
 //    p.save().then((newPost)=>{

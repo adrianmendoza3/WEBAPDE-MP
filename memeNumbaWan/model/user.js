@@ -48,7 +48,7 @@ module.exports.createNew = function(username, hashedpassword, description){
 //        res.redirect("/redirectprofile")
     }, (err)=>{
       console.log ("*NEW USER NOT CREATED!*")
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
     })
 
 //    p.save().then((newPost)=>{
@@ -86,7 +86,7 @@ module.exports.getOneByUnameAndPword = function(uname, pword){
         }
     }, (err)=>{
         console.log ("*USER DOES NOT EXIST!*")
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
     })
 
 // SAMPLE:
@@ -124,7 +124,7 @@ module.exports.getOneByUname = function(uname){
         }
     }, (err)=>{
         console.log ("*USER DOES NOT EXIST!*")
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
     })
 
 // SAMPLE:

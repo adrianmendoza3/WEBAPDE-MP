@@ -89,16 +89,16 @@ app.use(session({ //controller/index
 //                posts : posts,
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //        })
 //    }
 //    else{
 //        Post.find().then((posts)=>{
-//            res.render("landing.hbs", {
+//            res.render("index.hbs", {
 //                posts : posts
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //        })
 //
 //    }
@@ -130,7 +130,7 @@ app.use(session({ //controller/index
 //            console.log("cannot login")
 //        }
 //    }, (err)=>{
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
 //    })
 //
 //
@@ -150,7 +150,7 @@ app.use(session({ //controller/index
 //
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //        })
 //    }
 //    else{
@@ -159,7 +159,7 @@ app.use(session({ //controller/index
 //                posts : posts
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //    })
 //
 //    }
@@ -174,7 +174,7 @@ app.use(session({ //controller/index
 //                posts : posts
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //        })
 //    }
 //    else{
@@ -183,7 +183,7 @@ app.use(session({ //controller/index
 //                posts : posts
 //            });
 //        }, (err)=>{
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //    })
 //
 //    }
@@ -217,7 +217,7 @@ app.use(session({ //controller/index
 //
 //
 //            }, (err)=>{
-//                res.render("landing.hbs")
+//                res.render("index.hbs")
 //            })
 //
 //        }
@@ -277,13 +277,13 @@ app.use(session({ //controller/index
 //                res.redirect("/redirectprofile")
 //            }, (err)=>{
 //                console.log("ERROR: Somethings wrong")
-//                res.render("landing.hbs")
+//                res.render("index.hbs")
 //            })
 //
 ////            Tag.update({_id : f._id}, { $push: { postID: postID } })
 //        }
 //    }, (err)=>{
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
 //    })
 //    //////////////////////////////////////
 //
@@ -318,7 +318,7 @@ app.use(session({ //controller/index
 //                    res.redirect("/")
 //                }, (err)=>{
 //                    console.log("ERROR: Somethings wrong")
-//                    res.render("landing.hbs")
+//                    res.render("index.hbs")
 //                })
 //
 //                req.session.username = username
@@ -326,16 +326,16 @@ app.use(session({ //controller/index
 //            else{
 //                // not same password
 //                console.log("ERROR: Not same password")
-//                res.render("landing.hbs")
+//                res.render("index.hbs")
 //            }
 //        }
 //        else{
 //            console.log("ERROR: Username taken")
-//            res.render("landing.hbs")
+//            res.render("index.hbs")
 //            // username exists
 //        }
 //    }, (err)=>{
-//        res.render("landing.hbs")
+//        res.render("index.hbs")
 //    })
 //});
 
@@ -352,10 +352,10 @@ app.use(session({ //controller/index
 //    res.redirect("/redirectprofile");
 //});
 
-//app.get("/landing", (req, res) => {
-//    console.log("GET /landing");
+//app.get("/index", (req, res) => {
+//    console.log("GET /index");
 //    res.redirect("/");
-////    res.render("landing.hbs");
+////    res.render("index.hbs");
 //});
 
 app.get("/home", (req, res) => { //??????DELETE THIS
@@ -457,21 +457,21 @@ app.get("/home", (req, res) => { //??????DELETE THIS
 //    })
 //
 //});
-
-app.get("/logout", (req, res) => { //user or index?
-    console.log("GET /logout");
-    
-    req.session.destroy((err)=> {
-        if(err){
-            console.log(err)
-        } else {
-            console.log("Destroyed sesh")
-        }
-        
-    })
-    res.redirect("/");
-//    res.render("landing.hbs");
-});
+//
+// app.get("/logout", (req, res) => { //user or index?
+//     console.log("GET /logout");
+//
+//     req.session.destroy((err)=> {
+//         if(err){
+//             console.log(err)
+//         } else {
+//             console.log("Destroyed sesh")
+//         }
+//
+//     })
+//     res.redirect("/");
+// //    res.render("index.hbs");
+// });
 
 app.get("/memeNA", (req, res) => { //????DELETE THIS
     console.log("GET /memeNA");

@@ -39,7 +39,7 @@ router.get("/search", (req, res) => { //index???
                     res.render("tagNA.hbs")
                 }
             }, (err)=>{
-                res.render("landing.hbs")
+                res.render("index.hbs")
             })
 
         }
@@ -85,7 +85,7 @@ router.post("/addTag", (req, res) => { //tag
             Tag.createNew(f)
         }
     }, (err)=>{
-        res.render("landing.hbs")
+        res.render("index.hbs")
     })
 });
 

@@ -129,7 +129,7 @@ module.exports.getAll = function(){
        console.log ("*DID NOT GET ALL POSTS!*")
        reject(err)
 
-//      res.render("landing.hbs")
+//      res.render("index.hbs")
     })
 
 // SAMPLE:
@@ -158,7 +158,7 @@ module.exports.getAllFiltered = function(uname){
        console.log ("*DID NOT GET ALL POSTS!*")
        reject(err)
 
-//      res.render("landing.hbs")
+//      res.render("index.hbs")
     })
 
 // SAMPLE:

@@ -14,12 +14,6 @@ router.use(urlencoder)
 // localhost:3000/post/
 
 
-router.get("/profileNA", (req, res) => { //?????DELETE THIS
-    console.log("GET /profileNA");
-
-    res.redirect("/redirectprofile");
-});
-
 router.get("/postDelete", urlencoder, (req, res) => { //post
     console.log("POST /postDelete");
 
