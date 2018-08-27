@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f84cd329-97fb-445c-b7c3-6af1e0b1c1e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/Post.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/User.js" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1501439189">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="13" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="1" />
+          <entry key="hbs" value="60" />
+          <entry key="html" value="2" />
+          <entry key="js" value="12" />
+          <entry key="json" value="9" />
+          <entry key="scss" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="2" />
+          <entry key="Handlebars/Mustache" value="60" />
+          <entry key="JSON" value="9" />
+          <entry key="JavaScript" value="12" />
+          <entry key="SCSS" value="2" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="hbs" value="336" />
+          <entry key="js" value="587" />
+          <entry key="txt" value="332" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Handlebars/Mustache" value="336" />
+          <entry key="JavaScript" value="587" />
+          <entry key="PLAIN_TEXT" value="332" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>profile</find>
+      <find>href</find>
+      <find>action</find>
+      <find>css</find>
+      <find>img</find>
+      <find>tag</find>
+      <find>logout</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/views/server.js" />
+        <option value="$PROJECT_DIR$/.idea/server.js" />
+        <option value="$PROJECT_DIR$/views/landing.hbs" />
+        <option value="$PROJECT_DIR$/views/home.hbs" />
+        <option value="$PROJECT_DIR$/views/memeNA.hbs" />
+        <option value="$PROJECT_DIR$/views/profileNA.hbs" />
+        <option value="$PROJECT_DIR$/views/tagNA.hbs" />
+        <option value="$PROJECT_DIR$/views/uploadmeme.hbs" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/views/profile.hbs" />
+        <option value="$PROJECT_DIR$/views/meme.hbs" />
+        <option value="$PROJECT_DIR$/views/tag.hbs" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/Post.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/User.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/server.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/memeNumbaWan/node_modules" />
+    <handled-path value="$PROJECT_DIR$/memeNumbaWan/views/node_modules" />
+    <handled-path value="$PROJECT_DIR$/mongodbcode/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/memeNumbaWan/package.json" />
+      <path value="$PROJECT_DIR$/memeNumbaWan/views/package.json" />
+      <path value="$PROJECT_DIR$/mongodbcode/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="797" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534755732282" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="tag1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEBAPDE-MP/views/tag1.html">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.tag1.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f84cd329-97fb-445c-b7c3-6af1e0b1c1e5" name="Default Changelist" comment="" />
+      <created>1532712236048</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532712236048</updated>
+      <workItem from="1533052955167" duration="7318000" />
+      <workItem from="1533111241191" duration="205000" />
+      <workItem from="1533653970007" duration="61000" />
+      <workItem from="1533715538913" duration="417000" />
+      <workItem from="1533754860324" duration="210000" />
+      <workItem from="1533761934813" duration="51000" />
+      <workItem from="1534392612737" duration="384000" />
+      <workItem from="1534567329933" duration="223000" />
+      <workItem from="1534755587841" duration="289000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added working server">
+      <created>1532714475363</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532714475363</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added working server">
+      <created>1532714557635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532714557635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Made landing = hbs">
+      <created>1532715241584</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532715241585</updated>
+    </task>
+    <task id="LOCAL-00004" summary="All files accessible through server rendering">
+      <created>1533056681771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1533056681771</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed Images">
+      <created>1533058027267</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1533058027267</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added models for db">
+      <created>1533060768694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533060768695</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added models for db">
+      <created>1533060864121</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1533060864121</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed some bugs">
+      <created>1533654008752</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1533654008752</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixed delete and edit">
+      <created>1533715654524</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1533715654524</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added function">
+      <created>1533754892725</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1533754892725</updated>
+    </task>
+    <task id="LOCAL-00011" summary="PHASE 2 LAST FILE">
+      <created>1533761969659</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1533761969660</updated>
+    </task>
+    <task id="LOCAL-00012" summary="MVC Start">
+      <created>1534755701442</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1534755701442</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="9158000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.32907802" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added working server" />
+    <MESSAGE value="Made landing = hbs" />
+    <MESSAGE value="All files accessible through server rendering" />
+    <MESSAGE value="Fixed Images" />
+    <MESSAGE value="Added models for db" />
+    <MESSAGE value="Fixed some bugs" />
+    <MESSAGE value="Fixed delete and edit" />
+    <MESSAGE value="Added function" />
+    <MESSAGE value="PHASE 2 LAST FILE" />
+    <MESSAGE value="MVC Start" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVC Start" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/views/server.js" />
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/package-lock.json" />
+    <entry file="file://$PROJECT_DIR$/css/app.css" />
+    <entry file="file://$PROJECT_DIR$/package.json" />
+    <entry file="file://$PROJECT_DIR$/views/package.json" />
+    <entry file="file://$PROJECT_DIR$/views/main.scss" />
+    <entry file="file://$PROJECT_DIR$/views/landing.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/memeNA.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/profileNA.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/tagNA.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/uploadmeme.hbs" />
+    <entry file="file://$PROJECT_DIR$/server.js" />
+    <entry file="file://$PROJECT_DIR$/views/profile.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/home.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/meme.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/tag.hbs" />
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
