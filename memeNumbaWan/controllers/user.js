@@ -22,10 +22,10 @@ router.post("/login", (req, res) => { //controller/user
 
     console.log("encrypted pw:" +password);
 
-    User.getOneByUnameAndPword({
+    User.getOneByUnameAndPword(
         username,
         password
-    }).then((user)=>{
+    ).then((user)=>{
         if(user != null){
             console.log(user.username + ": " + user.password);
             req.session.username = user.username;
