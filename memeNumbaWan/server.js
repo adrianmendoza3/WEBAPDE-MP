@@ -326,53 +326,53 @@ app.post("/addTag", urlencoder, (req, res) => {
     
 //    res.redirect("/redirectmeme")
 });
-
-app.post("/register", urlencoder, (req, res) => {
-    console.log("POST /register");
-    
-    var username = req.body.regusername;
-    var name = req.body.regname;
-    var password = req.body.regpassword;
-    var conpassword = req.body.regconfirmpassword;
-    var description = req.body.regshortdescription;
-    
-    User.findOne({
-        username : username
-    }).then((user)=>{
-        if(user == null){
-            if(password == conpassword){
-                var hashedpassword = encrypt(password);
-                
-                var f = new User({
-                    username, name, password: hashedpassword, description
-                })
-
-                f.save().then(()=>{
-                    //things were correct
-                    console.log("UName:" + username + " Name:" + name + " Password:" + password + " Description:" + description)
-                    res.redirect("/")
-                }, (err)=>{
-                    console.log("ERROR: Somethings wrong")
-                    res.render("index.hbs")
-                })
-                
-                req.session.username = username
-            }
-            else{
-                // not same password
-                console.log("ERROR: Not same password")
-                res.render("index.hbs")
-            }
-        }
-        else{
-            console.log("ERROR: Username taken")
-            res.render("index.hbs")
-            // username exists
-        }
-    }, (err)=>{
-        res.render("index.hbs")
-    })
-});
+//
+// app.post("/register", urlencoder, (req, res) => {
+//     console.log("POST /register");
+//
+//     var username = req.body.regusername;
+//     var name = req.body.regname;
+//     var password = req.body.regpassword;
+//     var conpassword = req.body.regconfirmpassword;
+//     var description = req.body.regshortdescription;
+//
+//     User.findOne({
+//         username : username
+//     }).then((user)=>{
+//         if(user == null){
+//             if(password == conpassword){
+//                 var hashedpassword = encrypt(password);
+//
+//                 var f = new User({
+//                     username, name, password: hashedpassword, description
+//                 })
+//
+//                 f.save().then(()=>{
+//                     //things were correct
+//                     console.log("UName:" + username + " Name:" + name + " Password:" + password + " Description:" + description)
+//                     res.redirect("/")
+//                 }, (err)=>{
+//                     console.log("ERROR: Somethings wrong")
+//                     res.render("index.hbs")
+//                 })
+//
+//                 req.session.username = username
+//             }
+//             else{
+//                 // not same password
+//                 console.log("ERROR: Not same password")
+//                 res.render("index.hbs")
+//             }
+//         }
+//         else{
+//             console.log("ERROR: Username taken")
+//             res.render("index.hbs")
+//             // username exists
+//         }
+//     }, (err)=>{
+//         res.render("index.hbs")
+//     })
+// });
 
 app.get("/profile", (req, res) => {
     console.log("GET /profile");

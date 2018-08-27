@@ -10,8 +10,19 @@
       <script>
           $(document).ready(function() {
 
+              $("button.userclickhere").click(function(){
+                  //get attr data id from the clicked button
+                  // var id = $(this).attr("data-id")
 
-          }
+                  var name = $(this).attr("name")
+
+                  //place data id into input#deleteid
+                  $("input#username").val(name)
+
+                  //submit the form#deleteform
+                  $("form#userform").submit()
+              })
+          })
       </script>
 
     <!-- Bootstrap core CSS -->
@@ -153,6 +164,11 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
+
+            <form id = "userform" action="profileNA" method="get">
+                <input id="username" type = "hidden"  name = "id">
+            </form>
+
         {{#each posts}}
         <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
                 <h1 class="mt-5"><br>{{title}}</h1>
@@ -168,7 +184,8 @@
                 <div class="filler"></div>
                 <div data-id="{{_id}}">
                     <h5>Uploaded by:</h5>
-                    <a href="redirectprofile"><h5>{{user}}</h5></a>
+                    <button class="userclickhere" name="{{user}}">{{user}}</button>
+                </div>
                 </div>
                 <!-- will show only when user owns this meme-->
                 <div class="col-12 col-md-7">

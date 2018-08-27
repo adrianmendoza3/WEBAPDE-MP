@@ -127,6 +127,34 @@ module.exports.updateAndPush = function(id, tag){
   })
 }
 
+// get all by tag id
+module.exports.getAllByTagID = function(id){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/getAll-----")
+
+        Post.find({tags: id}).then((posts)=>{
+            // console.log ("*GOT ALL POSTS!*")
+            console.log(posts)
+            resolve(posts)
+//      res.render("home.hbs", {
+//        posts : posts,
+//      });
+        }, (err)=>{
+            console.log ("*DID NOT GET ALL POSTS!*")
+            reject(err)
+
+//      res.render("index.hbs")
+        })
+
+// SAMPLE:
+//    Post.find().then((posts)=>{
+//      resolve(posts)
+//    }, (err)=>{
+//      reject(err)
+//    })
+    })
+}
+
 //GET ALL POSTS
 module.exports.getAll = function(){
   return new Promise(function(resolve, reject){

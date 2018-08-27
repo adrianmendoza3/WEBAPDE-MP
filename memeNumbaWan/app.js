@@ -40,34 +40,34 @@ app.use(express.static(__dirname+"/public"))
 //  return crypto.createHash("md5").update(text).digest("hex")
 //}
 
-function updatePost(title, id, user, tagID, likers, unlikers, time, privacy, sharedTo, postID){ //post
-    
-    let newPost = {
-        title, uid:id, user, tags:tagID, likers, unlikers, time, privacy, sharedTo
-    }
-
-    if(tagID != null){
-        Post.findOneAndUpdate({
-            _id : postID
-        }, newPost).then(()=>{
-            
-            console.log(newPost)
-        }, (err)=>{
-            console.log(err)         
-        })
-        
-        
-        User.findOneAndUpdate({_id : id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
-            if(err){
-                console.log("Something wrong when updating data!");
-            }
-            console.log(doc);
-        });
-    }  
-    else{
-        console.log("No tag yet????")
-    }
-}
+// function updatePost(title, id, user, tagID, likers, unlikers, time, privacy, sharedTo, postID){ //post
+//
+//     let newPost = {
+//         title, uid:id, user, tags:tagID, likers, unlikers, time, privacy, sharedTo
+//     }
+//
+//     if(tagID != null){
+//         Post.findOneAndUpdate({
+//             _id : postID
+//         }, newPost).then(()=>{
+//
+//             console.log(newPost)
+//         }, (err)=>{
+//             console.log(err)
+//         })
+//
+//
+//         User.findOneAndUpdate({_id : id}, {$push: { postID : postID }}, {new: true}, function(err, doc){
+//             if(err){
+//                 console.log("Something wrong when updating data!");
+//             }
+//             console.log(doc);
+//         });
+//     }
+//     else{
+//         console.log("No tag yet????")
+//     }
+// }
 
 app.use(session({ //controller/index
     secret: "super secret",

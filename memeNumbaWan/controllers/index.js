@@ -7,6 +7,7 @@ const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 const Post = require("../model/post")
 const User = require("../model/user")
+const Tag = require("../model/tag")
 const router = express.Router()
 const auth = require("../middlewares/auth")
 
@@ -82,6 +83,43 @@ router.get("/myprofile", (req, res, next) => { //post???
     }
 });
 
+router.get("/profileNA",(req, res, next) => {
+
+    // console.log(req.query.name)
+    var userNAME = req.query.id
+    console.log("USERNAME = " + userNAME)
+    var postSets
+    Post.getAllFiltered(userNAME).then((posts)=> {
+        postSets = posts
+    }).then(()=>{
+
+        User.getOneByUname(userNAME).then((users)=> {
+            if (users != null) {
+                console.log(users)
+                res.render("profileNA.hbs", {
+                    posts: postSets,
+                    username: userNAME,
+                    description: users.description
+                })
+            }
+        })
+    }, (err)=>{
+
+    })
+});
+
+router.get("/profile",(req, res, next) => {
+    Post.getOne(req.query.id).then((posts)=>{
+        res.render("profile.hbs", {
+            posts
+        })
+    }, (err)=>{
+
+    })
+});
+
+
+
 router.get("/redirectprofile", (req, res, next) => { //post???
     console.log("GET /redirect profile");
 
@@ -124,7 +162,7 @@ router.get("/memeNA", (req, res) => { //????DELETE THIS
     console.log("GET /memeNA");
     console.log(req.query.id)
     Post.getOne(req.query.id).then((posts)=>{
-        console.log(posts)
+        // console.log(posts)
         res.render("memeNA.hbs", {
             posts
         })
@@ -148,41 +186,44 @@ router.get("/meme", (req, res) => { //post
 
 });
 
-// router.get("/redirectmeme", (req, res, next) => { //index???
-//     console.log("GET /meme");
-//
-//
-//
-//    if(req.session.username != null){
-//        Post.getAll().then((posts)=>{
-//            res.render("meme.hbs", {
-//                posts : posts
-//            });
-//        }, (err)=>{
-//            res.render("index.hbs")
-//        })
-//    }
-//    else {
-//        Post.getAll().then((posts) => {
-//            res.render("memeNA.hbs", {
-//                posts: posts //pass username
-//            });
-//        }, (err) => {
-//            res.render("index.hbs")
-//        })
-//    }
-//
-// });
 
+router.get("/search", (req, res) => { //index???
+    console.log("search input: "+req.query.searchinput)
 
-//////// TO BE FIXED
+    var input = req.query.searchinput;
+    var tagID;
 
-//delete post
-//edit post
-//delete tag
+    Tag.getAll(
+        input
+    ).then((tag)=>{
+        if(tag != null){
+            console.log("Tag: " + tag)
+            tagID = tag._id
 
+            Post.getAllByTagID(
+                tag._id
+            ).then((posts)=>{
+                if(req.session.username != null){
+                    res.render("tag.hbs", {
+                        name : tag.name,
+                        posts : posts
+                    });
+                }
+                else{
+                    res.render("tagNA.hbs", {
+                        posts: posts
+                    })
+                }
+            }, (err)=>{
+                res.render("index.hbs")
+            })
 
-
+        }
+        else{
+            res.redirect("/")
+        }
+    })
+});
 
 router.get("/tag", (req, res) => { //index or delete???
     console.log("GET /tag");

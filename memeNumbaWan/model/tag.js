@@ -51,6 +51,35 @@ module.exports.createNew = function(name, postID){
 }
 
 
+//GET Multiple
+module.exports.getAll = function(tagname){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/tag/getOne-----")
+
+        Tag.find({
+            name: tagname
+        }).then((tag)=>{
+            console.log ("*GOT ONE TAG!*")
+            resolve(tag)
+//      res.render("meme.hbs", {
+//          post
+//      })
+        }, (err)=>{
+            console.log ("*TAG DOES NOT EXIST!*")
+
+            reject(err)
+        })
+
+// SAMPLE:
+//    Post.findOne({_id:id}).then((post)=>{
+//      console.log(post)
+//      resolve(post)
+//    }, (err)=>{
+//      reject(err)
+//    })
+    })
+}
+
 //GET ONE TAG
 module.exports.getOne = function(tagname){
   return new Promise(function(resolve, reject){
@@ -60,7 +89,7 @@ module.exports.getOne = function(tagname){
       name: tagname
     }).then((tag)=>{
        console.log ("*GOT ONE TAG!*")
-
+        resolve(tag)
 //      res.render("meme.hbs", {
 //          post
 //      })

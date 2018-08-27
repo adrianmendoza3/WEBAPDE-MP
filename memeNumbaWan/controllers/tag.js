@@ -13,42 +13,6 @@ const urlencoder = bodyparser.urlencoded({
 router.use(urlencoder)
 // localhost:3000/post/
 
-router.get("/search", (req, res) => { //index???
-    console.log("search input: "+req.query.searchinput)
-
-    var input = req.query.searchinput;
-    var tagID;
-
-     Tag.getOne({
-        input
-     }).then((tag)=>{
-        if(tag != null){
-            console.log("Tag: " + tag)
-            tagID = tag._id
-
-            Post.find({
-                tags : tag._id
-            }).then((posts)=>{
-                if(req.session.username != null){
-                    res.render("tag.hbs", {
-                    name : tag.name,
-                    posts : posts
-                    });
-                }
-                else{
-                    res.render("tagNA.hbs")
-                }
-            }, (err)=>{
-                res.render("index.hbs")
-            })
-
-        }
-        else{
-            res.redirect("/")
-        }
-     })
-});
-
 router.post("/deleteTag", (req, res) => { //tag
     console.log("Deleting tag with id of: " + req.body.deletetagid)
 });

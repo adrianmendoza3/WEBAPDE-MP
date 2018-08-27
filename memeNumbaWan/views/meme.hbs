@@ -21,6 +21,18 @@
                 //submit the form#
                 $("form#addTagForm").submit()
             })
+
+
+            $("button.userclickhere").click(function(){
+                //get attr data id from the clicked button
+                var id = $(this).attr("data-id")
+
+                //place data id into input#deleteid
+                $("input#userid").val(id)
+
+                //submit the form#deleteform
+                $("form#userform").submit()
+            })
         })
           
     </script>
@@ -155,6 +167,11 @@
     <!-- Begin page content -->
     <main role="main" class="container">
         <div class="row">
+
+            <form id = "userform" action="profile" method="get">
+                <input id ="userid" type = "hidden"  name = "id">
+            </form>
+
         {{#each posts}}
             <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
                 <h1 class="mt-5"> <br>{{title}} </h1>
@@ -168,7 +185,7 @@
                 </div>
                 <div data-id="{{_id}}">
                     <h5>Uploaded by:</h5>
-                    <a href="redirectprofile"><h5>{{user}}</h5></a>
+                    <button class="userclickhere" data-id=""{{_id}}"><h5>{{user}}</h5></button>
                 </div>
 
                 <!-- will show only when user owns this meme-->

@@ -144,18 +144,20 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="mt-5"><br>Chesie's Profile</h1> <!--name of user-->
+        <h1 class="mt-5"><br>{{username}}'s Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
+
+                {{#each posts}}
                     <div class="mt-4 memedivprof">
                         <div class="col-12 col-md-13 card-body">
-                        <a href="memeNA"><div class = "biggerprof">90 percent of the time , we hate you all the time ...</div></a>
+                        <a href="memeNA"><div class = "biggerprof">{{title}}</div></a>
                         <a href="memeNA"><img src="/meme1.jpg" class = "imgprof"/></a>
                         <div class="filler"></div>
                         <div>
-                            Tags:
-                            <a href="tagNA">World Cup</a>,
-                            <a href="tagNA">i made dis</a>
+                            {{#each tags}}
+                                <a href="tag">{{this}}TAG</a>,
+                            {{/each}}
                         </div>
                             <h6>12 shares</h6>
                             <br>
@@ -167,15 +169,16 @@
                         </div>
                     </div>
 
+                {{/each}}
                     
 
             </div>
             <div class="col-12 offset-md-1 col-md-4 info"> <!--user information part-->
                 <br>
                 <h4><b>Username:</b></h4>
-                <p class="lead">{{user}}</p>
+                <p class="lead">{{username}}</p>
                 <h4><b>Description:</b> </h4>
-                <p class="lead">19 year old college girl who loves posting and sharing memes</p>
+                <p class="lead">{{description}}</p>
             </div>
         </div>
     </main>
