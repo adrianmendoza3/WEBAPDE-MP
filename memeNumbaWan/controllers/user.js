@@ -55,16 +55,25 @@ router.post("/register", urlencoder, (req, res) => { //user
         username
     ).then((user)=>{
         if(user == null){
+            console.log("HEREEE")
             if(password == conpassword){
                 var hashedpassword = encrypt(password);
 
-                var f = new User({
-                    username, name, password: hashedpassword, description
+                console.log("create?")
+                // var f = new user({
+                //     username, password: hashedpassword, description
+                // })
+                User.createNew(
+                    username,
+                    hashedpassword,
+                    description
+                ).then((user)=>{
+                    console.log("created")
+                    console.log(user)
+                    req.session.username = username
+                    res.redirect("/")
                 })
 
-                User.createNew(f)
-
-                req.session.username = username
             }
             else{
                 // not same password

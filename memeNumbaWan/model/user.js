@@ -36,14 +36,15 @@ var a = {
 }
 
 //CREATE NEW USER
-exports.createNew = function(user){
+module.exports.createNew = function(username, hashedpassword, description){
   return new Promise(function(resolve, reject){
     console.log ("-----model/user/createNew-----")
 
-    var u = new User(user)
+    var u = new User({username, password:hashedpassword, description})
 
-    u.save().then(()=>{
+    u.save().then((user)=>{
       console.log ("*NEW USER CREATED!*")
+        resolve(user)
 //        res.redirect("/redirectprofile")
     }, (err)=>{
       console.log ("*NEW USER NOT CREATED!*")
@@ -69,7 +70,7 @@ module.exports.getOneByUnameAndPword = function(uname, pword){
     }).then((user)=>{
         if(user != null){
            console.log ("*GOT ONE USER!*")
-
+                resolve(user)
 //            console.log(user.username + ": " + user.password);
 //            req.session.username = user.username;
 //            console.log("uname sesh: "+req.session.username);
@@ -100,14 +101,14 @@ module.exports.getOneByUnameAndPword = function(uname, pword){
 //GET ONE USER BY USERNAME
 module.exports.getOneByUname = function(uname){
   return new Promise(function(resolve, reject){
-    console.log ("-----model/user/getOneByUnameAndPword-----")
+    console.log ("-----model/user/getOneByUname-----")
 
     User.findOne({
             username : uname
     }).then((user)=>{
         if(user != null){
            console.log ("*GOT ONE USER!*")
-
+            resolve(user)
 //            console.log(user.username + ": " + user.password);
 //            req.session.username = user.username;
 //            console.log("uname sesh: "+req.session.username);
@@ -115,7 +116,7 @@ module.exports.getOneByUname = function(uname){
         }
         else{
            console.log ("*USER DOES NOT EXIST!*")
-
+            resolve(user)
 //            res.redirect("/")
 //            console.log("cannot login")
         }

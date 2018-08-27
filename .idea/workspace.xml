@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84cd329-97fb-445c-b7c3-6af1e0b1c1e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/Post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/_mdb_catalog.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/_mdb_catalog.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/collection-0--7040887334409668069.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/collection-0--7040887334409668069.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/collection-2--8417598552067664812.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/collection-2--8417598552067664812.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/collection-4--8417598552067664812.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/collection-4--8417598552067664812.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/index-1--7040887334409668069.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/index-1--7040887334409668069.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/index-3--8417598552067664812.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/index-3--8417598552067664812.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/index-5--8417598552067664812.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/index-5--8417598552067664812.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/index-6--8417598552067664812.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/index-6--8417598552067664812.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/journal/WiredTigerLog.0000000014" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/mongod.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodbdata/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/sizeStorer.wt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +48,7 @@
           <entry key="css" value="1" />
           <entry key="hbs" value="60" />
           <entry key="html" value="2" />
-          <entry key="js" value="12" />
+          <entry key="js" value="14" />
           <entry key="json" value="9" />
           <entry key="scss" value="2" />
           <entry key="xml" value="1" />
@@ -46,7 +60,7 @@
           <entry key="HTML" value="2" />
           <entry key="Handlebars/Mustache" value="60" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="12" />
+          <entry key="JavaScript" value="14" />
           <entry key="SCSS" value="2" />
           <entry key="XML" value="1" />
         </counts>
@@ -54,14 +68,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="hbs" value="336" />
-          <entry key="js" value="587" />
+          <entry key="js" value="785" />
           <entry key="txt" value="332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Handlebars/Mustache" value="336" />
-          <entry key="JavaScript" value="587" />
+          <entry key="JavaScript" value="785" />
           <entry key="PLAIN_TEXT" value="332" />
         </counts>
       </usages-collector>
@@ -70,28 +84,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="60">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+            <state relative-caret-position="179">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3587">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/tag.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-962">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-112">
+              <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state relative-caret-position="-1614">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -114,6 +164,7 @@
       <find>img</find>
       <find>tag</find>
       <find>logout</find>
+      <find>User</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,6 +188,8 @@
         <option value="$PROJECT_DIR$/memeNumbaWan/model/Post.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/model/User.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/server.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/user.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/user.js" />
       </list>
     </option>
   </component>
@@ -163,12 +216,15 @@
     <option name="width" value="1440" />
     <option name="height" value="797" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,20 +247,24 @@
               <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
               <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
               <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
               <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
               <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="middlewares" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBAPDE-MP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBAPDE-MP" type="462c0819:PsiDirectoryNode" />
+              <item name="memeNumbaWan" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -346,16 +406,31 @@
       <option name="project" value="LOCAL" />
       <updated>1534755701442</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="MVC Start 2">
+      <created>1535382953725</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1535382953725</updated>
+    </task>
+    <task id="LOCAL-00014" summary="MVC Start 2">
+      <created>1535383142384</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1535383142384</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9158000" />
+    <option name="totallyTimeSpent" value="11141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2932761" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -391,6 +466,24 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -405,7 +498,8 @@
     <MESSAGE value="Added function" />
     <MESSAGE value="PHASE 2 LAST FILE" />
     <MESSAGE value="MVC Start" />
-    <option name="LAST_COMMIT_MESSAGE" value="MVC Start" />
+    <MESSAGE value="MVC Start 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="MVC Start 2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/views/server.js" />
@@ -438,17 +532,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="2" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1614">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
