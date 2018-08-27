@@ -7,36 +7,22 @@ const cookieparser = require("cookie-parser"); //for cookies also
 const mongoose = require("mongoose")
 const Post = require("../model/post")
 const router = express.Router()
+const auth = require("../middlewares/auth")
 
 router.use("/post", require("./post"))
 router.use("/user", require("./user"))
+router.use("/tag", require("./tag"))
 
-app.get("/", (req, res, next) => {
-    console.log("GET /");
-    
-//    User.find().then((users)=>{
-//        console.log(users)
-//    })
-    
-    if(req.session.username != null){
-        Post.find().then((posts)=>{
-            res.render("home.hbs", {
-                posts : posts,
-            });
-        }, (err)=>{
-            res.render("index.hbs")
-        })
-    }
-    else{
-        Post.find().then((posts)=>{
-            res.render("index.hbs", {
-                posts : posts
-            });
-        }, (err)=>{
-            res.render("index.hbs")
-        })  
-    }
+// create the route for the index/home page
+router.get("/", auth, (req, res)=>{
+  console.log("GET /")
 
-});
+  Post.getAll().then((posts)=>{
+    res.render("home", {
+      posts
+    })
+  })
+
+})
 
 module.exports = router
