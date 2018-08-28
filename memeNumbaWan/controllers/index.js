@@ -19,14 +19,15 @@ router.use("/tag", require("./tag"))
 router.get("/", (req, res)=>{
   console.log("GET /")
 
-    if(req.session.username){
-        Post.getAll().then((posts)=>{
+    if(req.session.username != null){
+        Post.getAll(req.session.username).then((posts)=>{
             res.render("home.hbs", {
-                posts
+                posts,
+                privacyString: posts.privacy
             })
         })
     }else{
-        Post.getAll().then((posts)=>{
+        Post.getAll(req.session.username).then((posts)=>{
             res.render("index.hbs", {
                 posts
             })
@@ -70,8 +71,9 @@ router.get("/myprofile", (req, res, next) => { //post???
             User.getOneByUname(req.session.username).then((user)=>{
                 res.render("profile.hbs", {
                     posts : posters,
-                    user : req.session.username,
-                    description: user.description
+                    username : req.session.username,
+                    description: user.description,
+
 
                 });
             }, (err)=>{
@@ -87,15 +89,15 @@ router.get("/profileNA",(req, res, next) => {
 
     // console.log(req.query.name)
     var userNAME = req.query.id
-    console.log("USERNAME = " + userNAME)
+    // console.log("USERNAME = " + userNAME)
     var postSets
-    Post.getAllFiltered(userNAME).then((posts)=> {
+    Post.getAll(req.session.username).then((posts)=> {
         postSets = posts
     }).then(()=>{
 
         User.getOneByUname(userNAME).then((users)=> {
             if (users != null) {
-                console.log(users)
+                // console.log(users)
                 res.render("profileNA.hbs", {
                     posts: postSets,
                     username: userNAME,
@@ -110,10 +112,23 @@ router.get("/profileNA",(req, res, next) => {
 
 router.get("/profile",(req, res, next) => {
 
-    console.log("HEREE AGAING")
-    Post.getOne(req.query.id).then((posts)=>{
-        res.render("profile.hbs", {
-            posts
+    // console.log(req.query.name)
+    var userNAME = req.query.id
+    var postSets
+
+    Post.getAll(req.session.username).then((posts)=> {
+        postSets = posts
+    }).then(()=>{
+
+        User.getOneByUname(userNAME).then((users)=> {
+            if (users != null) {
+                // console.log(users)
+                res.render("profile.hbs", {
+                    posts: postSets,
+                    username: userNAME,
+                    description: users.description
+                })
+            }
         })
     }, (err)=>{
 
@@ -160,6 +175,23 @@ router.get("/redirectprofile", (req, res, next) => { //post???
 });
 
 
+router.get("/tagNA", (req, res) => { //tag
+    Tag.getAllByTagID({
+        _id: req.query.id
+    }).then((tag)=>{
+
+        Post.getAllByTagName(tag.name).then((posts)=>{
+            res.render("tagNA.hbs", {
+                posts
+            })
+        })
+
+    }, (err)=>{
+
+    })
+
+});
+
 router.get("/memeNA", (req, res) => { //????DELETE THIS
     console.log("GET /memeNA");
     console.log(req.query.id)
@@ -175,6 +207,7 @@ router.get("/memeNA", (req, res) => { //????DELETE THIS
 
     // res.redirect("/redirectmeme");
 });
+
 
 router.get("/meme", (req, res) => { //post
 

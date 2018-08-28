@@ -22,6 +22,17 @@
                   //submit the form#deleteform
                   $("form#userform").submit()
               })
+
+              $("a.taggers").click(function(){
+                  //get attr data id from the clicked button
+                  var id = $(this).attr("data-id")
+
+                  //place data id into input#deleteid
+                  $("input#tagid").val(id)
+
+                  //submit the form#deleteform
+                  $("form#tagform").submit()
+              })
           })
       </script>
 
@@ -176,16 +187,24 @@
                 <input id="username" type = "hidden"  name = "id">
             </form>
 
+            <form id = "tagform" action="tagNA" method="get">
+                <input id ="tagid" type = "hidden"  name = "id">
+            </form>
+
         {{#each posts}}
         <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
             <h1 class="pageTitle"><i class="fas fa-star"></i>{{title}}</h1>
-                <h6 align="right" class="type">Public</h6>
+                <!--<h6 align="right" class="type">Public</h6>-->
+
+            <br>
+            <br>
+
             <img src="post/photo/{{id}}" />
                 <div class="filler"></div>
                 <div>
                     <!--Tags:-->
                     {{#each tags}}
-                        <a href="tagNA">{{name}} TAG</a>
+                        <a class="taggers" data-id="{{name}}" name="tagName">#{{this}}</a>
                     {{/each}}
                 </div>
                 <div class="filler"></div>

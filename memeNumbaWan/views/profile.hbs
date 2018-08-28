@@ -78,109 +78,120 @@
   <body>
 
 
-      <!-- Modal Edit-->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+  <!-- Modal Edit-->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
           <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Edit Content</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>  
-              
-            <form id = "viewform" method="POST" action="postEdit">
-                <input id ="viewid" type = "hidden"  name = "id">
-                <div class="modal-body">
-                    <div class="form-group row"> 
-                        <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
-                        <div class="col-md-6">
-                            <input id="edittitle" type="text" class="form-control" name="edittitle" value="" required = "" autofocus="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> 
-                        <label for="tags" class="col-md-4 col-form-label text-md-right">Tags</label>
-                        <div class="col-md-6">
-                            <input id="edittags" type="text" class="form-control" name="edittags" required="">
-                            
-                        </div>
-                    </div>
-                    <div class="form-group row"> 
-                        <label for="privacy" class="col-md-4 col-form-label text-md-right">Privacy</label>
-                        <div class="col-md-6">
-                            <select id="editprivacy" class="form-control" name="editprivacy" value="" required="" autofocus="">
-                                <option value="val1">Private</option>
-                                <option value="val2">Public</option>
-                            </select>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button class="editmodal btn btn-primary">Update Content</button>  
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Modal Delete-->
-    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Are you sure you want to delete meme?</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
+              <div class="modal-header"> <!--"register" and exit button-->
+                  <h5 class="modal-title" id="registerModalLabel">Edit Content</h5> <!--"register"-->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
 
-            <form id = "deleteform" method="POST" action="postDelete"> <!--bottom half of pop up-->
-                <input id="deleteid" type="hidden" name="id">
-                                
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button class="deletemodal btn btn-primary" >Delete</button>  <!--register button-->
-                </div>
-            </form>
+              <form id = "viewform" method="POST" action="postEdit">
+                  <input id ="viewid" type = "hidden"  name = "id">
+                  <div class="modal-body">
+                      <div class="form-group row">
+                          <label for="title" class="col-md-4 col-form-label text-md-right">Title</label>
+                          <div class="col-md-6">
+                              <input id="edittitle" type="text" class="form-control" name="edittitle" value="" required = "" autofocus="">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="tags" class="col-md-4 col-form-label text-md-right">Tags</label>
+                          <div class="col-md-6">
+                              <input id="edittags" type="text" class="form-control" name="edittags" required="">
+
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="privacy" class="col-md-4 col-form-label text-md-right">Privacy</label>
+                          <div class="col-md-6">
+                              <select id="editprivacy" class="form-control" name="editprivacy" value="" required="" autofocus="">
+                                  <option value="val1">Private</option>
+                                  <option value="val2">Public</option>
+                              </select>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer"> <!--cancel and register button-->
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                      <button class="editmodal btn btn-primary">Update Content</button>
+                  </div>
+              </form>
           </div>
-        </div>
       </div>
-      
-    <header>
+  </div>
+
+  <!-- Modal Delete-->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content"> <!--the whole pop up-->
+              <div class="modal-header"> <!--"register" and exit button-->
+                  <h5 class="modal-title" id="registerModalLabel">Are you sure you want to delete meme?</h5> <!--"register"-->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <form id = "deleteform" method="POST" action="postDelete"> <!--bottom half of pop up-->
+                  <input id="deleteid" type="hidden" name="id">
+
+                  <div class="modal-footer"> <!--cancel and register button-->
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                      <button class="deletemodal btn btn-primary" >Delete</button>  <!--register button-->
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./profile">My Profile</a> <!--my profile button-->
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
-                  <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
-              </form>
-              <!--log out button-->
-              <form action="logout">
-                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
-              </form>
-        </ul>
-        </div>
+          <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
+                  </li>
+                  <li class="nav-item">
+                      <a id="profile" class="nav-link active" href="./profile">My Profile</a> <!--my profile button-->
+                  </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                  <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+
+                      <div class="input-group mr-sm-2">
+                          <input type="text" class="form-control" placeholder="Search" name="searchinput" aria-label="Search" aria-describedby="basic-addon2">
+                          <div class="input-group-append">
+                              <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
+                          </div>
+                      </div>
+
+
+                  </form>
+                  <!--log out button-->
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="logout">Logout</a>
+                      </div>
+                  </li>
+              </ul>
+          </div>
       </nav>
-    </header>
+  </header>
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="pageTitle"><i class="fas fa-user"></i> {{user}}'s Profile</h1> <!--name of user-->
+        <h1 class="pageTitle"><i class="fas fa-user"></i> {{username}}'s Profile</h1> <!--name of user-->
         <div class="row">
             <div class="col-12 col-md-7"> <!--memes and captions by user-->
 
@@ -201,7 +212,26 @@
                     </div>
                     <div class="card-body">
 
-                        <button class="btn btn-danger btn-lg bigger meme" data-id="{{_id}}">{{title}}</button>
+
+
+                        <div class="homeTitle">
+                            <div class="titleee">
+                                <h1 class="memeTitlee">
+                                    <button class="btn btn-danger btn-lg bigger memeNameee" data-id="{{_id}}">{{title}}</button>
+                                </h1>
+                            </div>
+
+                            <div class="typeee">
+                            <h6 align="right" class="type">
+                                {{#if privacy}}
+                                    <span> private </span></h6>
+                                {{else}}
+                                    <span> public </span></h6>
+                                {{/if}}
+                            </div>
+                        </div>
+
+
                         <div class ="filler"></div>
 
                         <img src="post/photo/{{id}}" class = "imgprof"/> <!--memes-->
@@ -219,6 +249,10 @@
                         <div class="bottombuttons">
                             <button class="btn btn-secondary buttonid" ><i class="fas fa-thumbs-up"></i></button>
                             <button class="btn btn-secondary buttonid ml-1" ><i class="fas fa-thumbs-down"></i></button>
+                            {{#if privacy}}
+                                <button class="btn btn-secondary buttonid ml-1 share" align="right"> share </button>
+                            {{else}}
+                            {{/if}}
 <!--
                             <button class="buttonid" > {{likes}} thumbs up </button>
                             <button class="buttonid" > {{dislikes}} thumbs down </button>
@@ -248,13 +282,13 @@
                 {{/each}}
 
             </div>
-            
-             <div class="col-12 offset-md-1 col-md-4 info"> <!--user information part-->
+
+            <div class="col-12 offset-md-1 col-md-4 info"> <!--user information part-->
                 <br>
-                <h4><b>Username:</b></h4>
-                <p class="lead">{{user}}</p>
-                <h4><b>Description:</b> </h4>
-                <p class="lead">{{description}}</p>
+                <h6><b>Username:</b></h6>
+                <p class="lead"><h4>{{username}}</h4></p>
+                <h6><b>Description:</b></h6>
+                <p class="lead"><h4>{{description}}</h4></p>
             </div>
         </div>
     </main>

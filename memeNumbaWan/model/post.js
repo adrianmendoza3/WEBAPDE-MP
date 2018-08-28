@@ -132,12 +132,41 @@ module.exports.updateAndPush = function(id, tag){
   })
 }
 
+//get all by tagname
+module.exports.getAllByTagName = function(name){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/getAll-----")
+
+        Post.find({tags: name}).then((posts)=>{
+            // console.log ("*GOT ALL POSTS!*")
+            console.log(posts)
+            resolve(posts)
+//      res.render("home.hbs", {
+//        posts : posts,
+//      });
+        }, (err)=>{
+            console.log ("*DID NOT GET ALL POSTS!*")
+            reject(err)
+
+//      res.render("index.hbs")
+        })
+
+// SAMPLE:
+//    Post.find().then((posts)=>{
+//      resolve(posts)
+//    }, (err)=>{
+//      reject(err)
+//    })
+    })
+}
+
+
 // get all by tag id
 module.exports.getAllByTagID = function(id){
     return new Promise(function(resolve, reject){
         console.log ("-----model/post/getAll-----")
 
-        Post.find({tags: id}).then((posts)=>{
+        Post.find({tags_id: id}).then((posts)=>{
             // console.log ("*GOT ALL POSTS!*")
             console.log(posts)
             resolve(posts)
@@ -161,22 +190,69 @@ module.exports.getAllByTagID = function(id){
 }
 
 //GET ALL POSTS
-module.exports.getAll = function(){
+module.exports.getAll = function(username){
   return new Promise(function(resolve, reject){
     console.log ("-----model/post/getAll-----")
 
-    Post.find().then((posts)=>{
-       console.log ("*GOT ALL POSTS!*")
-       resolve(posts)
+      if(username != null){
+        var Posters
+
+          Post.find({privacy:"false"}).then((posts)=>{
+              console.log ("*GOT ALL POSTS!*")
+                Posters = posts
+
+          }).then(()=>{
+              Post.find({user: username, privacy:"true"}).then((posts)=>{
+
+                  for(var i=0; i<posts.length; i++){
+                      // console.log(posts[i])
+                      Posters.push(posts[i])
+                  }
+
+
+
+              }).then(()=>{
+                  Post.find({sharedTo: username, privacy:"true"}).then((posts)=>{
+                      for(var i=0; i<posts.length; i++){
+                          // console.log(posts[i])
+                          Posters.push(posts[i])
+                      }
+                      resolve(Posters)
+                  }, (err)=>{
+                      console.log("LAST LOOP TO GET")
+                  })
+
+              }, (err)=>{
+                  console.log ("*DID NOT GET ALL POSTS!*")
+                  reject(err)
+
+              })
+
+              // resolve(Posters)
+
+          }, (err)=>{
+              console.log ("*DID NOT GET ALL POSTS!*")
+              reject(err)
+
+          })
+
+
+      }
+      else{
+          Post.find({privacy:"false"}).then((posts)=>{
+              console.log ("*GOT ALL POSTS!*")
+              resolve(posts)
 //      res.render("home.hbs", {
 //        posts : posts,
 //      });
-    }, (err)=>{
-       console.log ("*DID NOT GET ALL POSTS!*")
-       reject(err)
+          }, (err)=>{
+              console.log ("*DID NOT GET ALL POSTS!*")
+              reject(err)
 
 //      res.render("index.hbs")
-    })
+          })
+      }
+
 
 // SAMPLE:
 //    Post.find().then((posts)=>{

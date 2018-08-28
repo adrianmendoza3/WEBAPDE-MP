@@ -19,120 +19,146 @@
   </head>
 
   <body>
-    <!-- Modal Log in-->
-    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+  <!-- Modal Sign in-->
+
+  <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content"> <!--the whole popup-->
-          <div class="modal-header"><!--"login" and exit button-->
-            <h5 class="modal-title" id="signinModalLabel">Login</h5> <!--"login"-->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <form method="POST" action="home.hbs"> <!--bottom half of the popup-->
-            <div class="modal-body"> <!--username, password, remember me-->
-                  <div class="form-group row"> <!--username-->
-                      <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
-                      <div class="col-md-6">
-                          <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                      </div>
-                  </div>
-                  <div class="form-group row"><!--password-->
-                      <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                      <div class="col-md-6">
-                          <input id="password" type="password" class="form-control" name="password" required="">
-                      </div>
-                  </div>
-
-                  <div class="form-group row"><!--remember me-->
-                      <div class="col-md-6 offset-md-4">
-                          <div class="checkbox">
-                              <label>
-                                  <input type="checkbox" name="remember"> Remember Me
-                              </label>
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="signinModalLabel">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <form method="POST" action="login">
+                  <div class="modal-body">
+                      <div class="form-group row">
+                          <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
+                          <div class="col-md-6">
+                              <input id="logusername" type="text" class="form-control" name="logusername" value="" required="" autofocus="">
                           </div>
                       </div>
+                      <div class="form-group row">
+                          <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                          <div class="col-md-6">
+                              <input id="logpassword" type="password" class="form-control" name="logpassword" required="">
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <div class="col-md-6 offset-md-4">
+                              <div class="checkbox">
+                                  <label>
+                                      <input type="checkbox" name="remember"> Remember Me
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+
                   </div>
-              
-            </div>
-            <div class="modal-footer"> 
-              <button type="submit" class="btn btn-primary">Login</button> <!--login button-->
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal Register-->
-    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content"> <!--the whole pop up-->
-            <div class="modal-header"> <!--"register" and exit button-->
-              <h5 class="modal-title" id="registerModalLabel">Register</h5> <!--"register"-->
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <form method="POST" action="home.hbs"> <!--bottom half of pop up-->
-                <div class="modal-body"> <!--username, password, confirm password-->
-                    <div class="form-group row"> <!--username-->
-                        <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
-                        <div class="col-md-6">
-                            <input id="username" type="text" class="form-control" name="username" value="" required="" autofocus="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--password-->
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control" name="password" required="">
-                        </div>
-                    </div>
-                    <div class="form-group row"> <!--confirm password-->
-                        <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                        <div class="col-md-6">
-                            <input id="confirmpassword" type="password" class="form-control" name="confirmpassword" required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"> <!--cancel and register button-->
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
-                    <button type="submit" class="btn btn-primary">Register</button>  <!--register button-->
-                </div>
-            </form>
+                  <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Login</button>
+                  </div>
+              </form>
           </div>
-        </div>
       </div>
+  </div>
 
-    <header>
+  <!-- Modal Register-->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <form method="POST" action="register">
+                  <div class="modal-body">
+                      <div class="form-group row">
+                          <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
+                          <div class="col-md-6">
+                              <input id="regusername" type="text" class="form-control" name="regusername" value="" required="" autofocus="">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                          <div class="col-md-6">
+                              <input id="regname" type="text" class="form-control" name="regname" value="" required="" autofocus="">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                          <div class="col-md-6">
+                              <input id="regpassword" type="password" class="form-control" name="regpassword" required="">
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="confirmpassword" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                          <div class="col-md-6">
+                              <input id="regconfirmpassword" type="password" class="form-control" name="regconfirmpassword" required="">
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label for="shortdescription" class="col-md-4 col-form-label text-md-right">Short Description (Optional)</label>
+                          <div class="col-md-6">
+                              <input id="regshortdescription" type="text" class="form-control" name="regshortdescription">
+                          </div>
+                      </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="submit" class="btn btn-primary">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile">My Profile</a> <!--my profile button-->
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
-                  <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
-              </form>
-              <!--log out button-->
-              <form action="logout">
-                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
-              </form>
-        </ul>
-        </div>
+          <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/myprofile">My Profile</a> <!--my profile button-->
+                  </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                  <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+
+                      <div class="input-group mr-sm-2">
+                          <input type="text" class="form-control" placeholder="Search" name="searchinput" aria-label="Search" aria-describedby="basic-addon2">
+                          <div class="input-group-append">
+                              <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
+                          </div>
+                      </div>
+
+
+                  </form>
+                  <!--log out button-->
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="logout">Logout</a>
+                      </div>
+                  </li>
+              </ul>
+          </div>
       </nav>
-    </header>
+  </header>
 
     <!-- Begin page content -->
     <main role="main" class="container">

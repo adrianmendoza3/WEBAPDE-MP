@@ -20,6 +20,18 @@
                   $("form#memeform").submit()
               })
 
+              $("a.taggers").click(function(){
+                  //get attr data id from the clicked button
+                  var id = $(this).attr("data-id")
+
+                  //place data id into input#deleteid
+                  $("input#tagid").val(id)
+
+                  //submit the form#deleteform
+                  $("form#tagform").submit()
+              })
+
+
           })
 
       </script>
@@ -172,11 +184,15 @@
 
     <!-- Begin page content -->
     <main role="main" class="container-fluid feed">  
-        <h1 class="mt-5"><br>All Memes</h1>
+        <h1 class="pageTitle">All Memes</h1>
         <div class="row">
 
             <form id = "memeform" action="memeNA" method="get">
                 <input id ="memeid" type = "hidden"  name = "id">
+            </form>
+
+            <form id = "tagform" action="tagNA" method="get">
+                <input id ="tagid" type = "hidden"  name = "id">
             </form>
 
             {{#each posts}}
@@ -192,7 +208,7 @@
                 </div>
                 Tags:
                 {{#each tags}}
-                    <a href="tagNA" name="tagName">{{this}}</a>,
+                    <a class="taggers" data-id="{{_id}}" name="tagName">#{{this}}</a>
                 {{/each}}
                 </div>
             </div>

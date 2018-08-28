@@ -18,35 +18,46 @@
 
   <body>
 
-    <header>
+  <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-        <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile">My Profile</a> <!--my profile button-->
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-              <form class="form-inline my-2 my-lg-0" action="search" method="GET">
-                  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput"> <!--search bar-->
-                  <button id="search" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit">Search</button> <!--search button-->
-              </form>
-              <!--log out button-->
-              <form action="logout">
-                  <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="submit" >Logout</button>
-              </form>
-        </ul>
-        </div>
+          <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a id="upload" class="nav-link active" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/myprofile">My Profile</a> <!--my profile button-->
+                  </li>
+              </ul>
+              <ul class="navbar-nav ml-auto">
+                  <form class="form-inline my-2 my-lg-0" action="search" method="GET">
+
+                      <div class="input-group mr-sm-2">
+                          <input type="text" class="form-control" placeholder="Search" name="searchinput" aria-label="Search" aria-describedby="basic-addon2">
+                          <div class="input-group-append">
+                              <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
+                          </div>
+                      </div>
+
+
+                  </form>
+                  <!--log out button-->
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="logout">Logout</a>
+                      </div>
+                  </li>
+              </ul>
+          </div>
       </nav>
-    </header>
+  </header>
 
     <!-- Begin page content -->
     <main role="main" class="container">
