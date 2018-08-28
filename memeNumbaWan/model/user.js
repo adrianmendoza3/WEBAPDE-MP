@@ -151,23 +151,27 @@ module.exports.getOneByUname = function(uname){
 }
 
 //FIND ONE AND PUSH POSTS
-module.exports.updateAndPush = function(id, post){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/user/updateAndPush-----")
+module.exports.updateAndPush = function(user, post){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/user/updateAndPush-----")
 
-    User.findOneAndUpdate({
-        _id : id
-    },{
-        $push: {posts : post}
-    },{
-        new: true
-    }, function(err, doc){
-        if(err){
-            console.log ("*USER NOT UPDATED!*")
-        }
-        console.log(doc);
-    });
-  })
+        User.findOneAndUpdate({
+            username : user
+        },{
+            $push: {posts : post}
+        },{
+            new: true
+        }, function(err, doc){
+            if(err){
+                console.log ("USER NOT UPDATED!")
+            }
+            else {
+                console.log ("USER UPDATED!")
+
+            }
+            console.log(doc);
+        });
+    })
 }
 
 

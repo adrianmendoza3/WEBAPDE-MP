@@ -31,7 +31,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <form method="POST" action="login">
+              <form method="POST" action="user/login">
                   <div class="modal-body">
                       <div class="form-group row">
                           <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -76,7 +76,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <form method="POST" action="register">
+              <form method="POST" action="user/register">
                   <div class="modal-body">
                       <div class="form-group row">
                           <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -123,7 +123,7 @@
   <header>
       <!--Fixed navbar-->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-          <a class="navbar-brand" href="landing"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
+          <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
@@ -163,7 +163,7 @@
             <div class="mt-4 memedivTag"> <!--memes and captions area-->
                 <a href="memeNA"><div class="biggerTag">{{title}}</div></a>
 
-                <a href="memeNA"><img src="/meme1.jpg" class = "memePicTag"/></a>
+                <a href="memeNA"><img src="post/photo/{{id}}" class = "memePicTag"/></a>
 
                 <div class="memedivTagsOfTag">
 

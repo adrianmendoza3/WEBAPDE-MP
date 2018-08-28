@@ -32,6 +32,8 @@ var a = {
 module.exports.createNew = function(title, user, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename){
     return new Promise(function(resolve, reject){
         console.log ("-----model/post/createNew-----")
+        console.log(filename)
+        console.log(originalfilename)
 
         var p = new Post({
             title,
@@ -54,19 +56,23 @@ module.exports.createNew = function(title, user, tags, likers, unlikers, time, p
             reject(err)
         })
     })
-}
+};
 
 //FIND ONE AND UPDATE BY ID ONLY
-module.exports.updateOneByID = function(id, newPost){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/post/updateOneByID-----")
+module.exports.updateOneByID = function(id, title, user, tagID, likers, unlikers, time, privacy, sharedTo, filename, originalfilename){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/updateOneByID-----")
 
-    Post.findOneAndUpdate({
-        _id : id
-    }, newPost).then(()=>{
-       console.log ("*POST UPDATED!*")
+        let newPost = {
+            title, user, tags:tagID, likers, unlikers, time, privacy, sharedTo, filename, originalfilename
+        }
+
+        Post.findOneAndUpdate({
+            _id : id
+        }, newPost).then(()=>{
+            console.log ("POST UPDATED!")
 //        res.redirect("/redirectprofile")
-    })
+        })
 
 // SAMPLE:
 //    Post.findOneAndUpdate({
@@ -78,9 +84,8 @@ module.exports.updateOneByID = function(id, newPost){
 //    }, (err)=>{
 //      reject(err)
 //    })
-  })
+    })
 }
-
 //FIND ONE AND UPDATE BY ID AND USER (private/public)
 module.exports.updateOneByUser = function(id, user, newPost){
   return new Promise(function(resolve, reject){
@@ -225,9 +230,8 @@ module.exports.getOne = function(id){
 //          post
 //      })
     }, (err)=>{
-       console.log ("*POST DOES NOT EXIST!*")
 
-        reject(err)
+        console.log ("*POST DOES NOT EXIST!*")
     })
 
 // SAMPLE:
@@ -238,6 +242,35 @@ module.exports.getOne = function(id){
 //      reject(err)
 //    })
   })
+}
+
+
+//POST.FINDONE
+module.exports.findOneFunction = function(id){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/getOne-----")
+
+        Post.findOne({
+            _id: id
+        }).then((post)=>{
+            // console.log ("*GOT ONE POST!*")
+            resolve(post)
+//      res.render("meme.hbs", {
+//          post
+//      })
+        }, (err)=>{
+
+            console.log ("*POST DOES NOT EXIST!*")
+        })
+
+// SAMPLE:
+//    Post.findOne({_id:id}).then((post)=>{
+//      console.log(post)
+//      resolve(post)
+//    }, (err)=>{
+//      reject(err)
+//    })
+    })
 }
 
 //DELETE POST

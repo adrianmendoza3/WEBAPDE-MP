@@ -35,8 +35,9 @@ module.exports.createNew = function(name, postID){
             postID
         })
 
-        t.save().then(()=>{
-            console.log ("NEW POST CREATED!")
+        t.save().then((newtag)=>{
+            resolve(newtag)
+            console.log ("NEW TAG CREATED!")
 //        res.redirect("/redirectprofile")
         }, (err)=>{
 //        res.render("index.hbs")
@@ -82,22 +83,22 @@ module.exports.getAll = function(tagname){
 
 //GET ONE TAG
 module.exports.getOne = function(tagname){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/tag/getOne-----")
-
-    Tag.findOne({
-      name: tagname
-    }).then((tag)=>{
-       console.log ("*GOT ONE TAG!*")
-        resolve(tag)
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/tag/getOne-----")
+        console.log(tagname)
+        Tag.findOne({
+            name: tagname
+        }).then((tag)=>{
+            console.log ("TAG EXISTS")
+            resolve(tag)
 //      res.render("meme.hbs", {
 //          post
 //      })
-    }, (err)=>{
-       console.log ("*TAG DOES NOT EXIST!*")
+        }, (err)=>{
+            console.log ("TAG DOES NOT EXIST!")
 
-        reject(err)
-    })
+            reject(err)
+        })
 
 // SAMPLE:
 //    Post.findOne({_id:id}).then((post)=>{
@@ -106,27 +107,31 @@ module.exports.getOne = function(tagname){
 //    }, (err)=>{
 //      reject(err)
 //    })
-  })
+    })
 }
 
 //FIND ONE AND PUSH POSTS
 module.exports.updateAndPush = function(id, post){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/tag/updateAndPush-----")
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/tag/updateAndPush-----")
 
-    Tag.findOneAndUpdate({
-        _id : id
-    },{
-        $push: {posts : post}
-    },{
-        new: true
-    }, function(err, doc){
-        if(err){
-            console.log ("*TAG NOT UPDATED!*")
-        }
-        console.log(doc);
-    });
-  })
+        Tag.findOneAndUpdate({
+            _id : id
+        },{
+            $push: {posts : post}
+        },{
+            new: true
+        }, function(err, doc){
+            if(err){
+                console.log ("TAG NOT UPDATED!")
+            }
+            else {
+                console.log ("TAG UPDATED!")
+
+            }
+            console.log(doc);
+        });
+    })
 }
 
 //DELETE POST

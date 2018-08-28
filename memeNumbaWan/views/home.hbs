@@ -161,10 +161,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="uploadmeme">Upload a Meme</a> <!--upload a meme button-->
+              <a class="nav-link" href="/uploadmeme">Upload a Meme</a> <!--upload a meme button-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="myprofile">My Profile</a> <!--my profile button-->
+              <a class="nav-link" href="/myprofile">My Profile</a> <!--my profile button-->
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
@@ -192,6 +192,7 @@
 
             <div class="col-6"> <!--whole column 12-->
                 <!--<h1 class="mt-5"><br>All Memes</h1>-->
+                {{#if posts}}
                 {{#each posts}}
                     <br>
                 <div class="mb-4 memediv" data-id="{{_id}}">
@@ -202,7 +203,9 @@
                     <h6 align="right" class="type">Public</h6>
 
                     <div class="memePic">
-                        <a><img src="/meme1.jpg" class = "imgthumb"/> </a>
+                        <!--<a><img src="/meme1.jpg" class = "imgthumb"/> </a>-->
+                        <a><img src="post/photo/{{id}}" class = "imgthumb"/> </a>
+
                     </div>
 
                     <!--<br>-->
@@ -222,6 +225,7 @@
                 </div>
                 
                 {{/each}}
+                {{/if}}
                 
             </div>
 

@@ -48,7 +48,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <form method="POST" action="login">
+              <form method="POST" action="user/login">
                   <div class="modal-body">
                       <div class="form-group row">
                           <label for="username" class="col-sm-4 col-form-label text-md-right">Username</label>
@@ -93,7 +93,7 @@
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
-              <form method="POST" action="register">
+              <form method="POST" action="user/register">
                   <div class="modal-body">
                       <div class="form-group row">
                           <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
@@ -140,7 +140,7 @@
   <header>
       <!--Fixed navbar-->
       <nav class="navbar navbar-expand-md navbar-red fixed-top bg-red">
-          <a class="navbar-brand" href="landing"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
+          <a class="navbar-brand" href="home"><img id="logo" src="/MEME NUMBA WAN.png"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
@@ -180,7 +180,7 @@
         <div class="col-12 col-md-7 memecontent" data-id="{{_id}}">
             <h1 class="pageTitle"><i class="fas fa-star"></i>{{title}}</h1>
                 <h6 align="right" class="type">Public</h6>
-                <img src="/meme1.jpg" />
+            <img src="post/photo/{{id}}" />
                 <div class="filler"></div>
                 <div>
                     <!--Tags:-->
