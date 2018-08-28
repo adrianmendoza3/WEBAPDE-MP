@@ -162,10 +162,11 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-        <h1 class="pageTitle"><i class="fas fa-tags"></i> Memes under the Tag of: {{name}}</h1>
+        <h1 class="pageTitle"><i class="fas fa-tags"></i> {{name}}</h1>
         <div class="row">
-            <div class="col-12 col-md-4"> 
-                
+            <div class="col-12 col-md-4">
+
+                {{#each posts}}
                 <div class="mt-4 memedivTag" data-id="{{_id}}">
                     <a href="meme" class ="aCaps">
                         <div class="biggerTag" >{{title}} TITLE</div>
@@ -176,7 +177,7 @@
                     <br>
                     <div class = "memedivTagsofTag">
                         Tags:
-                        {{#each post.tags}}
+                        {{#each tags}}
                             <a href="tag">TAG</a>,
                         {{/each}}
                     </div>
@@ -185,7 +186,7 @@
                     
                 </div>
                 
-                {{#each posts}}
+
                 
                 
                 

@@ -19,38 +19,53 @@ router.use(urlencoder)
 router.get("/postDelete", urlencoder, (req, res) => { //post
     console.log("POST /postDelete");
 
-    console.log("Body id is: " + req.body.id);
+    console.log("Body id is: " + req.query.id);
 
-    Post.deleteOne({
-        _id: req.body.id
-    }).then((post)=>{
-        res.redirect("/redirectprofile");
-
+    Post.deletePost(
+        req.query.id
+    ).then((post)=>{
+        console.log(post)
+        if(post!=null){
+            res.redirect("/")
+        }
     })
 
 });
 
-router.get("/postEdit", urlencoder, (req, res) => { //post
+
+
+router.get("/postShare", urlencoder, (req, res) => {
+    var user = req.query.shareuser
+    //get id
+
+    console.log(user)
+    Post.updateAndPushSharedTo()
+
+
+})
+
+router.post("/postEdit", urlencoder, (req, res) => { //post
     console.log("POST /postEdit");
+//            title, user, tags:tagID, likers, unlikers, time, privacy, sharedTo, filename, originalfilename
 
     var id = req.body.id // for finding one post
     console.log("Body id = " + id)
     var title = req.body.edittitle
     console.log("Title = " + title)
-    var likes;
-    var Uid;
     var user = req.session.username;
-    User.findOne({
-        username : user
-    }).then((user)=>{
-        if(user != null){
-            Uid = user._id;
-
-        }
-        else{
-            Uid = 0000;
-        }
-    })
+    var filename;
+    var originalfilename
+//    User.getOneByUname(
+//        user
+//    ).then((user)=>{
+//        if(user != null){
+//            Uid = user._id;
+//
+//        }
+//        else{
+//            Uid = 0000;
+//        }
+//    })
 //    var tags = req.body.tags; //process csv
     var likers; //default null
     var unlikers; //default null
@@ -58,46 +73,78 @@ router.get("/postEdit", urlencoder, (req, res) => { //post
 
     var tags = req.body.edittags
 
-    var privacy = req.body.editprivacy
-    if(privacy=="private"){
-        privacy = true;
-    }
-    else {
-        privacy = false;
-    }
-    console.log("Privacy: " + privacy)
-
+    var privacy
     var sharedTo; //default null
 
-    Post.findOne({
-        _id : id
-    }).then((post)=>{
+    Post.getOne(
+        id
+    ).then((post)=>{
         if(post != null){
-            if(!req.body.edittitle){
-                console.log("WALANG LAMAN TITLE!!")
-                console.log("post.title="+ post.title)
-                title = post.title
-            }
-            if(!req.body.edittags){
-                console.log("WALANG LAMAN TAGS!!")
-                tags = post.tags
-            }
+            title = post.title
+            user = post.user
+            tags = post.tags
+            likers = post.likers
+            unlikers = post.unlikers
+            time = post.time
+            privacy = post.privacy
+            sharedTo = post.sharedTo
+            filename = post.filename
+            originalfilename = post.originalfilename
+//            if(!req.body.edittitle){
+//                console.log("WALANG LAMAN TITLE!!")
+//                console.log("post.title="+ post.title)
+//                title = post.title
+//            }
+//            if(!req.body.edittags){
+//                console.log("WALANG LAMAN TAGS!!")
+//                tags = post.tags
+//            }
         }
         else{
             console.log("ERROR IN FINDING ONE IN POST")
         }
+
+        // SET ALL VALUES
+        privacy = req.body.editprivacy
+        if(privacy=="private"){
+            privacy = true;
+        }
+        else {
+            privacy = false;
+        }
+        console.log("Privacy: " + privacy)
+
+        if(req.body.edittitle != null){
+            //            console.log("WALANG LAMAN TITLE!!")
+            //            console.log("post.title="+ post.title)
+            title = req.body.edittitle
+        }
+        if(req.body.edittags != null){
+            console.log("WALANG LAMAN TAGS!!")
+            tags = req.body.edittags
+        }
+
+    }).then(()=>{
+
+
+        Post.updateOneByUser(id, user, title, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename).then((updatedpost)=>{
+
+            if(updatedpost != null){
+                console.log("TANGINAAA")
+            }
+
+            res.redirect("/redirectprofile")
+
+        })
+    }, (err)=>{
+
     })
 
-    let newPost = {
-        title, likes, id:Uid, user, likers, unlikers, time, privacy, sharedTo
-    }
 
-    Post.findOneAndUpdate({
-        _id : id,
-        user : user
-    }, newPost).then(()=>{
-        res.redirect("/redirectprofile")
-    })
+
+//        (title, user, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename){
+
+
 
 });
 

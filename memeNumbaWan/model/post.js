@@ -86,18 +86,29 @@ module.exports.updateOneByID = function(id, title, user, tagID, likers, unlikers
 //    })
     })
 }
-//FIND ONE AND UPDATE BY ID AND USER (private/public)
-module.exports.updateOneByUser = function(id, user, newPost){
-  return new Promise(function(resolve, reject){
-    console.log ("-----model/post/updateOneByUser-----")
 
-    Post.findOneAndUpdate({
-        _id : id,
-        user : user
-    }, newPost).then(()=>{
-       console.log ("*POST UPDATED!*")
+
+//FIND ONE AND UPDATE BY ID AND USER (private/public)
+module.exports.updateOneByUser = function(id, user, title, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/updateOneByUser-----")
+
+        let newPost = {
+            title, user, tags, likers, unlikers, time, privacy, sharedTo, filename, originalfilename
+        }
+
+        console.log(id)
+        console.log(user)
+        Post.findOneAndUpdate({
+            _id : id,
+            user : user
+        }, newPost).then((updatedpost)=>{
+            console.log ("POST UPDATED!")
+            console.log(updatedpost)
+            resolve(updatedpost)
+
 //        res.redirect("/redirectprofile")
-    })
+        })
 
 // SAMPLE:
 //    Post.findOneAndUpdate({
@@ -109,7 +120,7 @@ module.exports.updateOneByUser = function(id, user, newPost){
 //    }, (err)=>{
 //      reject(err)
 //    })
-  })
+    })
 }
 
 //FIND ONE AND PUSH TAGS
@@ -130,6 +141,26 @@ module.exports.updateAndPush = function(id, tag){
         console.log(doc);
     });
   })
+}
+
+//FIND ONE AND PUSH SHAREDTO USERS
+module.exports.updateAndPushSharedTo = function(id, user){
+    return new Promise(function(resolve, reject){
+        console.log ("-----model/post/updateAndPush-----")
+
+        Post.findOneAndUpdate({
+            _id : id
+        },{
+            $push: {sharedTo : user}
+        },{
+            new: true
+        }, function(err, doc){
+            if(err){
+                console.log ("*POST NOT UPDATED!*")
+            }
+            console.log(doc);
+        });
+    })
 }
 
 //get all by tagname

@@ -10,33 +10,17 @@
     <script src="jquery-3.3.1.js"> </script>
       <script>
             $(document).ready(function(){
-                
+
                 $("button.delete").click(function(){
                     var id = $(this).attr("data-id")
-                    
+
                     $("button.deletemodal").click(function(){
                         $("input#deleteid").val(id)
-                    
+
                         $("form#deleteform").submit()
                     })
                 })
-                
-                $("button.edit").click(function(){
-                    //get attr data id from the clicked button
-                    var id = $(this).attr("data-id")
-               
-                    $("button.editmodal").click(function(){
-                        if($("input#edittitle").val() != ""){
-                            //place data id into input#deleteid
-                            $("input#viewid").val(id)
 
-
-                            //submit the form#deleteform
-                            $("form#viewform").submit()
-                        }
-                    })
-                    
-                })
                 
                  $("button.meme").click(function(){
                     //get attr data id from the clicked button
@@ -89,7 +73,7 @@
                   </button>
               </div>
 
-              <form id = "viewform" method="POST" action="postEdit">
+              <form id = "viewform" method="POST" action="post/postEdit">
                   <input id ="viewid" type = "hidden"  name = "id">
                   <div class="modal-body">
                       <div class="form-group row">
@@ -117,7 +101,7 @@
                       </div>
                   </div>
                   <div class="modal-footer"> <!--cancel and register button-->
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                      <button type="button" class="btn btn-secondary view" data-dismiss="modal">Cancel</button> <!--cancel button-->
                       <button class="editmodal btn btn-primary">Update Content</button>
                   </div>
               </form>
@@ -136,12 +120,42 @@
                   </button>
               </div>
 
-              <form id = "deleteform" method="POST" action="postDelete"> <!--bottom half of pop up-->
-                  <input id="deleteid" type="hidden" name="id">
+              <form id = "deleteform" method="GET" action="post/postDelete"  > <!--bottom half of pop up-->
+                  <input id="deleteid" type="hidden" data-id="_id" name="id">
 
                   <div class="modal-footer"> <!--cancel and register button-->
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
                       <button class="deletemodal btn btn-primary" >Delete</button>  <!--register button-->
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal Share -->
+  <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content"> <!--the whole pop up-->
+              <div class="modal-header"> <!--"register" and exit button-->
+                  <h5 class="modal-title" id="registerModalLabel">Share Meme</h5> <!--"register"-->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <!--exit button-->
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+
+              <form id = "viewform" method="GET" action="post/postShare">
+                  <input id ="viewid" type = "hidden"  name = "id">
+                  <div class="modal-body">
+                      <div class="form-group row">
+                          <label for="title" class="col-md-4 col-form-label text-md-right">User</label>
+                          <div class="col-md-6">
+                              <input id="shareuser" type="text" class="form-control" name="shareuser" value="" required = "" autofocus="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer"> <!--cancel and register button-->
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> <!--cancel button-->
+                      <button class="editmodal btn btn-primary">Share</button>
                   </div>
               </form>
           </div>
@@ -250,7 +264,7 @@
                             <button class="btn btn-secondary buttonid" ><i class="fas fa-thumbs-up"></i></button>
                             <button class="btn btn-secondary buttonid ml-1" ><i class="fas fa-thumbs-down"></i></button>
                             {{#if privacy}}
-                                <button class="btn btn-secondary buttonid ml-1 share" align="right"> share </button>
+                                <button class="btn btn-secondary buttonid ml-1 share" align="right" data-toggle="modal" data-target="#shareModal"> <i class="fas fa-share"></i> </button>
                             {{else}}
                             {{/if}}
 <!--
@@ -259,7 +273,7 @@
                             <button class="buttonid" > {{sharedTo}} shares </button>
 -->
                             <button class="btn btn-danger btn-lg edit ml-1" data-id="{{_id}}"
-                                    data-toggle="modal" data-target="#editModal">Edit</button>
+                                    ><a href="/editmeme">Edit</a></button>
 
                             <button class="btn btn-danger btn-lg delete ml-1" data-id="{{_id}}" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt"></i></button>
 <!--

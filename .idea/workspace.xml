@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f84cd329-97fb-445c-b7c3-6af1e0b1c1e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/memeNumbaWan/views/editmeme.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/model/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/model/tag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/home.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/home.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/meme.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/meme.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/memeNA.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/memeNA.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/profile.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/profile.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/profileNA.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/profileNA.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/tag.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/tag.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/uploadmeme.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/uploadmeme.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mongodbdata/collection-0--7040887334409668069.wt" beforeDir="false" afterPath="$PROJECT_DIR$/mongodbdata/collection-0--7040887334409668069.wt" afterDir="false" />
@@ -55,9 +50,9 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
-          <entry key="hbs" value="169" />
+          <entry key="hbs" value="175" />
           <entry key="html" value="2" />
-          <entry key="js" value="87" />
+          <entry key="js" value="99" />
           <entry key="json" value="10" />
           <entry key="scss" value="4" />
           <entry key="xml" value="1" />
@@ -67,9 +62,9 @@
         <counts>
           <entry key="CSS" value="5" />
           <entry key="HTML" value="2" />
-          <entry key="Handlebars/Mustache" value="169" />
+          <entry key="Handlebars/Mustache" value="175" />
           <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="87" />
+          <entry key="JavaScript" value="99" />
           <entry key="SCSS" value="4" />
           <entry key="XML" value="1" />
         </counts>
@@ -77,16 +72,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="69" />
-          <entry key="hbs" value="2567" />
-          <entry key="js" value="3752" />
+          <entry key="hbs" value="2717" />
+          <entry key="js" value="3987" />
           <entry key="txt" value="442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="69" />
-          <entry key="Handlebars/Mustache" value="2567" />
-          <entry key="JavaScript" value="3752" />
+          <entry key="Handlebars/Mustache" value="2717" />
+          <entry key="JavaScript" value="3987" />
           <entry key="PLAIN_TEXT" value="442" />
         </counts>
       </usages-collector>
@@ -95,73 +90,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/home.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="236" column="26" selection-start-line="221" selection-start-column="20" selection-end-line="236" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/profile.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="81">
+              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="242" column="24" lean-forward="true" selection-start-line="242" selection-start-column="24" selection-end-line="242" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/tag.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="134" column="58" selection-start-line="134" selection-start-column="58" selection-end-line="134" selection-end-column="58" />
+            <state relative-caret-position="211">
+              <caret line="164" column="58" lean-forward="true" selection-start-line="164" selection-start-column="58" selection-end-line="164" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/profileNA.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="192" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/uploadmeme.hbs">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/post.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="33" column="58" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="58" />
+              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/css/app.css">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/tag.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="1022" column="1" selection-start-line="1022" selection-start-column="1" selection-end-line="1022" selection-end-column="1" />
+            <state relative-caret-position="375">
+              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/index.hbs">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/tag.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="198" selection-start-line="198" selection-end-line="198" />
+            <state relative-caret-position="210">
+              <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/meme.hbs">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/editmeme.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="167" column="58" selection-start-line="167" selection-start-column="58" selection-end-line="167" selection-end-column="58" />
+            <state relative-caret-position="-8">
+              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="165" column="56" lean-forward="true" selection-start-line="165" selection-start-column="56" selection-end-line="165" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -177,18 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>update</find>
-      <find>getone</find>
-      <find>search</find>
-      <find>fa</find>
-      <find>button</find>
-      <find>fas</find>
-      <find>br</find>
-      <find>mypri</find>
-      <find>multer</find>
-      <find>meme</find>
-      <find>&lt;img src=&quot;post/photo/{{id}}&quot;</find>
-      <find>meme numba</find>
       <find>landing</find>
       <find>Post.getAll</find>
       <find>myprof</find>
@@ -202,11 +185,23 @@
       <find>profile</find>
       <find>*POST DOES NOT EXIST!*</find>
       <find>i</find>
-      <find>mypro</find>
       <find>memeNA</find>
       <find>tagNA</find>
       <find>hover</find>
       <find>bigger</find>
+      <find>myprofi</find>
+      <find>shar</find>
+      <find>share</find>
+      <find>redirectpro</find>
+      <find>posted</find>
+      <find>updateonebyuser</find>
+      <find>postEdit</find>
+      <find>redirec</find>
+      <find>editmeme</find>
+      <find>myprofile</find>
+      <find>postDele</find>
+      <find>mypro</find>
+      <find>search</find>
     </findStrings>
     <replaceStrings>
       <replace>index</replace>
@@ -237,11 +232,7 @@
         <option value="$PROJECT_DIR$/memeNumbaWan/app.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/server.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/model/user.js" />
-        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" />
-        <option value="$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs" />
-        <option value="$PROJECT_DIR$/memeNumbaWan/model/post.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/controllers/tag.js" />
-        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/model/tag.js" />
         <option value="$PROJECT_DIR$/memeNumbaWan/views/memeNA.hbs" />
         <option value="$PROJECT_DIR$/memeNumbaWan/views/index.hbs" />
@@ -250,8 +241,13 @@
         <option value="$PROJECT_DIR$/memeNumbaWan/views/home.hbs" />
         <option value="$PROJECT_DIR$/memeNumbaWan/css/app.css" />
         <option value="$PROJECT_DIR$/memeNumbaWan/views/meme.hbs" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/model/post.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/views/editmeme.hbs" />
         <option value="$PROJECT_DIR$/memeNumbaWan/views/profile.hbs" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/post.js" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs" />
         <option value="$PROJECT_DIR$/memeNumbaWan/views/tag.hbs" />
+        <option value="$PROJECT_DIR$/memeNumbaWan/controllers/index.js" />
       </list>
     </option>
   </component>
@@ -345,7 +341,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535428858983" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1535436019631" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -552,11 +548,18 @@
       <option name="project" value="LOCAL" />
       <updated>1535417593229</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="LATEST">
+      <created>1535428946482</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1535428946482</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50012000" />
+    <option name="totallyTimeSpent" value="54434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="1441" height="797" extended-state="0" />
@@ -699,13 +702,6 @@
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="61" column="14" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
@@ -716,31 +712,10 @@
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/main.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="178" column="16" selection-start-line="178" selection-start-column="16" selection-end-line="178" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="174" column="17" selection-start-line="174" selection-start-column="17" selection-end-line="174" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/tag.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/tag.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -751,24 +726,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1804">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/memeNA.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="199" column="16" selection-start-line="199" selection-start-column="16" selection-end-line="199" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/home.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="215" column="38" selection-start-line="215" selection-start-column="38" selection-end-line="215" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -779,10 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/home.hbs">
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/uploadmeme.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="236" column="26" selection-start-line="221" selection-start-column="20" selection-end-line="236" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="33" column="58" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -793,6 +761,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/meme.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="167" column="58" selection-start-line="167" selection-start-column="58" selection-end-line="167" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -800,31 +775,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/uploadmeme.hbs">
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/post.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="33" column="58" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="150">
+          <caret line="93" column="60" lean-forward="true" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/meme.hbs">
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/editmeme.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="167" column="58" selection-start-line="167" selection-start-column="58" selection-end-line="167" selection-end-column="58" />
+        <state relative-caret-position="-8">
+          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/profile.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        <state relative-caret-position="81">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/tag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/model/tag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="86" column="22" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/tag.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="134" column="58" selection-start-line="134" selection-start-column="58" selection-end-line="134" selection-end-column="58" />
+        <state relative-caret-position="211">
+          <caret line="164" column="58" lean-forward="true" selection-start-line="164" selection-start-column="58" selection-end-line="164" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/views/tagNA.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="165" column="56" lean-forward="true" selection-start-line="165" selection-start-column="56" selection-end-line="165" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memeNumbaWan/controllers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="242" column="24" lean-forward="true" selection-start-line="242" selection-start-column="24" selection-end-line="242" selection-end-column="24" />
         </state>
       </provider>
     </entry>

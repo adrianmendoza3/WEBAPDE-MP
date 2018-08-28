@@ -61,6 +61,14 @@ router.get("/uploadmeme", (req, res) => { //INDEX??? // upload to go to upload p
     res.render("uploadmeme.hbs");
 });
 
+router.get("/editmeme", (req, res) => { //INDEX??? // upload to go to upload page
+
+    console.log("get /editmeme");
+    console.log("uname sesh: "+req.session.username);
+
+    res.render("editmeme.hbs");
+});
+
 router.get("/myprofile", (req, res, next) => { //post???
     console.log("GET /redirect profile");
         var posters;
@@ -140,15 +148,15 @@ router.get("/profile",(req, res, next) => {
 router.get("/redirectprofile", (req, res, next) => { //post???
     console.log("GET /redirect profile");
 
-    console.log("UID" + req.query._id)
-
-    User.getOneByUID(
-        req.query._id
-    ).then((user)=>{
-        console.log("USERID IS BLANK" + user._id)
-    }, (err)=>{
-        console.log(err)
-    })
+    // console.log("UID" + req.query._id)
+    //
+    // User.getOneByUID(
+    //     req.query._id
+    // ).then((user)=>{
+    //     console.log("USERID IS BLANK" + user._id)
+    // }, (err)=>{
+    //     console.log(err)
+    // })
 
     if(req.session.username != null){
         Post.getAllFiltered(req.session.username).then((posts)=>{
@@ -227,11 +235,13 @@ router.get("/search", (req, res) => { //index???
 
     var input = req.query.searchinput;
     var tagID;
+    var namessss;
 
     Tag.getAll(
         input
     ).then((tag)=>{
         if(tag != null){
+            namessss = tag.name;
             console.log("Tag: " + tag)
             tagID = tag._id
 
@@ -240,12 +250,13 @@ router.get("/search", (req, res) => { //index???
             ).then((posts)=>{
                 if(req.session.username != null){
                     res.render("tag.hbs", {
-                        name : tag.name,
+                        name : namessss,
                         posts : posts
                     });
                 }
                 else{
                     res.render("tagNA.hbs", {
+                        name: namessss,
                         posts: posts
                     })
                 }
